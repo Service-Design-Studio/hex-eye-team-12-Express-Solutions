@@ -2,11 +2,21 @@
 
 <p style="color: green"><%= notice %></p>
 
+# Sprint 4: search bar
+# <%= form_tag services_path, method: :get do %>
+#   <%= label_tag "Search for a service:" %>
+#   <%= text_field_tag "search", params[:search] %>
+#   <%= submit_tag "Search" %>
+# <% end %>
+
+<section class="section is-medium">
 <h1>Services</h1>
 <% @services.each do |service| %>
 
-  <div class="box">
-    <%= service.name %>
+  <div class="box" >
+    
+    <%= link_to service.name, edit_service_path(service) %>
   </div>
 <% end %>
+</section>
 
