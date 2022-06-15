@@ -1,12 +1,24 @@
 
 
-<p style="color: green"><%= notice %></p>
+<h3 class="title is-1">Services</h3>
 
-<h1>Services</h1>
+<div class="columns is-mobile is-multiline is-8 has-background-white is-centered">
+
 <% @services.each do |service| %>
+  <div class="column is-half"> 
+  <p class="bd-notification is-primary">
 
-  <div class="box">
-    <%= service.name %>
+    <div class="box">
+      <figure class="image is-48x48">
+        <img src="https://bulma.io/images/placeholders/128x128.png">
+      </figure>
+
+      <%= service.name %>
+    </div>
+
   </div>
 <% end %>
+
+</div>
+
 
