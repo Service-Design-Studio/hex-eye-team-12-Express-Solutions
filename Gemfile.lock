@@ -72,6 +72,9 @@ GEM
     bootsnap (1.12.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    bulma-extensions-rails (6.2.7)
+    bulma-rails (0.9.3)
+      sassc (~> 2.0)
     capybara (3.37.1)
       addressable
       matrix
@@ -89,6 +92,7 @@ GEM
       reline (>= 0.2.7)
     digest (3.1.0)
     erubi (1.10.0)
+    ffi (1.15.5-x64-mingw32)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.10.0)
@@ -170,6 +174,8 @@ GEM
       io-console (~> 0.5)
     rexml (3.2.5)
     rubyzip (2.3.2)
+    sassc (2.4.0-x64-mingw32)
+      ffi (~> 1.9)
     selenium-webdriver (4.2.1)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -218,6 +224,8 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bulma-extensions-rails
+  bulma-rails (~> 0.9.3)
   capybara
   debug
   importmap-rails
