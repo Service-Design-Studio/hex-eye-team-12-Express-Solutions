@@ -4,6 +4,18 @@
 
 <div class="columns is-mobile is-multiline is-8 has-background-white is-centered">
 
+<<<<<<< HEAD
+=======
+# Sprint 4: search bar
+# <%= form_tag services_path, method: :get do %>
+#   <%= label_tag "Search for a service:" %>
+#   <%= text_field_tag "search", params[:search] %>
+#   <%= submit_tag "Search" %>
+# <% end %>
+
+<section class="section is-medium">
+<h1>Services</h1>
+>>>>>>> 63da5cabbba6ad8f2f0a4ecf4452dacbf7ba5c63
 <% @services.each do |service| %>
   <div class="column is-half"> 
   <p class="bd-notification is-primary">
@@ -16,8 +28,15 @@
       <%= service.name %>
     </div>
 
+<<<<<<< HEAD
+=======
+  <div class="box" >
+    
+    <%= link_to service.name, edit_service_path(service) %>
+>>>>>>> 63da5cabbba6ad8f2f0a4ecf4452dacbf7ba5c63
   </div>
 <% end %>
+</section>
 
 </div>
 

@@ -6,6 +6,13 @@ class ServicesController < ApplicationController
     @services = Service.all
   end
 
+  # GET /services/:id/sub
+  def sub
+    @service = Service.find(params[:id])
+    @sub_services = @service.description
+  end
+
+
   # GET /services/1 or /services/1.json
   def show
   end
@@ -15,9 +22,7 @@ class ServicesController < ApplicationController
     @service = Service.new
   end
 
-  # GET /services/1/edit
-  def edit
-  end
+
 
   # POST /services or /services.json
   def create
