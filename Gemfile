@@ -56,6 +56,15 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.3' 
+
+  #added from chips 7.7
+  gem 'byebug'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'rspec-rails'
+  gem 'pry'
+  gem 'pry-byebug'
 end
 
 group :development do
@@ -74,6 +83,9 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  #added from chips 7.7
+  gem 'cucumber-rails', require: false
+  gem 'cucumber-rails-training-wheels'
 end
 
 group :production do
