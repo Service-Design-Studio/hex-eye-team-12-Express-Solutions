@@ -8,8 +8,9 @@ class ServicesController < ApplicationController
 
   # GET /services/:id/sub
   def sub
-    @service = Service.find(params[:id])
-    @sub_services = @service.description
+    @service = Service.where( id: params[:id] )
+    # puts("@service: #{@service}")
+    # # @sub_services = @service.description
   end
 
 

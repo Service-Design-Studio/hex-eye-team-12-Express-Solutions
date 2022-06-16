@@ -3,12 +3,12 @@
 <h3 class="title is-1">Services</h3>
 
 
-# Sprint 4: search bar
-# <%= form_tag services_path, method: :get do %>
-#   <%= label_tag "Search for a service:" %>
-#   <%= text_field_tag "search", params[:search] %>
-#   <%= submit_tag "Search" %>
-# <% end %>
+<%= form_tag services_path, method: :get do %>
+  <%= label_tag "Search for a service:" %>
+  <%= text_field_tag "search", params[:search] %>
+  <%= submit_tag "Search" %>
+<% end %>
+
 
 <section class="section is-medium">
 <h1>Services</h1>
@@ -26,7 +26,7 @@
         <img src="https://bulma.io/images/placeholders/128x128.png">
       </figure>
 
-      <%= link_to service.name, edit_service_path(service) %>
+      <%= link_to service.name, sub_service_url(service.id) %>
 
     </div>
 

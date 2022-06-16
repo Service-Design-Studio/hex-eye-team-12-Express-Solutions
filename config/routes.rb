@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :services
-  get '/services/:id/sub', to:'services#sub'
+  get '/services/:id/sub', to:'services#sub', as: 'sub_service'
   root :to => redirect('/services')
 
 
