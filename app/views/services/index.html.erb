@@ -1,42 +1,41 @@
 
-
-<h3 class="title is-1">Services</h3>
-
-
+<div class="columns">
 <%= form_tag services_path, method: :get do %>
-  <%= label_tag "Search for a service:" %>
+  <%= label_tag "Search for a service:   " %>
   <%= text_field_tag "search", params[:search] %>
   <%= submit_tag "Search" %>
 <% end %>
+</div>
 
-
-<section class="section is-medium">
-<h1>Services</h1>
+<h3 class="title is-1">Top Services</h3>
 
 <div class="columns is-mobile is-multiline is-8 has-background-white is-centered">
-
 <% @services.each do |service| %>
-
   <div class="column is-half"> 
-  <p class="bd-notification is-primary">
+    <button class="button is-large is-responsive is-fullwidth">
+      <span class="icon">
+        <i class="fab fa-github"></i>
+        <%= link_to service.name, sub_service_url(service.id) %>
+      </span>
 
-    <div class="box">
-
-      <figure class="image is-48x48">
-        <img src="https://bulma.io/images/placeholders/128x128.png">
-      </figure>
-
-      <%= link_to service.name, sub_service_url(service.id) %>
-
-    </div>
-
-
+    </button>
   </div>
-
 <% end %>
 
-</section>
+<h3 class="title is-1">Main Categories</h3>
 
-</div>
+<div class="columns is-mobile is-multiline is-8 has-background-white is-centered">
+<% @services.each do |service| %>
+  <div class="column is-half"> 
+    <button class="button is-large is-responsive is-fullwidth">
+      <span class="icon">
+        <i class="fab fa-github"></i>
+        <%= link_to service.name, sub_service_url(service.id) %>
+      </span>
+
+    </button>
+  </div>
+<% end %>
+
 
 
