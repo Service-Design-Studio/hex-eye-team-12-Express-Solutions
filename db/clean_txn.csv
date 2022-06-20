@@ -1,0 +1,45 @@
+ Ammended_Category,Txn Category L4 (Clean),Service,Migratable,Monthly Count
+Account Opening,CASA OPENING ADDON PAYROLL,Addon Payroll,True,50
+Accounts,ACCOUNT CLOSURE,Account Closure,True,7500
+Accounts,ACCOUNT UPDATE,Account Update,False,150
+Accounts,CLOSURE CASH WITHDRAWAL,Closure Cash Withdrawal,False,2500
+Accounts,ACCT OPENING FCCA FCFD SRS,SRS Account Opening,True,50
+Card ,ATM CARD ISSUANCE,ATM Card Issuance,True,2500
+Card ,ATM CARD REPLACEMENT,ATM Card Replacement,True,2500
+Card ,DEBIT CARD ISSUANCE,Debit Card Issuance,True,7500
+Card ,DEBIT CARD REPLACEMENT,Debit Card Replacement,True,7500
+Card ,DEBIT CARD ACTIVATION VIA BBSA,Activate New Card,True,150
+Card ,ATM CARD ACTIVATION VIA BBSA,Activate New Card,True,50
+Cash,CASH DEPOSIT,Cash Deposit,False,10000
+Cash,CASH WITHDRAWAL,Cash Withdrawal,False,10000
+Cash,RETURN CASH WITHDRAWAL,Return Cash Withdrawal,False,50
+Cheque,CASHIER ORDER DEPOSIT,Cashier Order Deposit,True,350
+Cheque,CASHIER ORDER PURCHASE,Cashier Order Purchase,False,7500
+Cheque,CHEQUE BOOK UPDATE,Cheque Book Update,False,50
+Cheque,CHEQUE DEPOSIT,Cheque Deposit,False,50
+Cheque,CHEQUE ENCASHMENT,Cheque Encashment,False,2500
+Cheque,ODD,Overseas Cheque,False,100
+Deposit,FD PLACEMENT,Fixed Deposit Placement,True,2500
+Deposit,FD WITHDRAWAL,Fixed Deposit Withdrawal,True,2500
+Deposit,DEPOSIT,Foreign Currency Deposit,False,100
+Deposit,PREMATURE ADVICE WITHDRAWAL,Premature Advice Withdrawal,True,2500
+Deposit,PREMATURE WITHDRAWAL,Premature Withdrawal,False,150
+Digibank sign-up,IBSIGNUP VIA BRANCH,Apply for Digibank,True,350
+Digibank sign-up,STANDALONE IBSIGNUP VIA BRANCH,Apply for Digibank,True,350
+Digibank sign-up,STANDALONE IBSIGNUP VIA PWEB,Apply for Digibank,True,50
+Others,STATEMENT REQUEST,Statement Request,True,50
+Others,TOKENS REPLACEMENT,Tokens Replacement,True,150
+Others,TUITION FEE LOAN,Tuition Fee Loan,False,300
+Personal Info Update,CREATE CUSTOMER ADDRESS,Create Customer Address,False,2500
+Personal Info Update,CREATE CUSTOMER EMAIL,Create Customer Email,False,1000
+Personal Info Update,CREATE CUSTOMER PARTICULARS,Create Customer Particulars,False,2500
+Personal Info Update,CREATE CUSTOMER PHONE,Create Customer Phone,False,2500
+Personal Info Update,UPDATE CUSTOMER ADDRESS,Update Customer Address,True,2500
+Personal Info Update,UPDATE CUSTOMER EMAIL,Update Customer Email,True,7500
+Personal Info Update,UPDATE CUSTOMER PARTICULARS,Update Customer Particulars,True,20000
+Personal Info Update,UPDATE CUSTOMER PHONE,Update Customer Phone,True,10000
+Transfers,FUND TRANSFER,Fund Transfer,True,7500
+Transfers,OTT,Overseas Transfer,True,2500
+Withdrawals,ADVICE WITHDRAWAL,Advice Withdrawal,False,2500
+Withdrawals,WITHDRAWAL,Transact & Withdraw in Foreign Currency Overseas,False,100
+Withdrawals,WITHDRAWAL(PRINCIPAL),Transact & Withdraw in Foreign Currency Overseas,False,50

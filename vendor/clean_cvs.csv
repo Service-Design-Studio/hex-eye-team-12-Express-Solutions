@@ -1,0 +1,59 @@
+﻿Categrory, Ammended_Category,Txn Category L4 (internal),Txn Category L4 (Clean),Service,Level 1 Avoidable Classification,Migratable,"Avg/mthly
+Tnx Count 2022",Monthly Count,Remarks 
+SA/CA Acct Opening ,Account Opening,CASA_OPENING_ADDON_PAYROLL,CASA OPENING ADDON PAYROLL,Addon Payroll,Avoidable,TRUE, <50 ,50,
+SA/CA Acct Opening ,Account Opening,CASA_OPENING_ADDON,CASA OPENING ADDON,,Avoidable,TRUE, >1K - <5K ,2500,Unvoidable for Trust or Joint-All account opening. Currently only Personal and Joint-Alternative acct can be opened online
+SA/CA Acct Opening ,Account Opening,CASA_OPENING_NTB,CASA OPENING NTB,,Avoidable,TRUE, >500 ,500,
+SA/CA Acct Opening ,Account Opening,CASA_OPENING_NTB_PAYROLL,CASA OPENING NTB PAYROLL,,Avoidable,TRUE, >200 - 500 ,350,
+SA/CA Acct Opening ,Account Opening,CASA_OPENING_NTP,CASA OPENING NTP,,Avoidable,TRUE, >100 - 200 ,150,
+SA/CA Acct Opening ,Account Opening,CASA_OPENING_NTP_PAYROLL,CASA OPENING NTP PAYROLL,,Avoidable,TRUE, <50 ,50,
+SA/CA Acct Opening ,Account Opening,CASA_OPENING_OPENCLOSED_SAME_MTH,CASA OPENING OPENCLOSED SAME MTH,,Avoidable,TRUE, <50 ,50,
+SA/CA Acct Opening ,Account Opening,CASA_OPENING_POSB_CDA,CASA OPENING POSB CDA,,Avoidable,TRUE, <50 ,50,
+Account Closure,Accounts,ACCOUNT_CLOSURE,ACCOUNT CLOSURE,Account Closure,Avoidable,TRUE, >5K - 10K ,7500, 
+ACCOUNT_UPDATE,Accounts,ACCOUNT_UPDATE,ACCOUNT UPDATE,Account Update,Unavoidable,FALSE, >100 - 200 ,150,Likely to be account scheme conversion i.e. passbook to statements/ estatements
+Acct Closure Cash,Accounts,CLOSURE_CASH_WITHDRAWAL,CLOSURE CASH WITHDRAWAL,Closure Cash Withdrawal,Unavoidable,FALSE, >1K - <5K ,2500, 
+Acct Closure Advice,Accounts,CLOSURE_ADVICE_WITHDRAWAL,CLOSURE ADVICE WITHDRAWAL,,Unavoidable,FALSE, <100 ,100, 
+Acct Opening - CPF/SRS,Accounts,ACCT_OPENING_FCCA_FCFD_SRS,ACCT OPENING FCCA FCFD SRS,SRS Account Opening,Avoidable,TRUE, <50 ,50, 
+ATM/Debit Card Issuance,Card ,ATM_CARD_ISSUANCE,ATM CARD ISSUANCE,ATM Card Issuance,Avoidable,TRUE, >1K - <5K ,2500, 
+ATM/Debit Card Replacement,Card ,ATM_CARD_REPLACEMENT,ATM CARD REPLACEMENT,ATM Card Replacement,Avoidable,TRUE, >1K - <5K ,2500, 
+ATM/Debit Card Issuance,Card ,DEBIT_CARD_ISSUANCE,DEBIT CARD ISSUANCE,Debit Card Issuance,Avoidable,TRUE, >5K - >10K ,7500, 
+ATM/Debit Card Replacement,Card ,DEBIT_CARD_REPLACEMENT,DEBIT CARD REPLACEMENT,Debit Card Replacement,Avoidable,TRUE, >5K - >10K ,7500, 
+ATM/Debit Card Activation,Card ,DEBIT_CARD_ACTIVATION_VIA_BBSA,DEBIT CARD ACTIVATION VIA BBSA,Activate New Card,Avoidable,TRUE, >100 - 200 ,150, 
+ATM/Debit Card Activation,Card ,ATM_CARD_ACTIVATION_VIA_BBSA,ATM CARD ACTIVATION VIA BBSA,Activate New Card,Avoidable,TRUE, <50 ,50, 
+ATM/Debit Card Update,Card ,ATM_CARD_UPDATE_VIA_BBSA,ATM CARD UPDATE VIA BBSA,,Unavoidable,FALSE, <50 ,50,What is BBSA?
+ATM/Debit Card Update,Card ,DEBIT_CARD_UPDATE_VIA_BBSA,DEBIT CARD UPDATE VIA BBSA,,Unavoidable,FALSE, <50 ,50,What is BBSA?
+CASH_DEPOSIT,Cash,CASH_DEPOSIT,CASH DEPOSIT,Cash Deposit,Unavoidable,FALSE, >10K ,10000,No online service but can be done at ATM/VTM
+CASH_WITHDRAWAL,Cash,CASH_WITHDRAWAL,CASH WITHDRAWAL,Cash Withdrawal,Unavoidable,FALSE, >10K ,10000,No online service but can be done at ATM/VTM
+Cash Related,Cash,RETURN_CASH_WITHDRAWAL,RETURN CASH WITHDRAWAL,Return Cash Withdrawal,Unavoidable,FALSE, <50 ,50, 
+Cheque Deposit,Cheque,CASHIER_ORDER_DEPOSIT,CASHIER ORDER DEPOSIT,Cashier Order Deposit,Avoidable,TRUE, >200 - 500 ,350, 
+Cashier Order Purchase,Cheque,CASHIER_ORDER_PURCHASE,CASHIER ORDER PURCHASE,Cashier Order Purchase,Unavoidable,FALSE, >5K - >10K ,7500, 
+Cheque Book,Cheque,CHEQUE_BOOK_UPDATE,CHEQUE BOOK UPDATE,Cheque Book Update,Unavoidable,FALSE, <50 ,50, 
+Cheque Deposit,Cheque,CHEQUE_DEPOSIT,CHEQUE DEPOSIT,Cheque Deposit,Unavoidable,FALSE, <50 ,50,No online service but can be done at cheque box
+Cheque Encashment,Cheque,CHEQUE_ENCASHMENT,CHEQUE ENCASHMENT,Cheque Encashment,Unavoidable,FALSE, >1K - <5K ,2500, 
+Overseas Cheque,Cheque,ODD,ODD,Overseas Cheque,Unavoidable,FALSE, <100 ,100, 
+Fixed Deposit Tnx (placement),Deposit,FD_PLACEMENT,FD PLACEMENT,Fixed Deposit Placement,Avoidable,TRUE, >1K - <5K ,2500, 
+Fixed Deposit Tnx (withdrawal),Deposit,FD_WITHDRAWAL,FD WITHDRAWAL,Fixed Deposit Withdrawal,Avoidable,TRUE, >1K - <5K ,2500, 
+Deposit (Foreign Currency Acct),Deposit,DEPOSIT,DEPOSIT,Foreign Currency Deposit,Unavoidable,FALSE, <100 ,100,Deposit funds into FCCA / FCFD accts
+Fixed Deposit Tnx (withdrawal),Deposit,PREMATURE_ADVICE_WITHDRAWAL,PREMATURE ADVICE WITHDRAWAL,Premature Advice Withdrawal,Avoidable,TRUE, >1K - <5K ,2500, 
+Fixed Deposit Tnx,Deposit,PREMATURE_WITHDRAWAL,PREMATURE WITHDRAWAL,Premature Withdrawal,Unavoidable,FALSE, >100 - 200 ,150, 
+Digibank sign-up,Digibank sign-up,IBSIGNUP_VIA_BRANCH,IBSIGNUP VIA BRANCH,Apply for Digibank,Avoidable,TRUE, >200 - 500 ,350, 
+Digibank sign-up,Digibank sign-up,STANDALONE_IBSIGNUP_VIA_BRANCH,STANDALONE IBSIGNUP VIA BRANCH,Apply for Digibank,Avoidable,TRUE, >200 - 500 ,350, 
+Digibank sign-up,Digibank sign-up,STANDALONE_IBSIGNUP_VIA_PWEB,STANDALONE IBSIGNUP VIA PWEB,Apply for Digibank,Avoidable,TRUE, <50 ,50, 
+STATEMENT_REQUEST,Others,STATEMENT_REQUEST,STATEMENT REQUEST,Statement Request,Avoidable,TRUE, <50 ,50, 
+Hard Token Replacement,Others,TOKENS_REPLACEMENT,TOKENS REPLACEMENT,Tokens Replacement,Avoidable,TRUE, >100 - 200 ,150, 
+TUITION FEE LOAN,Others,TUITION FEE LOAN,TUITION FEE LOAN,Tuition Fee Loan,Unavoidable,FALSE, >100 - 500 ,300,Repayment or redemption of Loan
+PPU Create,Personal Info Update,CREATE_CUSTOMER_ADDRESS,CREATE CUSTOMER ADDRESS,Create Customer Address,Unavoidable,FALSE, >1K - <5K ,2500,"Opening of Personal and Joint Alternate account can be done online however if customer still goes to branch to open the acct, these services will be unavoidable as it part of account creation.
+
+Note: For Trust or Joint-All account opening, transaction will be unvoidable "
+PPU Create,Personal Info Update,CREATE_CUSTOMER_EMAIL,CREATE CUSTOMER EMAIL,Create Customer Email,Unavoidable,FALSE, >1K ,1000,
+PPU Create,Personal Info Update,CREATE_CUSTOMER_PARTICULARS,CREATE CUSTOMER PARTICULARS,Create Customer Particulars,Unavoidable,FALSE, >1K - <5K ,2500,
+PPU Create,Personal Info Update,CREATE_CUSTOMER_PHONE,CREATE CUSTOMER PHONE,Create Customer Phone,Unavoidable,FALSE, >1K - <5K ,2500,
+PPU Update,Personal Info Update,UPDATE_CUSTOMER_ADDRESS,UPDATE CUSTOMER ADDRESS,Update Customer Address,Avoidable,TRUE, >1K - <5K ,2500, 
+PPU Update,Personal Info Update,UPDATE_CUSTOMER_EMAIL,UPDATE CUSTOMER EMAIL,Update Customer Email,Avoidable,TRUE, >5K - >10K ,7500, 
+PPU Update,Personal Info Update,UPDATE_CUSTOMER_PARTICULARS,UPDATE CUSTOMER PARTICULARS,Update Customer Particulars,Avoidable,TRUE, >20K ,20000,"Only partial, signature update & a few others are unavoidable. >85% can be done online"
+PPU Update,Personal Info Update,UPDATE_CUSTOMER_PHONE,UPDATE CUSTOMER PHONE,Update Customer Phone,Avoidable,TRUE, >10K ,10000, 
+FUND_TRANSFER,Transfers,FUND_TRANSFER,FUND TRANSFER,Fund Transfer,Avoidable,TRUE, >5K - >10K ,7500, 
+Overseas Transfer/Remittance,Transfers,OTT,OTT,Overseas Transfer,Avoidable,TRUE, >1K - <5K ,2500, 
+FUND_TRANSFER,Transfers,TRF_FROM_FCCA,TRF FROM FCCA,,Avoidable,TRUE, <50 ,50,What is FCCA?
+ADVICE_WITHDRAWAL,Withdrawals,ADVICE_WITHDRAWAL,ADVICE WITHDRAWAL,Advice Withdrawal,Unavoidable,FALSE, >1K - <5K ,2500,Withdrawal from SGD $ FD accts to another account
+WITHDRAWAL (Foreign Currency Acct),Withdrawals,WITHDRAWAL,WITHDRAWAL,Transact & Withdraw in Foreign Currency Overseas,Unavoidable,FALSE, <100 ,100,Withdraw from FCCA accts
+WITHDRAWAL(PRINCIPAL) (Foreign Currency Acct),Withdrawals,WITHDRAWAL(PRINCIPAL),WITHDRAWAL(PRINCIPAL),Transact & Withdraw in Foreign Currency Overseas,Unavoidable,FALSE, <50 ,50,Principal withdrawal from FCY$ FD accts
