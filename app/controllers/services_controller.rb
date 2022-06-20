@@ -3,12 +3,15 @@ class ServicesController < ApplicationController
 
   # GET /services or /services.json
   def index
-    @services = Service.all
+    #sort_by count
+    @topServices = AllService.top_services()
+    @allServices = AllService.all_category()
   end
 
   # GET /services/:id/sub
   def sub
-    @service = Service.where(id: params[:id])
+    puts params[:category]
+    @services = AllService.where(category: params[:id])
     
   end
 

@@ -33,3 +33,9 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+
+# for me to keep 
+
+# data_cleaning.ipynb
+*.ipynb

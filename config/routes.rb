@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # Custom routes
   # url for services, with a id in parameters, to: controller
   get '/services/:id/sub', to:'services#sub', as: 'sub_service'
+  
 
   root :to => redirect('/services')
 
