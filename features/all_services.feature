@@ -11,10 +11,10 @@ Background: Categories have been added to database
     | Cash            | CASH DEPOSIT       | Cash Deposit  | False      | 10000 |
     
 
-  Then 9 seed services should exist
+  Then 2 seed services should exist
 
 
 Scenario: Customer clicks on Account Opening Category
     Given I am on the home page for "services"
-    When I click on the "Account Opening"
-    Then I should see 1 services on "Account Opening"
+    When I click on the "Cash"
+    Then I should see 1 services on "Cash"
