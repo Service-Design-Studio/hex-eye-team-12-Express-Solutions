@@ -1,11 +1,11 @@
-# README
+### README: Team 12 HEX-EYE Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Service Design Studio 2022
 
-Things you may want to cover:
+## DBS x SUTD in collaboration with Google.
 
-* Ruby version
+
+* Ruby version - 2.7.6-1
 
 * System dependencies
 
@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+[Code Bible](https://github.com/Service-Design-Studio/final-project-hex-eye-team-12/blob/main/codebible.md)
