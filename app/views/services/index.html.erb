@@ -1,3 +1,13 @@
+<section class="hero is-danger">
+  <div class="hero-body">
+    <p class="title">
+      DBS One-Stop Solutions
+    </p>
+    <p class="subtitle">
+      How can we help you today?
+    </p>
+  </div>
+</section>
 
 <div class="columns">
 <%= form_tag services_path, method: :get do %>
@@ -10,12 +20,12 @@
 <h3 class="title is-1">Top Services</h3>
 
 <div class="columns is-mobile is-multiline is-8 has-background-white is-centered">
-<% @topServices.each do |service| %>
+<% @services.each do |service| %>
   <div class="column is-half"> 
     <button class="button is-large is-responsive is-fullwidth">
       <span class="icon">
         <i class="fab fa-github"></i>
-        <%= service.service %>
+        <%= link_to service.name, sub_service_url(service.id) %>
       </span>
 
     </button>
@@ -25,23 +35,15 @@
 <h3 class="title is-1">Main Categories</h3>
 
 <div class="columns is-mobile is-multiline is-8 has-background-white is-centered">
-<!%= @allServices.inspect %>
-<% @allServices.each do |service| %>
+<% @services.each do |service| %>
   <div class="column is-half"> 
     <button class="button is-large is-responsive is-fullwidth">
-    <a><%= service[0] %></a>
       <span class="icon">
         <i class="fab fa-github"></i>
-        
-        <%= link_to service.category, sub_service_url(service.category) %>
-        
+        <%= link_to service.name, sub_service_url(service.id) %>
       </span>
 
     </button>
   </div>
 <% end %>
-
-
-
-
 
