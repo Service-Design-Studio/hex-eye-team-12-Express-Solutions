@@ -1,13 +1,13 @@
+<h2 class="subtitle">What are you looking for?</h2>
 
-<div class="columns">
-<%= form_tag services_path, method: :get do %>
-  <%= label_tag "Search for a service:   " %>
-  <%= text_field_tag "search", params[:search] %>
-  <%= submit_tag "Search" %>
-<% end %>
-</div>
+<input class="input is-rounded" type="text" placeholder="Search for a service">
 
-<h3 class="title is-1">Top Services</h3>
+<h3 class="title is-1">  </h3>
+<h3 class="title is-1">  </h3>
+<h3 class="title is-1">  </h3>
+<h3 class="title is-1">  </h3>
+
+<h3 class="title is-1 is-fluid">Top Services</h3>
 
 <div class="columns is-mobile is-multiline is-8 has-background-white is-centered">
 <% @topServices.each do |service| %>
@@ -22,9 +22,10 @@
   </div>
 <% end %>
 
-<h3 class="title is-1">Main Categories</h3>
 
-<div class="columns is-mobile is-multiline is-8 has-background-white is-centered">
+<h3 class="title is-1 has-text-left">Main Categories</h3>
+
+<div class="columns is-mobile is-multiline has-background-white">
 <!%= @allServices.inspect %>
 <% @allServices.each do |service| %>
   <div class="column is-half"> 
