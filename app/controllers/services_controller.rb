@@ -15,6 +15,20 @@ class ServicesController < ApplicationController
     
   end
 
+  # GET /services/:id/time_estimate
+  def time_estimate
+    puts params
+    @service = AllService.find(params[:id])
+    @digital_time = 5
+    @branch_time = 15
+    puts params
+    if params[:migratable] == "True"
+      @migratable = "true"
+    else
+      @migratable = "false"
+    end
+  end
+
 
   # GET /services/1 or /services/1.json
   def show

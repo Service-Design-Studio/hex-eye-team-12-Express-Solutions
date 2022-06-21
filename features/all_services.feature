@@ -14,7 +14,7 @@ Background: Categories have been added to database
   Then 2 seed services should exist
 
 
-Scenario: Customer clicks on Account Opening Category
+Scenario: Customer clicks on Cash Category
     Given I am on the home page for "services"
     When I click on the "Cash"
-    Then I should see 1 services on "Cash"
+    Then I should see 1 services on "Account Opening"
