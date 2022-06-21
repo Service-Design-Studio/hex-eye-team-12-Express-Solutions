@@ -12,6 +12,7 @@ World(WithinHelpers)
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
     visit '/services'
+    
   end
 
 # When /^(?:|I )click on the "([^"]*)"$/ do |button|
