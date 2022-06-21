@@ -86,6 +86,7 @@ group :test do
   #added from chips 7.7
   gem 'cucumber-rails', require: false
   gem 'cucumber-rails-training-wheels'
+  gem 'database_cleaner'
 end
 
 group :production do
