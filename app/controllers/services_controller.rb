@@ -6,6 +6,7 @@ class ServicesController < ApplicationController
     #sort_by count
     @topServices = AllService.top_services()
     @allServices = AllService.all_category()
+    session[:branch] = params[:branch]
   end
 
   # GET /services/:id/sub
