@@ -1,5 +1,5 @@
-
 <h1 class='title'><%= @service.service%></h1>
+
 <div class="is-centered">
 <% if @migratable == "true" %>
 <div >
@@ -14,43 +14,19 @@
 <% end %>
 </div>
 <div >
-<h1>--------------OR---------------</h1>
+<br>
+
+<h3 class="title is-5 is-vcentered">OR</h3>
+<progress class="progress is-small" value="100" max="100"></progress>
+
 <h1> Do it at the customer counter </h1>
 <h2>Estimate time</h2>
 <%= @branch_time %>
 </div >
 
-
-<div class="dropdown is-hoverable">
-  <div class="dropdown-trigger">
-    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-        <span>Dropdown button</span>
-        <span class="icon is-small">
-            <i class="fas fa-angle-down" ></i>
-        </span>
-    </button>
-  </div>
-    <div class="dropdown-menu" id="dropdown-menu" role="menu">
-        <div class="dropdown-content">
-        <a href="https://www.google.com/" class="dropdown-item">
-            Bank 1
-        </a>
-        <a class="dropdown-item">
-        Bank 2
-        </a>
-        <a href="#" class="dropdown-item">
-        Bank 3
-        </a>
-        <a href="#" class="dropdown-item">
-        Bank 4
-        </a>
-        <hr class="dropdown-divider">
-        <a href="#" class="dropdown-item">
-            Others
-        </a>
-        </div>
-    </div>
+<div class="select is-rounded">
+  <select>
+    <option>tampines</option>
+    <option>eunos</option>
+  </select>
 </div>
-</div>
-
-
