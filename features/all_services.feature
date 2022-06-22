@@ -9,10 +9,10 @@ Background: Categories have been added to database
     | category        | category_int       | service       | migratable | count |
     | Account Opening | CASA OPENING ADDON | Opening Addon | True       | 50    |
     | Cash            | CASH DEPOSIT       | Cash Deposit  | False      | 10000 |
-    | Personal Info Update     | UPDATE CUSTOMER PHONE      | Update Customer Phone  | True      | 10000 |
     
 
-  Then 3 seed services should exist
+  Then 2 seed services should exist
+
 
 
 # Scenario: Customer clicks on Cash Category
