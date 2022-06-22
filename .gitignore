@@ -16,7 +16,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-*.byebug_history
+.byebug_history
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
@@ -34,6 +34,9 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
- 
+
+
+# for me to keep 
+
 # data_cleaning.ipynb
 *.ipynb
