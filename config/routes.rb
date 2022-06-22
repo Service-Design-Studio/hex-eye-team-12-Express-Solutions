@@ -9,8 +9,11 @@ Rails.application.routes.draw do
   
   # Custom routes
   # url for services, with a id in parameters, to: controller
-  get '/services/:id/sub', to:'services#sub', as: 'sub_service'
+  get '/services/:id/sub', to:'services#sub', as: 'sub_services'
   get '/services/:id/time_estimate', to:'services#time_estimate', as: 'time_estimate'
+  get '/more', to:'services#more', as: 'more_services'
+  # #Set default first page as /home
+  # get '/services', to:'services#index', as: 'index'
 
   root :to => redirect('/services')
 
