@@ -28,11 +28,11 @@ Given('the following categories exist:') do |all_service_table|
     # byebug
     page.click_link l2
     if (l1 == "service") 
-      # byebug
+      #byebug
       id = AllService.where(:service => l2)[0].id
       @migratable = AllService.where(:id => id)[0].migratable
-
-      visit "/service/#{id}/time_estimate?migratable=#{@migratable}"
+      
+      visit "/services/#{id}/time_estimate?migratable=#{@migratable}"
     end
   end
   
@@ -40,7 +40,7 @@ Given('the following categories exist:') do |all_service_table|
   #   pending # Write code here that turns the phrase above into concrete actions
   # end
 
-  Then(/^I should see (.*) services on "(.+)"/) do |number, category|
+  Then(/^I should see "(.*)" services on "(.+)"/) do |number, category|
     services = AllService.where(:category => category)
     expect(services.count).to eq number.to_i
   end
@@ -51,7 +51,7 @@ Given('the following categories exist:') do |all_service_table|
   #   visit page_name
   # end
   
-  Then('I should see the headers {string} and {string}') do |string, string2|
+  Then(/^I should see the headers "(.*)" and "(.+)"/) do |string, string2|
     if @migratable == "True" 
       expect(page).to have_content string
     end
