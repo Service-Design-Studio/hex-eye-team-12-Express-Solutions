@@ -47,5 +47,5 @@ Scenario: Customer clicks on a Top Service and is redirected to the Time-Estimat
 Scenario: Customer can't find his service on Main Page
     When I visit "/services"
     Then I click on the button of More
-    Then I should see the headers "Choose a topic" and "Select your branch"
+    Then I should see the headers More
 
