@@ -75,6 +75,3 @@ end
     # end
   end
 # Scenario 3: Customer clicks on a Top Service and is redirected to the Time-Estimate page\
-# When('I try to visit "/services?branch=Mars"')
-#     expect{visit /services?branch=Mars}.to have_error(RoutingError)
-# end
