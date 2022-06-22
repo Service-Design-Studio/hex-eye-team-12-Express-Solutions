@@ -9,16 +9,22 @@
 
 <br>
 
-<div class="buttons is-mobile is-multiline">
+<div class="columns is-mobile is-multiline is-half">
 
 <% @topServices.each do |service| %>
-
-    <button class="button is-large is-fullwidth is-rounded">
+  <div class="column is-half is-multiline"> 
+    <button class="button is-large is-fullwidth is-half">
       <span class="icon">
         <i class="fab fa-github"></i>
-        <p style="font-size:20px; color:black;"><%= service.service %></p>
+        <p style="font-size:15px; color:black;"><%= service.service %></p>
       </span>
+
+      <!-- This is a comment -->
+      <%= link_to service.service, time_estimate_url(id: service.id, migratable: service.migratable) %>
+      <!-- -->
+
     </button>
+  </div>
 
 <% end %>
 
@@ -39,11 +45,11 @@
 
 <% @allServices.each do |service| %>
   <div class="column is-half is-multiline"> 
-    <button class="button is-large is-responsive is-fullwidth is-mobile">
+  <button class="button is-large is-fullwidth">
     <a><%= service[0] %></a>
       <span class="icon">
         <i class="fab fa-github"></i>
-        <p style="font-size:12px; color:black;"><%= link_to service.category, sub_service_url(service.category) %></p>
+        <p style="font-size:15px; color:black;"><%= link_to service.category %></p>
       </span>
     </button>
   </div>
