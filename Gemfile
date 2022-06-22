@@ -41,7 +41,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 gem 'bulma-rails', '~> 0.9.3'
-
+gem 'browser' # to detect mobile or desktop browser
 # optional
 gem 'bulma-extensions-rails'
 
