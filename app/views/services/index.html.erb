@@ -45,7 +45,7 @@
     <a><%= service[0] %></a>
       <span class="icon">
         <i class="fab fa-github"></i>
-        <p style="font-size:15px; color:black;"><%= link_to service.category %></p>
+        <p style="font-size:15px; color:black;"><%= link_to service.category, sub_services_url(service.category) %></p>
       </span>
     </button>
   </div>
@@ -54,4 +54,4 @@
 </div>
 <br>
 
-<button class="button"><a href="http://www.google.com.sg">More</a></button>
+<button class="button"><%= link_to "More", more_services_path() %></button>
