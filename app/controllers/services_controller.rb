@@ -1,12 +1,12 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: %i[ show edit update destroy ]
-  before_action :validate_params
+
   # GET /services or /services.json
   def index
     #sort_by count
     @topServices = AllService.top_services()
     @allServices = AllService.all_category()
-    
+    session[:branch] = params[:branch]
   end
 
   # GET /services/:id/sub
@@ -95,16 +95,4 @@ class ServicesController < ApplicationController
     def service_params
       params.require(:service).permit(:name, :description, :requirements, :ttc, :service_id)
     end
-
-    def validate_params
-      locations = ["Tampines-1", "Eunos"]
-      branch = params[:branch]
-      if (locations.include? branch) || branch == nil
-        session[:branch] = params[:branch]
-      else
-        raise ActionController::RoutingError.new('Not Found')
-        
-      end
-    end
-
 end
