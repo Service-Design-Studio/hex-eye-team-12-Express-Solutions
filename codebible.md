@@ -1,22 +1,22 @@
 ## Github
 
-Co-authoring _add 2 lines form the first line in your message first)_
+Commits Co-authoring _(add them 2 lines below the first line of your commit message )_
 
     Co-Authored-By: Ke Wei <yeokewei@users.noreply.github.com>
     Co-Authored-By: Subesh <pinkadotted@users.noreply.github.com>
     Co-Authored-By: Joshua <brutatoasta@users.noreply.github.com>
-    Co-Authored-By: Jeff Lai <Jefflai0315@users.noreply.github.com>    
+    Co-Authored-By: Jeff <Jefflai0315@users.noreply.github.com>    
     Co-Authored-By: Raymond <spizzray@users.noreply.github.com>  
     Co-Authored-By: Jowie <ioitami@users.noreply.github.com>  
 
+Fetches main into your current working branch [?](https://stackoverflow.com/questions/52108832/what-is-the-difference-between-git-pull-and-git-pull-origin-master)
+
+    git pull origin main
 
 
 Git pull [error](https://www.datree.io/resources/git-error-fatal-refusing-to-merge-unrelated-histories) on VSCode (when you have unrelated branches):
 
-    git pull origin master -allow-unrelated-histories
-
-Git [undoing](https://stackoverflow.com/questions/22682870/how-can-i-undo-pushed-commits-using-git) commits!
-
+    git pull origin main -allow-unrelated-histories
 
 
 ## Db-related
