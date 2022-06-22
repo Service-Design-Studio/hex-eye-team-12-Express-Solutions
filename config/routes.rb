@@ -11,10 +11,8 @@ Rails.application.routes.draw do
   # url for services, with a id in parameters, to: controller
   get '/services/:id/sub', to:'services#sub', as: 'sub_service'
   get '/services/:id/time_estimate', to:'services#time_estimate', as: 'time_estimate'
-  #Set default first page as /home
-  get '/home', to:'services#index', as: 'index'
 
-  root :to => redirect('/home')
+  root :to => redirect('/services')
 
 
 
