@@ -8,10 +8,8 @@ Given('the following categories exist:') do |all_service_table|
         # you should arrange to add that movie to the database here.
         AllService.create!(service)
 
-      end
-  end
-  
-  
+    end
+end
   
   Then /(.*) seed services should exist/ do | n_seeds |
     puts AllService
@@ -27,12 +25,14 @@ Given('the following categories exist:') do |all_service_table|
   When /I click on the (.*) of (.*)/ do |l1, l2|
     # byebug
     page.click_link l2
+    # byebug
     if (l1 == "service") 
       #byebug
       id = AllService.where(:service => l2)[0].id
       @migratable = AllService.where(:id => id)[0].migratable
       
-      visit "/services/#{id}/time_estimate?migratable=#{@migratable}"
+      #visit "/services/#{id}/time_estimate?migratable=#{@migratable}"
+      # byebug
     end
   end
   
@@ -44,18 +44,34 @@ Given('the following categories exist:') do |all_service_table|
     services = AllService.where(:category => category)
     expect(services.count).to eq number.to_i
   end
+  
 
 # Scenario 2: Customer uses a (QR Code) link to access the One-Stop Service page 
   
   # When /I visit "(.+)"$/ do |page_name|
   #   visit page_name
   # end
-  
-  Then(/^I should see the headers "(.*)" and "(.+)"/) do |string, string2|
-    if @migratable == "True" 
-      expect(page).to have_content string
+
+
+  Then(/^I should see the headers (.*)/) do |header_list|
+    headers = header_list.split(", ")
+    headers.each do |header|
+      expect(page).to have_content header
     end
-    expect(page).to have_content string2
+    #   if @migratable == "True" 
+    #     expect(page).to have_content string
+    #   end
+    #   expect(page).to have_content string2
   end
 
+  
+  And(/^I should not see the headers (.*)/) do |header_list|
+    headers = header_list.split(", ")
+    headers.each do |header|
+      expect(page).to_not have_content header
+    end
+    # if @migratable == "True" 
+    #   expect(page).to_not have_content string
+    # end
+  end
 # Scenario 3: Customer clicks on a Top Service and is redirected to the Time-Estimate page\
