@@ -29,6 +29,11 @@ class ServicesController < ApplicationController
     end
   end
 
+  # Get /services/more
+  def more
+    @counter_types = ["Digital", "Branch"]
+
+  end
 
   # GET /services/1 or /services/1.json
   def show
