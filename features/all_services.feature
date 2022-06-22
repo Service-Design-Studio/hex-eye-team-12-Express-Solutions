@@ -49,3 +49,14 @@ Scenario: Customer can't find his service on Main Page
     Then I click on the button of More
     Then I should see the headers More
 
+
+# TEST
+
+Scenario: Customer goes to Eunos branch
+    When I visit "/services?branch=Eunos"
+    Then I should see the headers Eunos
+
+Scenario: Customer tries to find Mars branch
+    When I visit "/services?branch=Mars"
+    Then I should not see the headers Mars
+

@@ -1,12 +1,23 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: %i[ show edit update destroy ]
+  before_action :validate_params
+
+  def validate_params
+    locations = ["Tampines-1", "Eunos"]
+    branch = params[:branch]
+    if (locations.include? branch)
+      session[:branch] = params[:branch]
+    else
+      session[:branch] = nil
+    end
+  end
 
   # GET /services or /services.json
   def index
     #sort_by count
     @topServices = AllService.top_services()
     @allServices = AllService.all_category()
-    session[:branch] = params[:branch]
+    # session[:branch] = params[:branch]
   end
 
   # GET /services/:id/sub
