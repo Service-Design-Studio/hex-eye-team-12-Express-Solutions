@@ -1,4 +1,3 @@
-#Background
 Given('the following categories exist:') do |all_service_table|
     # table is a Cucumber::MultilineArgument::DataTable
     
@@ -18,44 +17,16 @@ Given('the following categories exist:') do |all_service_table|
     AllService.count.should be n_seeds.to_i
   end
   
-  # Scenario 1: Customer clicks on Cash Category
-  Given /I visit "(.+)"$/ do |page_name|
-    visit page_name
-  end
 
-
-  When /I click on the (.*) of (.*)/ do |l1, l2|
-    # byebug
-    page.click_link l2
-    if (l1 == "service") 
-      #byebug
-      id = AllService.where(:service => l2)[0].id
-      @migratable = AllService.where(:id => id)[0].migratable
-      
-      visit "/services/#{id}/time_estimate?migratable=#{@migratable}"
-    end
-  end
   
   # Then('I should be on the Account Opening page') do
   #   pending # Write code here that turns the phrase above into concrete actions
   # end
 
-  Then(/^I should see "(.*)" services on "(.+)"/) do |number, category|
+  Then(/^I should see (.*) services on "(.+)"/) do |number, category|
     services = AllService.where(:category => category)
     expect(services.count).to eq number.to_i
   end
 
-# Scenario 2: Customer uses a (QR Code) link to access the One-Stop Service page 
-  
-  # When /I visit "(.+)"$/ do |page_name|
-  #   visit page_name
-  # end
-  
-  Then(/^I should see the headers "(.*)" and "(.+)"/) do |string, string2|
-    if @migratable == "True" 
-      expect(page).to have_content string
-    end
-    expect(page).to have_content string2
-  end
 
-# Scenario 3: Customer clicks on a Top Service and is redirected to the Time-Estimate page\
+  

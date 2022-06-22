@@ -14,25 +14,7 @@ Background: Categories have been added to database
   Then 2 seed services should exist
 
 
-# Scenario: Customer clicks on Cash Category
-#     Given I visit "/services"
-#     When I click on the category of Cash
-#     Then I should see 1 services on "Cash"
-
-
-Scenario: Customer uses a QR Code link to access the One-Stop Service page 
-    When I visit "/services"
-    Then I should see the headers "Top Services" and "Main Categories"
-
-
-Scenario: Customer clicks on a Top Service and is redirected to the Time-Estimate page
-    Given I visit "/services"
-    When I click on the service of Cash Deposit
-    When I visit "/services/2/time_estimate"
-    Then I should see the headers "Do it digitally" and "Do it at the customer counter"
-
-# Scenario: Customer can't find his service on Main Page
-#     When I visit "/services"
-#     Then I click on the button of More
-#     Then I should see the headers "Choose a topic" and "Select your branch"
-
+Scenario: Customer clicks on Cash Category
+    Given I am on the home page for "services"
+    When I click on the "Cash"
+    Then I should see 1 services on "Account Opening"
