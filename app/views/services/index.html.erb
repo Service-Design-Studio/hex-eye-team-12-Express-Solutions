@@ -10,16 +10,19 @@
 <br>
 
 <div class="columns is-mobile is-multiline is-8 has-background-white is-centered">
+
 <% @topServices.each do |service| %>
+
   <div class="column is-half"> 
     <button class="button is-large is-responsive is-fullwidth is-mobile">
       <span class="icon">
         <i class="fab fa-github"></i>
-        <p style="font-size:10px"><%= service.service %></p>
+        <p style="font-size:12px; color:black;"><%= service.service %></p>
       </span>
     </button>
   </div>
 <% end %>
+
 </div>
 
 
@@ -28,22 +31,29 @@
 <div class="container">
   <h3 class="title is-1 has-text-left">Main Categories</h3>
 </div>
+<br>
 
 
 <div class="columns is-mobile is-multiline is-8 has-background-white is-centered">
+
 <!%= @allServices.inspect %>
+
 <% @allServices.each do |service| %>
   <div class="column is-half"> 
-    <button class="button is-large is-responsive is-fullwidth">
+    <button class="button is-large is-responsive is-fullwidth is-mobile">
     <a><%= service[0] %></a>
       <span class="icon">
         <i class="fab fa-github"></i>
-        <%= link_to service.category, sub_service_url(service.category) %>
+        <p style="font-size:12px; color:black;"><%= link_to service.category, sub_service_url(service.category) %></p>
       </span>
     </button>
   </div>
 <% end %>
+
 </div>
+<br>
+
+<button class="button"><a href="http://www.google.com.sg">More</a></button>
 
 
 
