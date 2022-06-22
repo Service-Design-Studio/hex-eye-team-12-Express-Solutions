@@ -12,31 +12,23 @@ This webapp unifies all the banking services under one roof. With the help of AI
 
 Summary of Features:
 
-* Seamless Navigation for all Banking Services
-* Digital / Branch service options with Time-estimate for completion
-* AI-powered Service Searchbar
+* Display & Navigation for all Banking Services
 * Dynamic Top Services Options (based on time & branch)
+* Digital / Branch service options with Time-estimate for completion
 * Pre-filled SMS for branch Queue number
-
-Others:
+* AI-powered Service Searchbar
 
 [Code Bible](https://github.com/Service-Design-Studio/final-project-hex-eye-team-12/blob/main/codebible.md)
 
+Others:
+
 * Ruby version - 2.7.6-1
-
 * System dependencies
-
 * Configuration
-
 * Database creation
-
 * Database initialization
-
 * How to run the test suite
-
 * Services (job queues, cache servers, search engines, etc.)
-
 * Deployment instructions
-
 * ...
 
