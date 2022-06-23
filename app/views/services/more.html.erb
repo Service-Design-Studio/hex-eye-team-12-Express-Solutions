@@ -1,35 +1,41 @@
-<h1 class='title'>More</h1>
+<div class="columns is-multiline is-mobile">
 
-<div class="dropdown is-hoverable">
-  <div class="dropdown-trigger">
-    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-        <span>Dropdown button</span>
-        <span class="icon is-small">
-            <i class="fas fa-angle-down" ></i>
-            
-        </span>
+  <div class="column is-full">
+    <h1 class='title' style = "font-size:45px">More</h1>
+  </div>
+
+  <div class="column is-full">
+    <h1 class='title' style = "font-size:30px">Choose a topic</h1>
+    <div class="select is-danger">
+      <select>
+        <option>Select</option>
+        <option>Transfer</option>
+        <option>blah</option>
+        <option>blahblah</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="column is-full">
+    <h1 class='title' style = "font-size:30px">Select your Branch</h1>
+    <div class="select is-danger">
+      <select>
+        <option>Select</option>
+        <option>Tampines</option>
+        <option>Pasir Ris</option>
+        <option>Simei</option>
+      </select>
+    </div>
+  </div>
+  
+  <div class="column is-full"><br><br>
+    <button class="button is-medium is-responsive">
+      <p style="color:white; font-size:14px">Get Queue Number</p>
     </button>
   </div>
-    <div class="dropdown-menu" id="dropdown-menu" role="menu">
-        <div class="dropdown-content">
-        <%@counter_types.each do |counter_type| %>
-            <a href="#" class="dropdown-item">
-            <%= counter_type %>
-            </a>
-        <% end %>
-        </div>
-    </div>
+
 </div>
 
-
-<div class="is-centered">
-
-<div >
-<button class="button is-medium is-responsive">
-  Get Queue Number
-</button>
-</div>
-</div>
 
 
 
