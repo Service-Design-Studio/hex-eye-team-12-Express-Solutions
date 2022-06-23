@@ -10,17 +10,22 @@
 </div>
 <div >
 <h2>Estimate time</h2>
-    <%=  @digital_time%>
+    <% @digital_time = @digital_time.to_s + ' min' %>
+    <%= @digital_time %>
+
+<h3 class="title is-5 is-vcentered">OR</h3>
+<progress class="progress is-small" value="100" max="100"></progress>
 <% end %>
 </div>
 <div >
 <br>
 
-<h3 class="title is-5 is-vcentered">OR</h3>
-<progress class="progress is-small" value="100" max="100"></progress>
+
 
 <h1> Do it at the customer counter </h1>
 <h2>Estimate time</h2>
+
+<% @branch_time  = @branch_time.to_s + ' min' %>
 <%= @branch_time %>
 </div >
 
