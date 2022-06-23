@@ -60,6 +60,6 @@ Scenario: Customer tries to find Mars branch
     Then I should not see the headers "Mars"
 
 
-# Scenario: Customer tries to random url of our web service
-#     When I visit "/randomsite"
-#     Then I should see the headers "The page you were looking for doesn't exist."
+Scenario: Customer tries to random url of our web service
+    When I visit "/randomsite"
+    Then I should see the headers "One-Stop Solutions"
