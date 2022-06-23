@@ -1,18 +1,16 @@
+<div class="column is-full">
+
+  <h2 class="subtitle">What are you looking for?</h2>
+
+  <input class="input is-rounded" type="text" placeholder="🔍 Search for a service">
+
+  <div class="container">
+  <br>
+  <h3 class="title is-1 has-text-left">Top Services</h3>
+  </div><br>
 
 
-    <h2 class="subtitle">What are you looking for?</h2>
-
-    <input class="input is-rounded" type="text" placeholder="🔍 Search for a service">
-
-    <div class="container">
-    <br>
-    <h3 class="title is-1 has-text-left">Top Services</h3>
-    </div><br>
-
-
-
-
-  <div class="columns is-mobile is-multiline">
+  <div class="columns is-mobile is-multiline is-full">
 
   <% @topServices.each do |service| %>
 
@@ -62,3 +60,4 @@
 
   <button class="button" id="More"><%= link_to "More", more_services_path() %></button>
 
+</div>
