@@ -43,3 +43,9 @@ Requires *gem rspec-rails* in GEMFILE
 
 
 [Markdown Guide](https://agea.github.io/tutorial.md/)
+
+
+
+Resources:
+
+[Rails redirecting invalid route to root](https://stackoverflow.com/questions/6548928/rails-redirecting-invalid-route-to-root)
