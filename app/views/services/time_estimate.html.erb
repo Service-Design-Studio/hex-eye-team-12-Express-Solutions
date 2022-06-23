@@ -1,37 +1,56 @@
-<h1 class='title'><%= @service.service%></h1>
 
-<div class="is-centered">
-<% if @migratable == "true" %>
-<div >
-<h1 class='subtitle'>Do it digitally</h1>
-<button class="button is-medium is-responsive">
-  <p style="font-size:15px; color:white;">Start</p>
-</button>
+<div class="columns is-multiline is-mobile is-vcentered">
+  <center>
+  <div class="column is-full">
+    <h1 class='title'><%= @service.service%></h1>
+  </div>
+
+    <% if @migratable == "true" %>
+
+  <div class="column is-full">
+    <div>
+      <b><p style="font-size:25px; color:DimGray">Do it digitally</p></b>
+        <% @digital_time = @digital_time.to_s + ' min' %>
+        <h2>Estimate time: <b><%= @digital_time %></b> </h2><br>
+
+        <button class="button is-large is-responsive is-rounded">
+          <p style="font-size:22px; color:white;">Start</p>
+        </button>
+    </div>
+  </div>
+
+  <div class="column is-full">
+    <div>
+      <hr style="height: 4px; color:black; background-color:gray;">
+        <div class="columns is-centered is-vcentered">
+          <h3 class="title is-5 is-vcentered">OR</h3>
+        </div> 
+    </div>
+  </div><br>
+
+
+  <% end %>
+
+  <div class="column is-full">
+    <b><p style="font-size:25px; color:DimGray">Do it at a branch</p></b>
+
+    <% @branch_time  = @branch_time.to_s + ' min' %>
+    <h2>Estimate time: <b> <%= @branch_time %> </b></h2><br>
+
+    <div class="select is-rounded">
+      <select>
+      <option>Select</option>
+        <option>Tampines</option>
+        <option>Eunos</option>
+      </select>
+    </div><br>
+
+
+    <br><button class="button is-large is-responsive is-rounded">
+      <p style="font-size:22px; color:white;">Next</p>
+    </button>
+  </div>
+  </center>
 </div>
-<div >
-<h2>Estimate time</h2>
-    <% @digital_time = @digital_time.to_s + ' min' %>
-    <%= @digital_time %>
-
-<h3 class="title is-5 is-vcentered">OR</h3>
-<progress class="progress is-small" value="100" max="100"></progress>
-<% end %>
-</div>
-<div >
-<br>
 
 
-
-<h1> Do it at the customer counter </h1>
-<h2>Estimate time</h2>
-
-<% @branch_time  = @branch_time.to_s + ' min' %>
-<%= @branch_time %>
-</div >
-
-<div class="select is-rounded">
-  <select>
-    <option>tampines</option>
-    <option>eunos</option>
-  </select>
-</div>

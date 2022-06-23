@@ -20,21 +20,27 @@
   <body>
 
 
-<section class = "hero is-dark">
-  <div class = "hero-body">
-      <figure class="image">
-        <%= image_tag 'dbs_logo.png' %>
-      </figure><br>
+<div class = "columns has-background-dark is-mobile is-multiline">
 
-        <h1 class = "title">One-Stop Solutions </h1>
+  <div class="column is-half">
+    <figure class="image">
+      <%= image_tag 'dbs_logo.png' %>
+    </figure>
   </div>
-</section>
 
-<section class="section is-small">
-<%= session[:branch]%>
+  <div class="column is-full">
+    
+    <h1 class = "title" style="color:white">‏ ‏ ‎ ‎One-Stop Solutions </h1>
+    <hr style="height: 0.1px; visibility: hidden; margin-bottom:0px;">
+  </div>
+</div><br>
 
-    <%= yield %>
-</section>
+<div class="columns is-multiline is-vcentered is-centered">
+  <section class="section is-large">
+    <%= session[:branch]%>
+        <%= yield %>
+  </section>
+</div>
   </body>
 
 </html>
