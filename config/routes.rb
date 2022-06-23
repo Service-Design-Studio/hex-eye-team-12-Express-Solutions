@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get '/services/:id/time_estimate', to:'services#time_estimate', as: 'time_estimate'
   get '/more', to:'services#more', as: 'more_services'
 
+  get ':not_found' => redirect('/'), :constraints => { :not_found => /.*/ }
+
   root :to => redirect('/services')
 
 
