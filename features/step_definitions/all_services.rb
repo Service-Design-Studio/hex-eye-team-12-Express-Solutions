@@ -11,7 +11,7 @@ Given('the following categories exist:') do |all_service_table|
     end
 end
   
-  Then /(.*) seed services should exist/ do | n_seeds |
+  Then /"(.*)" seed services should exist/ do | n_seeds |
     puts AllService
     AllService.count.should be n_seeds.to_i
   end
@@ -22,7 +22,7 @@ end
   end
 
 
-  When /I click on the (.*) of (.*)/ do |l1, l2|
+  When /I click on the "(.*)" of "(.*)"$/ do |l1, l2|
     # byebug
     page.click_link l2
     # byebug
@@ -53,7 +53,7 @@ end
   # end
 
 
-  Then(/^I should see the headers (.*)/) do |header_list|
+  Then(/^I should see the headers "(.*)"/) do |header_list|
     headers = header_list.split(", ")
     headers.each do |header|
       expect(page).to have_content header
@@ -65,7 +65,7 @@ end
   end
 
   
-  And(/^I should not see the headers (.*)/) do |header_list|
+  And(/^I should not see the headers "(.*)"/) do |header_list|
     headers = header_list.split(", ")
     headers.each do |header|
       expect(page).to_not have_content header
