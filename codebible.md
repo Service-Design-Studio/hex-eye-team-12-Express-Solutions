@@ -49,3 +49,5 @@ Requires *gem rspec-rails* in GEMFILE
 Resources:
 
 [Rails redirecting invalid route to root](https://stackoverflow.com/questions/6548928/rails-redirecting-invalid-route-to-root)
+
+[Gem browser](https://github.com/fnando/browser)
