@@ -13,10 +13,11 @@ $button-background-color: #454545;
 $link: $white;
 $button-text-color: $white;
 
-$box-padding: 20px;
+$box-padding: 18px;
 $box-background-color: #454545;
 $box-link-hover-shadow: $red;
 $box-link-active-shadow: $red;
+$box-radius: 8px;
 
 // import bulma and optionally the extensions
 @import "bulma";
