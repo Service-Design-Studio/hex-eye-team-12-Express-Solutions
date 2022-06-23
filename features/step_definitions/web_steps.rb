@@ -19,6 +19,6 @@ Given /^(?:|I )am on (.+)$/ do |page_name|
 #   click_button(button)
 # end
 
-When /I click on the "(.*)"/ do |locator|
+When /I click on the "([^"]*)"$/ do |locator| #Has a similar step in all_services, to counter ambigous match error
   page.click_link locator
 end
