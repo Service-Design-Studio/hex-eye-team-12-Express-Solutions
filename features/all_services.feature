@@ -37,13 +37,13 @@ Scenario: Customer tries to find Mars branch #sad path
 Scenario: Customer clicks on a Top Service and is redirected to the Time-Estimate page (physical only)
     Given I visit "/services"
     When I click on the "service" of "Cash Deposit"
-    Then I should see the headers "Do it at the customer counter"
+    Then I should see the headers "Do it at a branch"
     And I should not see the headers "Do it digitally"
 
 Scenario: Customer clicks on a Top Service and is redirected to the Time-Estimate page (Digital)
     Given I visit "/services"
     When I click on the "service" of "Update Customer Phone"
-    Then I should see the headers "Do it digitally, Do it at the customer counter"
+    Then I should see the headers "Do it digitally, Do it at a branch"
 
 Scenario: Customer can't find his service on Main Page #sad path
     When I visit "/services"
