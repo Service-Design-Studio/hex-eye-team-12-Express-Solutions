@@ -8,16 +8,19 @@ $subtitle-line-height: 1.5;
 $family-sans-serif: "Open Sans", Helvetica, Arial, sans-serif;
 $family-monospace: "Source Code Pro", monospace;
 
+$link: $white;
 
 $button-background-color: #454545;
-$link: $white;
 $button-text-color: $white;
+
 
 $box-padding: 18px;
 $box-background-color: #454545;
 $box-link-hover-shadow: $red;
 $box-link-active-shadow: $red;
 $box-radius: 8px;
+
+$progress-value-background-color: #bdbdbd;
 
 // import bulma and optionally the extensions
 @import "bulma";

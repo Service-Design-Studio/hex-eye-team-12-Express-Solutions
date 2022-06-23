@@ -1,62 +1,64 @@
 
-<h2 class="subtitle">What are you looking for?</h2>
 
-<input class="input is-rounded" type="text" placeholder="🔍 Search for a service">
+    <h2 class="subtitle">What are you looking for?</h2>
 
-<div class="container">
-<br>
-<h3 class="title is-1 has-text-left">Top Services</h3>
-</div>
+    <input class="input is-rounded" type="text" placeholder="🔍 Search for a service">
 
-<br>
+    <div class="container">
+    <br>
+    <h3 class="title is-1 has-text-left">Top Services</h3>
+    </div><br>
 
 
-<div class="columns is-mobile is-multiline">
 
-<% @topServices.each do |service| %>
 
-  <% @the_link = time_estimate_url(id: service.id, migratable: service.migratable) %>
-  <% @the_services = service.service %>
+  <div class="columns is-mobile is-multiline">
 
-  <% @the_services = '' + @the_services + '' %>
-    
-  <div class="column is-half" id= <%= service.service %>> 
-    <a href=<%= @the_link %>>
-      <div class="box">
-          <center><p style="color:white; font-size:13px"><%= @the_services %></p></center>   
-      </div>
-    </a>
+  <% @topServices.each do |service| %>
+
+    <% @the_link = time_estimate_url(id: service.id, migratable: service.migratable) %>
+    <% @the_services = service.service %>
+
+    <% @the_services = '' + @the_services + '' %>
+      
+    <div class="column is-half" id= <%= service.service %>> 
+      <a href=<%= @the_link %>>
+        <div class="box">
+            <center><p style="color:white; font-size:13px"><%= @the_services %></p></center>   
+        </div>
+      </a>
+    </div>
+
+  <% end %>
+
   </div>
 
-<% end %>
-
-</div>
-
-<div class="container">
-  <h3 class="title is-1 has-text-left">Main Categories</h3>
-</div>
-<br>
-
-<div class="columns is-mobile is-multiline">
-
-<!%= @allServices.inspect %>
-
-<% @allServices.each do |service| %>
-
-<% @the_link2 = sub_services_url(service.category) %>
-<% @the_services2 = service.category %>
-
-  <div class="column is-half"> 
-    <a href=<%= @the_link2 %>>
-      <div class="box">
-          <center><p style="color:white; font-size:13px"><%= @the_services2 %></p></center>   
-      </div>
-    </a>
+  <div class="container">
+    <h3 class="title is-1 has-text-left">Main Categories</h3>
   </div>
+  <br>
 
-<% end %>
+  <div class="columns is-mobile is-multiline">
 
-</div>
-<br>
+  <!%= @allServices.inspect %>
 
-<button class="button" id="More"><%= link_to "More", more_services_path() %></button>
+  <% @allServices.each do |service| %>
+
+  <% @the_link2 = sub_services_url(service.category) %>
+  <% @the_services2 = service.category %>
+
+    <div class="column is-half"> 
+      <a href=<%= @the_link2 %>>
+        <div class="box">
+            <center><p style="color:white; font-size:13px"><%= @the_services2 %></p></center>   
+        </div>
+      </a>
+    </div>
+
+  <% end %>
+
+  </div>
+  <br>
+
+  <button class="button" id="More"><%= link_to "More", more_services_path() %></button>
+
