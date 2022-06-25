@@ -13,6 +13,12 @@
       .columns {
         display: flex;
       }
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+      }
     </style>
 
   </head>
@@ -33,10 +39,10 @@
         <h1 class = "title" style="color:white">‏ ‏ ‎ ‎One-Stop Solutions </h1>
         <hr style="height: 0.1px; visibility: hidden; margin-bottom:0px;">
       </div>
-    </div><br>
+    </div>
 
     <div class="columns is-multiline is-vcentered is-centered">
-        <section class="section is-medium" style="padding: 4px;">
+        <section class="section is-medium" style="padding: 3px;">
           <%= session[:branch]%>
               <%= yield %>
         </section>

@@ -1,0 +1,29 @@
+<div class="columns is-multiline is-mobile is-vcentered is-centered">
+
+  <div class="column is-three-quarters">
+    <center><h1 class='title'>Branch XXX</h1></center>
+    <center><h2 class='title'>Service 1</h2></center>
+  </div>
+
+  <%  @option = 1
+      @text = '' %>
+  <% if @option == 1
+    @text = 'Tap';
+  else
+    @text = 'Scan';
+  end %>
+
+  <div class="column is-three-quarters">
+    <center><p style="font-size:25px; color:DimGray"><b><%= @text %></b> QR Code</p></center>
+
+    <center><p style="font-size:15px; color:DimGray">to send SMS for your</p></center>
+    <center><p style="font-size:15px; color:DimGray">Queue Number</p></center>
+  </div>
+
+  <div class="column is-full">
+      <figure class="center">
+        <%= image_tag 'qr_code_dummy.png' %>
+      </figure>
+  </div>
+
+</div>
