@@ -1,32 +1,25 @@
 <center>
+<div class="column is-full is-mobile">
 
-  <div class="column is-full is-mobile">
-
-
-
-<div class="container">
-  <h3 class="title is-1 has-text-left"><%=@category%></h3>
-</div>
-<br>
-
-<div class="columns is-mobile is-multiline">
-
-<!%= @services.inspect %>
-
-<% @services.each do |service| %>
-
-<% @the_link = time_estimate_url(id: service.id, migratable: service.migratable) %>
-<% @the_services = service.service %>
-
-  <div class="column is-half"> 
-    <a href=<%= @the_link %>>
-      <div class="box">
-          <center><p style="color:white; font-size:13px"><%= @the_services %></p></center>   
-      </div>
-    </a>
+  <div class="container">
+    <h3 class="title is-1 has-text-left"><%=@category%></h3>
   </div>
+  <br>
 
-<% end %>
+  <div class="columns is-mobile is-multiline">
+    <% @services.each do |service| %>
+    <% @the_link = time_estimate_url(id: service.id, migratable: service.migratable) %>
+    <% @the_services = service.service %>
+
+      <div class="column is-half"> 
+        <a href=<%= @the_link %>>
+          <div class="box">
+              <center><p style="color:white; font-size:13px"><%= @the_services %></p></center>   
+          </div>
+        </a>
+      </div>
+
+  <% end %>
 </div>
 </center>
 
