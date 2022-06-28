@@ -22,9 +22,8 @@ class ServicesController < ApplicationController
 
   # GET /services/:id/sub
   def sub
-    puts params[:category]
     @services = AllService.where(category: params[:id])
-    
+    @category = params[:id]
   end
 
   # GET /services/:id/time_estimate
