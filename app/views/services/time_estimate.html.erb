@@ -5,7 +5,7 @@
     <br><h1 class='title'><%= @service.service%></h1>
   </div>
 
-    <% if @migratable == "true" %>
+    <% if @migratable %>
 
   <div class="column is-full">
     <div>
@@ -30,6 +30,7 @@
 
 
   <% end %>
+  
 
   <div class="column is-full">
     <b><p style="font-size:25px; color:DimGray">Do it at a branch</p></b>

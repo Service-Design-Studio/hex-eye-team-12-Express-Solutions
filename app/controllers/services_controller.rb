@@ -17,27 +17,26 @@ class ServicesController < ApplicationController
     #sort_by count
     @topServices = AllService.top_services()
     @allServices = AllService.all_category()
-    # session[:branch] = params[:branch]
+    # @branch = params[:branch]
+    
   end
 
   # GET /services/:id/sub
   def sub
     @services = AllService.where(category: params[:id])
     @category = params[:id]
+    # @branch = params[:branch]
   end
 
   # GET /services/:id/time_estimate
   def time_estimate
-    puts params
+   
     @service = AllService.find(params[:id])
+    @migratable = @service.migratable
     @digital_time = 5
     @branch_time = 15
-    puts params
-    if params[:migratable] == "True"
-      @migratable = "true"
-    else
-      @migratable = "false"
-    end
+    # @branch = params[:branch]
+    
   end
 
   # Get /services/more
@@ -106,3 +105,4 @@ class ServicesController < ApplicationController
       params.require(:service).permit(:name, :description, :requirements, :ttc, :service_id)
     end
 end
+

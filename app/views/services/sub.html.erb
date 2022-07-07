@@ -8,7 +8,8 @@
 
   <div class="columns is-mobile is-multiline">
     <% @services.each do |service| %>
-    <% @the_link = time_estimate_url(id: service.id, migratable: service.migratable) %>
+    
+    <% @the_link = time_estimate_url(service) %>
     <% @the_services = service.service %>
 
       <div class="column is-half"> 
