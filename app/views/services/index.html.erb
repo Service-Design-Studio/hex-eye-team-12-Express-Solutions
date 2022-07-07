@@ -14,7 +14,7 @@
 
   <% @topServices.each do |service| %>
 
-    <% @the_link = time_estimate_url(id: service.id, migratable: service.migratable) %>
+    <% @the_link = time_estimate_url(service) %>
     <% @the_services = service.service %>
 
     <% @the_services = '' + @the_services + '' %>
