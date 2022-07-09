@@ -4,29 +4,28 @@
   <div class="column is-full">
     <br><h1 class='title'><%= @service.service%></h1>
   </div>
+    <% if @migratable == 'True'%>
 
-    <% if @migratable %>
+      <div class="column is-full">
+        <div>
+          <b><p style="font-size:25px; color:DimGray">Do it digitally</p></b>
+            <% @digital_time = @digital_time.to_s + ' min' %>
+            <h2>Estimate time: <b><%= @digital_time %></b> </h2><br>
 
-  <div class="column is-full">
-    <div>
-      <b><p style="font-size:25px; color:DimGray">Do it digitally</p></b>
-        <% @digital_time = @digital_time.to_s + ' min' %>
-        <h2>Estimate time: <b><%= @digital_time %></b> </h2><br>
+            <button class="button is-large is-responsive is-rounded">
+              <p style="font-size:22px; color:white;">Start</p>
+            </button>
+        </div>
+      </div>
 
-        <button class="button is-large is-responsive is-rounded">
-          <p style="font-size:22px; color:white;">Start</p>
-        </button>
-    </div>
-  </div>
-
-  <div class="column is-full">
-    <div>
-      <hr style="height: 4px; color:black; background-color:gray;">
-        <div class="columns is-centered is-vcentered">
-          <h3 class="title is-5 is-vcentered">OR</h3>
-        </div> 
-    </div>
-  </div><br>
+      <div class="column is-full">
+        <div>
+          <hr style="height: 4px; color:black; background-color:gray;">
+            <div class="columns is-centered is-vcentered">
+              <h3 class="title is-5 is-vcentered">OR</h3>
+            </div> 
+        </div>
+      </div><br>
 
 
   <% end %>
