@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_20_075513) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_10_061743) do
   create_table "all_services", force: :cascade do |t|
     t.string "category"
     t.string "category_int"
@@ -22,6 +22,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_20_075513) do
     t.integer "branch_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "branches", force: :cascade do |t|
+    t.string "bank"
+    t.string "branch_name"
+    t.string "branch"
+    t.string "sms_number"
   end
 
   create_table "services", force: :cascade do |t|

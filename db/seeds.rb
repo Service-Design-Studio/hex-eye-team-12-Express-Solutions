@@ -16,8 +16,13 @@
 
 require 'csv'
 
-table = CSV.read("db/clean_txn.csv")
-table.each do |category, category_int, service, migratable, count, details, digital_time, branch_time|
+service_table = CSV.read("db/clean_txn.csv")
+service_table.each do |category, category_int, service, migratable, count, details, digital_time, branch_time|
     AllService.create!(:category => category, :category_int => category_int, :service => service, :migratable => migratable, :count => count, :details => details, :digital_time => digital_time, :branch_time => branch_time)
-    # Service.create!(name: name, description: description, requirements: requirements, ttc: ttc, service_id: service_id)
 end
+
+bank_details_table = CSV.read("db/sms_numbers.csv")
+bank_details_table.each do |bank, branch_name, branch, sms_number|
+    Branch.create!(:bank => bank, :branch_name => branch_name,:branch => branch, :sms_number => sms_number)
+end
+

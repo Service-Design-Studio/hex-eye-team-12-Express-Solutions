@@ -8,7 +8,7 @@
         <div>
           <b><p style="font-size:25px; color:DimGray">Do it digitally</p></b>
             <% @digital_time = @digital_time.to_s + ' min' %>
-            <h2>Estimate time: <b><%= @digital_time %></b> </h2><br>
+            <h2>Estimated time: <b><%= @digital_time %></b> </h2><br>
 
             <button class="button is-large is-responsive is-rounded">
               <p style="font-size:22px; color:white;">Start</p>
@@ -33,19 +33,19 @@
     <b><p style="font-size:25px; color:DimGray">Do it at a branch</p></b>
 
     <% @branch_time  = @branch_time.to_s + ' min' %>
-    <h2>Estimate time: <b> <%= @branch_time %> </b></h2><br>
+    <h2>Estimated time: <b> <%= @branch_time %> </b></h2><br>
 
     <div class="select is-rounded">
       <select>
-      <option>Select</option>
-        <option>Tampines</option>
-        <option>Eunos</option>
+          <%@all_locations_name.each do |options|%>
+            <option><%=options%></option>
+          <%end%>
       </select>
     </div><br>
 
-
-    <br><button class="button is-large is-responsive is-rounded">
-      <p style="font-size:22px; color:white;">Next</p>
+  
+    <br><button class="button is-large is-responsive is-rounded" id="show_QR">
+    <p style="font-size:22px; color:white;"><%= link_to "Next", show_QR_path %></p>
     </button>
   </div>
 </center>

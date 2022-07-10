@@ -1,15 +1,22 @@
+require "browser/aliases"
+Browser::Base.include(Browser::Aliases)
+
+
+
 class ServicesController < ApplicationController
   before_action :set_service, only: %i[ show edit update destroy ]
   before_action :validate_params
 
   def validate_params
-    locations = ["Tampines-1", "Eunos"]
+    locations = Branch.all_locations
     branch = params[:branch]
     if (locations.include? branch)
       session[:branch] = params[:branch]
-    else
-      session[:branch] = nil
     end
+    browser = Browser.new("Some user agent")
+    session[:mobile] = browser.mobile?
+    session[:ua] = request.user_agent
+
   end
 
   # GET /services or /services.json
@@ -30,20 +37,58 @@ class ServicesController < ApplicationController
 
   # GET /services/:id/time_estimate
   def time_estimate
-   
+    branch = session[:branch]
     @service = AllService.find(params[:id])
     @migratable = @service.migratable
     @digital_time = @service.digital_time
     @branch_time = @service.branch_time
-    
-    # @branch = params[:branch]
-    
+
+    @branch_name = Branch.find_by(branch: branch).branch_name
+    all_locations_name = Branch.all_locations_name
+    if branch != nil
+      
+      all_locations_name.delete(@branch_name)
+      all_locations_name.unshift(@branch_name)
+    end
+    @all_locations_name = all_locations_name
   end
 
+  # GET /services/:id/show_QR
+  def show_QR
+    
+    #construct sms body here
+    service = AllService.find(params[:id]).service
+    branch = Branch.find_by(branch: session[:branch])
+    branch_name = branch.branch_name
+    sms_number = branch.sms_number
+    body = "sms:+65#{sms_number}?&body=q #{branch_name} #{service}"
+    # generate QR code
+    @qr = RQRCode::QRCode.new(body).as_svg(
+      color: "000",
+      shape_rendering: "crispEdges",
+      module_size: 11,
+      standalone: true,
+      use_path: true,
+      viewbox: true)
+    @body = body
+    #other 
+    @service = AllService.find(params[:id])
+    @branch_name = branch_name
+    @mobile = session[:mobile]
+  end
+  
   # Get /services/more
   def more
+    branch = session[:branch]
     @counter_types = ["Digital", "Branch"]
-
+    @branch_name = Branch.find_by(branch: branch).branch_name
+    all_locations_name = Branch.all_locations_name
+    if branch != nil
+      
+      all_locations_name.delete(@branch_name)
+      all_locations_name.unshift(@branch_name)
+    end
+    @all_locations_name = all_locations_name
   end
 
   # GET /services/1 or /services/1.json
