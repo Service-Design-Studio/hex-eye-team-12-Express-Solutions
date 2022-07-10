@@ -21,10 +21,9 @@
     <h1 class='title' style = "font-size:30px">Select your Branch</h1>
     <div class="select">
       <select>
-        <option>Select</option>
-        <option>Tampines</option>
-        <option>Pasir Ris</option>
-        <option>Simei</option>
+        <%@all_locations_name.each do |options|%>
+          <option><%=options%></option>
+        <%end%>
       </select>
     </div>
   </div>

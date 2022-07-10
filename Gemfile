@@ -41,7 +41,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 gem 'bulma-rails', '~> 0.9.3'
-gem 'browser' # to detect mobile or desktop browser
+gem "rqrcode", "~> 2.0" # to generate QR code
 # optional
 gem 'bulma-extensions-rails'
 
@@ -80,13 +80,11 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
   #added from chips 7.7
   gem 'cucumber-rails', require: false
   gem 'cucumber-rails-training-wheels'
-  gem 'database_cleaner'
 end
 
 group :production do
