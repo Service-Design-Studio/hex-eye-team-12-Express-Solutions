@@ -14,6 +14,7 @@ class ServicesController < ApplicationController
       session[:branch] = params[:branch]
     end
     browser = Browser.new("Some user agent")
+    session[:ios] = browser.platform.ios?
     session[:mobile] = browser.mobile?
     session[:ua] = request.user_agent
 
@@ -61,7 +62,12 @@ class ServicesController < ApplicationController
     branch = Branch.find_by(branch: session[:branch])
     branch_name = branch.branch_name
     sms_number = branch.sms_number
-    body = "sms:+65#{sms_number}?&body=q #{branch_name} #{service}"
+    if session[:ios]
+      mobile_body = "/?"
+    else
+      mobile_body = "?&"
+    end
+    body = "sms://+65#{sms_number}#{mobile_body}body=q #{branch_name} #{service}"
     # generate QR code
     @qr = RQRCode::QRCode.new(body).as_svg(
       color: "000",
