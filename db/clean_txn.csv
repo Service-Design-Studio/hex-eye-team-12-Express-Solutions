@@ -1,45 +1,51 @@
-Â Ammended_Category,Txn Category L4 (Clean),Service,Migratable,Monthly Count
-Account Opening,CASA OPENING ADDON PAYROLL,Addon Payroll,True,50
-Accounts,ACCOUNT CLOSURE,Account Closure,True,7500
-Accounts,ACCOUNT UPDATE,Account Update,False,150
-Accounts,CLOSURE CASH WITHDRAWAL,Closure Cash Withdrawal,False,2500
-Accounts,ACCT OPENING FCCA FCFD SRS,SRS Account Opening,True,50
-Card ,ATM CARD ISSUANCE,ATM Card Issuance,True,2500
-Card ,ATM CARD REPLACEMENT,ATM Card Replacement,True,2500
-Card ,DEBIT CARD ISSUANCE,Debit Card Issuance,True,7500
-Card ,DEBIT CARD REPLACEMENT,Debit Card Replacement,True,7500
-Card ,DEBIT CARD ACTIVATION VIA BBSA,Activate New Card,True,150
-Card ,ATM CARD ACTIVATION VIA BBSA,Activate New Card,True,50
-Cash,CASH DEPOSIT,Cash Deposit,False,10000
-Cash,CASH WITHDRAWAL,Cash Withdrawal,False,10000
-Cash,RETURN CASH WITHDRAWAL,Return Cash Withdrawal,False,50
-Cheque,CASHIER ORDER DEPOSIT,Cashier Order Deposit,True,350
-Cheque,CASHIER ORDER PURCHASE,Cashier Order Purchase,False,7500
-Cheque,CHEQUE BOOK UPDATE,Cheque Book Update,False,50
-Cheque,CHEQUE DEPOSIT,Cheque Deposit,False,50
-Cheque,CHEQUE ENCASHMENT,Cheque Encashment,False,2500
-Cheque,ODD,Overseas Cheque,False,100
-Deposit,FD PLACEMENT,Fixed Deposit Placement,True,2500
-Deposit,FD WITHDRAWAL,Fixed Deposit Withdrawal,True,2500
-Deposit,DEPOSIT,Foreign Currency Deposit,False,100
-Deposit,PREMATURE ADVICE WITHDRAWAL,Premature Advice Withdrawal,True,2500
-Deposit,PREMATURE WITHDRAWAL,Premature Withdrawal,False,150
-Digibank sign-up,IBSIGNUP VIA BRANCH,Apply for Digibank,True,350
-Digibank sign-up,STANDALONE IBSIGNUP VIA BRANCH,Apply for Digibank,True,350
-Digibank sign-up,STANDALONE IBSIGNUP VIA PWEB,Apply for Digibank,True,50
-Others,STATEMENT REQUEST,Statement Request,True,50
-Others,TOKENS REPLACEMENT,Tokens Replacement,True,150
-Others,TUITION FEE LOAN,Tuition Fee Loan,False,300
-Personal Info Update,CREATE CUSTOMER ADDRESS,Create Customer Address,False,2500
-Personal Info Update,CREATE CUSTOMER EMAIL,Create Customer Email,False,1000
-Personal Info Update,CREATE CUSTOMER PARTICULARS,Create Customer Particulars,False,2500
-Personal Info Update,CREATE CUSTOMER PHONE,Create Customer Phone,False,2500
-Personal Info Update,UPDATE CUSTOMER ADDRESS,Update Customer Address,True,2500
-Personal Info Update,UPDATE CUSTOMER EMAIL,Update Customer Email,True,7500
-Personal Info Update,UPDATE CUSTOMER PARTICULARS,Update Customer Particulars,True,20000
-Personal Info Update,UPDATE CUSTOMER PHONE,Update Customer Phone,True,10000
-Transfers,FUND TRANSFER,Fund Transfer,True,7500
-Transfers,OTT,Overseas Transfer,True,2500
-Withdrawals,ADVICE WITHDRAWAL,Advice Withdrawal,False,2500
-Withdrawals,WITHDRAWAL,Transact & Withdraw in Foreign Currency Overseas,False,100
-Withdrawals,WITHDRAWAL(PRINCIPAL),Transact & Withdraw in Foreign Currency Overseas,False,50
+ Amended_Category,Txn Category L4 (Clean),Service,Migratable,Monthly Count,Details,Digital,Branch Time
+Accounts,CASA OPENING ADDON PAYROLL,Account Opening,TRUE,50,CASA Payroll Add-on Account Opening,11,22
+Card ,ATM CARD ACTIVATION VIA BBSA,Activate ATM Card,TRUE,50,Activate ATM Card,5,10
+Card ,DEBIT CARD ACTIVATION VIA BBSA,Activate Debit Card,TRUE,150,Activate Debit Card,5,10
+Withdrawal,ADVICE WITHDRAWAL,Advice Withdrawal,FALSE,2500,Withdrawal from SGD $ FD accts to another account,1,1
+Digibank sign-up,IBSIGNUP VIA BRANCH,Apply for Digibank,TRUE,350,IB signup for CASA Account Opening customer via branch,3,5
+Card ,ATM CARD ISSUANCE,ATM Card Issuance,TRUE,2500,Issue ATM Card,5,10
+Card ,ATM CARD REPLACEMENT,ATM Card Replacement,TRUE,2500,Replace ATM card to ATM/Debit Card,5,10
+Cheque,CHEQUE BOOK UPDATE,Book Update,FALSE,50,Update cheque book for FCCA,3,5
+Cheque,CASHIER ORDER DEPOSIT,Cashier Order Deposit,TRUE,350,Deposit a banker's cheque into CASA accts,4,8
+Cheque,CASHIER ORDER PURCHASE,Cashier Order Purchase,FALSE,7500,Issue a banker's cheque from CASA accts,5,9
+Accounts,ACCOUNT CLOSURE,Closure,TRUE,7500,Closure of FCCA / FCFD / CASA / CPF accts,11,22
+Accounts,CLOSURE ADVICE WITHDRAWAL,Closure Advice Withdrawal,FALSE,100,Close SA & withdraw funds via cheque,11,22
+Accounts,CLOSURE CASH WITHDRAWAL,Closure Cash Withdrawal,FALSE,2500,Close SA & withdraw funds via cash,11,22
+Card ,DEBIT CARD ISSUANCE,Debit Card Issuance,TRUE,7500,Issue Debit Card,5,10
+Card ,DEBIT CARD REPLACEMENT,Debit Card Replacement,TRUE,7500,Replace Debit card to ATM/Debit Card,5,10
+Cash,CASH DEPOSIT,Deposit,FALSE,10000,Deposit cash into CASA / SGD$ FD accts,1,2
+Cheque,CHEQUE DEPOSIT,Deposit,FALSE,50,Deposit cheque into CASA / FDA accts,4,8
+Cheque,CHEQUE ENCASHMENT,Encashment,FALSE,2500,Cheque Encashment,4,8
+Deposits,FD PLACEMENT,Fixed Deposit Placement,TRUE,2500,Sign up FD for CASA accts,4,8
+Deposits,FD WITHDRAWAL,Fixed Deposit Withdrawal,TRUE,2500,Withdraw FD from CASA accts,4,8
+Withdrawal,WITHDRAWAL,Foreign Account,FALSE,100,Withdraw from FCCA accts,1,1
+Transfers,TRF FROM FCCA,Foreign Currency Current Account,TRUE,50,Fund Transfer from FCCA accts,3,5
+Deposits,DEPOSIT,Foreign Currency Deposit,FALSE,100,Deposit funds into FCCA / FCFD accts,4,7
+Transfers,FUND TRANSFER,Fund Transfer,TRUE,7500,Transfer funds from CASA accts,3,5
+Cheque,ODD,Overseas Cheque,FALSE,100,Outward demand draft from CASA accts,4,8
+Transfers,OTT,Overseas Remittance,TRUE,2500,Outward telegraphic transfer from CASA accts,6,12
+Deposits,PREMATURE ADVICE WITHDRAWAL,Premature Advice Withdrawal,TRUE,2500,Premature withdrawal from SGD$ FD accts to another account,1,1
+Deposits,PREMATURE WITHDRAWAL,Premature Withdrawal,FALSE,150,Premature withdrawal for FCFD accts,1,1
+Withdrawal,WITHDRAWAL(PRINCIPAL),Principal,FALSE,50,Principal withdrawal from FCY$ FD accts,1,1
+Cash,RETURN CASH WITHDRAWAL,Return Cash Withdrawal,FALSE,50,Premature withdrawal for FCFD accts,1,2
+Others,STATEMENT REQUEST,Statement Request,TRUE,50,Request statement for FCCA accts,3,5
+Others,TOKENS REPLACEMENT,Tokens Replacement,TRUE,150,IB tokens replacement,3,5
+Others,TUITION FEE LOAN,Tuition Fee Loan,FALSE,300,Tuition Fee Loan for Tertiary Institutions,5,9
+Accounts,ACCOUNT UPDATE,Update,FALSE,150,Closure of FCCA / FCFD / CASA / CPF accts,11,22
+Personal Info Update,UPDATE CUSTOMER ADDRESS,Update Address,TRUE,2500,Update Customer Address,3,5
+Card ,ATM CARD UPDATE VIA BBSA,Update ATM Card,FALSE,50,Update ATM Card,5,10
+Card ,DEBIT CARD UPDATE VIA BBSA,Update Debit Card,FALSE,50,Update Debit Card,5,10
+Personal Info Update,UPDATE CUSTOMER EMAIL,Update Email,TRUE,7500,Update Customer Email,3,5
+Personal Info Update,UPDATE CUSTOMER PARTICULARS,Update Particulars,TRUE,20000,Update Customer Particulars,3,5
+Personal Info Update,UPDATE CUSTOMER PHONE,Update Phone,TRUE,10000,Update Customer Phone,3,5
+Cash,CASH WITHDRAWAL,Withdrawal,FALSE,10000,Withdraw cash from CASA / SGD$ FD accts,1,2
+Personal Info Update,,,,,,,
+Personal Info Update,,,,,,,
+Personal Info Update,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
