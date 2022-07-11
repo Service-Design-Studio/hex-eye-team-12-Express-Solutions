@@ -13,10 +13,11 @@ class ServicesController < ApplicationController
     if (locations.include? branch)
       session[:branch] = params[:branch]
     end
-    browser = Browser.new("Some user agent")
-    session[:ios] = browser.platform.ios?
-    session[:mobile] = browser.mobile?
-    session[:ua] = request.user_agent
+    #Check browser type
+    uA = request.user_agent
+    session[:ios] = uA.include? "iPhone"
+    session[:mobile] = (uA.include? "iPhone") || (uA.include? "Android")
+    session[:ua] = uA
 
   end
 
@@ -47,9 +48,9 @@ class ServicesController < ApplicationController
     @branch_name = Branch.find_by(branch: branch).branch_name
     all_locations_name = Branch.all_locations_name
     if branch != nil
-      
-      all_locations_name.delete(@branch_name)
-      all_locations_name.unshift(@branch_name)
+      branch_name = Branch.find_by(branch: branch).branch_name
+      all_locations_name.delete(branch_name)
+      all_locations_name.unshift(branch_name)
     end
     @all_locations_name = all_locations_name
   end
@@ -105,8 +106,6 @@ class ServicesController < ApplicationController
   def new
     @service = Service.new
   end
-
-
 
   # POST /services or /services.json
   def create
