@@ -1,4 +1,4 @@
-## Github
+n## Github
 
 Commits Co-authoring _(add them 2 lines below the first line of your commit message )_
 
@@ -33,6 +33,8 @@ Check for pending migrations and load the test schema
 Empty the test database
 
     bundle exec rails db:test:purge
+
+
 
 ## RSpec
 Generates rails_helper and spec_helper in "Spec"

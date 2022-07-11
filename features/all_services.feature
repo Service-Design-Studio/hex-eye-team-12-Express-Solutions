@@ -9,7 +9,7 @@ Background: Categories have been added to database
     | category                  | category_int              | service                   | migratable    | count     |
     | Account Opening           | CASA OPENING ADDON        | Opening Addon             | True          | 50        |
     | Cash                      | CASH DEPOSIT              | Cash Deposit              | False         | 10000     |
-    | Personal Info Update      | UPDATE CUSTOMER PHONE     | Update Customer Phone     | True          | 10000     |
+    | Personal Info Update      | UPDATE CUSTOMER PHONE     | Update Phone              | True          | 10000     |
 
     Then "3" seed services should exist
 
@@ -26,31 +26,15 @@ Scenario: Customer goes to Eunos branch and scans QR Code
 
 Scenario: Customer tries to random url of our web service #sad path
     When I visit "/randomsite"
-    Then I should see the headers "One-Stop Solutions"
-
-Scenario: Customer tries to find Mars branch #sad path
-    When I visit "/services?branch=Mars"
+    Then I should see the headers "One-Stop Solutions, What are you looking for?"
     Then I should not see the headers "Mars"
 
 #----------------------------------------------------------------------------------------------------
 
-Scenario: Customer clicks on a Top Service and is redirected to the Time-Estimate page (physical only)
-    Given I visit "/services"
-    When I click on the "service" of "Cash Deposit"
-    Then I should see the headers "Do it at a branch"
-    And I should not see the headers "Do it digitally"
-
-Scenario: Customer clicks on a Top Service and is redirected to the Time-Estimate page (Digital)
-    Given I visit "/services"
-    When I click on the "service" of "Update Customer Phone"
-    Then I should see the headers "Do it digitally, Do it at a branch"
-
 Scenario: Customer can't find his service on Main Page #sad path
     When I visit "/services"
     Then I click on the "button" of "More"
-    Then I should see the headers "More"
-
-
+    Then I should see the headers "More, Get Queue Number"
 
 #Test----------------------------------------------------------------------------------------------------
 # Scenario: Customer clicks on a Top Service and is redirected to the Time-Estimate page

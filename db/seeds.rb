@@ -17,7 +17,7 @@
 require 'csv'
 
 table = CSV.read("db/clean_txn.csv")
-table.each do |category, category_int, service, migratable, count|
-    AllService.create!(:category => category, :category_int => category_int, :service => service, :migratable => migratable, :count => count)
+table.each do |category, category_int, service, migratable, count, details, digital_time, branch_time|
+    AllService.create!(:category => category, :category_int => category_int, :service => service, :migratable => migratable, :count => count, :details => details, :digital_time => digital_time, :branch_time => branch_time)
     # Service.create!(name: name, description: description, requirements: requirements, ttc: ttc, service_id: service_id)
 end
