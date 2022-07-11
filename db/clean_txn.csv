@@ -40,9 +40,9 @@ Personal Info Update,UPDATE CUSTOMER EMAIL,Update Email,TRUE,7500,Update Custome
 Personal Info Update,UPDATE CUSTOMER PARTICULARS,Update Particulars,TRUE,20000,Update Customer Particulars,3,5
 Personal Info Update,UPDATE CUSTOMER PHONE,Update Phone,TRUE,10000,Update Customer Phone,3,5
 Cash,CASH WITHDRAWAL,Withdrawal,FALSE,10000,Withdraw cash from CASA / SGD$ FD accts,1,2
-Personal Info Update,,,,,,,
-Personal Info Update,,,,,,,
-Personal Info Update,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,
