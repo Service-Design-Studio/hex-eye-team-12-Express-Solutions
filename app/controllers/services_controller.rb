@@ -33,8 +33,9 @@ class ServicesController < ApplicationController
    
     @service = AllService.find(params[:id])
     @migratable = @service.migratable
-    @digital_time = 5
-    @branch_time = 15
+    @digital_time = @service.digital_time
+    @branch_time = @service.branch_time
+    
     # @branch = params[:branch]
     
   end

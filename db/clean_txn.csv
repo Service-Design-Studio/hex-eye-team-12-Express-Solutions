@@ -1,9 +1,9 @@
- Amended_Category,Txn Category L4 (Clean),Service,Migratable,Monthly Count,Details,Digital,Branch Time
+Amended_Category,Txn Category L4 (Clean),Service,Migratable,Monthly Count,Details,Digital Time,Branch Time
 Accounts,CASA OPENING ADDON PAYROLL,Account Opening,TRUE,50,CASA Payroll Add-on Account Opening,11,22
 Card ,ATM CARD ACTIVATION VIA BBSA,Activate ATM Card,TRUE,50,Activate ATM Card,5,10
 Card ,DEBIT CARD ACTIVATION VIA BBSA,Activate Debit Card,TRUE,150,Activate Debit Card,5,10
 Withdrawal,ADVICE WITHDRAWAL,Advice Withdrawal,FALSE,2500,Withdrawal from SGD $ FD accts to another account,1,1
-Digibank sign-up,IBSIGNUP VIA BRANCH,Apply for Digibank,TRUE,350,IB signup for CASA Account Opening customer via branch,3,5
+Digibank Sign-up,IBSIGNUP VIA BRANCH,Apply for Digibank,TRUE,350,IB signup for CASA Account Opening customer via branch,3,5
 Card ,ATM CARD ISSUANCE,ATM Card Issuance,TRUE,2500,Issue ATM Card,5,10
 Card ,ATM CARD REPLACEMENT,ATM Card Replacement,TRUE,2500,Replace ATM card to ATM/Debit Card,5,10
 Cheque,CHEQUE BOOK UPDATE,Book Update,FALSE,50,Update cheque book for FCCA,3,5
@@ -40,12 +40,3 @@ Personal Info Update,UPDATE CUSTOMER EMAIL,Update Email,TRUE,7500,Update Custome
 Personal Info Update,UPDATE CUSTOMER PARTICULARS,Update Particulars,TRUE,20000,Update Customer Particulars,3,5
 Personal Info Update,UPDATE CUSTOMER PHONE,Update Phone,TRUE,10000,Update Customer Phone,3,5
 Cash,CASH WITHDRAWAL,Withdrawal,FALSE,10000,Withdraw cash from CASA / SGD$ FD accts,1,2
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
