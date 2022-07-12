@@ -34,19 +34,14 @@
 
     <% @branch_time  = @branch_time.to_s + ' min' %>
     <h2>Estimated time: <b> <%= @branch_time %> </b></h2><br>
-
     <div class="select is-rounded">
-      <select>
-          <%@all_locations_name.each do |options|%>
-            <option><%=options%></option>
-          <%end%>
-      </select>
+    <%= form_with url: show_QR_path, method: :get, id: 'branch_form' do |form| %>
+      <%= form.select :branch_name, @all_locations_name %>
+      <br>
+      <%= form.submit "Next", class: "button is-large is-responsive is-rounded",  style: "font-size:22px; color:white;"%>
+    <% end %>
     </div><br>
-
-  
-    <br><button class="button is-large is-responsive is-rounded" id="show_QR">
-    <p style="font-size:22px; color:white;"><%= link_to "Next", show_QR_path %></p>
-    </button>
+    
   </div>
 </center>
 
