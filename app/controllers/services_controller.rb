@@ -60,7 +60,8 @@ class ServicesController < ApplicationController
     
     #construct sms body here
     service = AllService.find(params[:id]).service
-    branch = Branch.find_by(branch: session[:branch])
+    branch = Branch.find_by(branch_name: params[:branch_name])
+    session[:branch] = branch.branch
     branch_name = branch.branch_name
     sms_number = branch.sms_number
     if session[:ios]
@@ -68,7 +69,7 @@ class ServicesController < ApplicationController
     else
       mobile_body = "?&"
     end
-    body = "sms://+65#{sms_number}#{mobile_body}body=q #{branch_name} #{service}"
+    body = "sms://+65#{sms_number}#{mobile_body}body=q #{service}"
     # generate QR code
     @qr = RQRCode::QRCode.new(body).as_svg(
       color: "000",
