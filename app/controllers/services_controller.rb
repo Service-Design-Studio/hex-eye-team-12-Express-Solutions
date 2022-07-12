@@ -18,6 +18,13 @@ class ServicesController < ApplicationController
     # @branch = params[:branch]
   end
 
+
+  # def search 
+  #   @search = params[:search]
+  #   puts @search
+  #   redirect_to services_url
+  # end
+
   # GET /services/:id/time_estimate
   def time_estimate
     branch = session[:branch]
