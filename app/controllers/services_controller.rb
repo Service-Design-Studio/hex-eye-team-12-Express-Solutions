@@ -2,19 +2,7 @@ class ServicesController < ApplicationController
   before_action :set_service, only: %i[ show edit update destroy ]
   before_action :validate_params
 
-  def validate_params
-    locations = Branch.all_locations
-    branch = params[:branch]
-    if (locations.include? branch)
-      session[:branch] = params[:branch]
-    end
-    # #Check browser type
-    # uA = request.user_agent
-    # session[:ios] = uA.include? "iPhone"
-    # session[:mobile] = (uA.include? "iPhone") || (uA.include? "Android")
-    # session[:ua] = uA
-
-  end
+  
 
   # GET /services or /services.json
   def index
@@ -185,5 +173,29 @@ class ServicesController < ApplicationController
     def service_params
       params.require(:service).permit(:name, :description, :requirements, :ttc, :service_id)
     end
+
+    def validate_params
+      validate_locations
+      validate_user_agent
+    end
+    
+    def validate_locations
+      locations = Branch.all_locations
+      branch = params[:branch]
+      if (locations.include? branch)
+        session[:branch] = branch
+      end
+    end
+
+    def validate_user_agent
+       #Check browser type
+       uA = request.user_agent
+       # because ios has a separate QR code
+       session[:ios] = uA.include? "iPhone"
+       # because mobile says "Tap" and web says "Scan"
+       session[:mobile] = (uA.include? "iPhone") || (uA.include? "Android")
+       session[:ua] = uA
+    end
+
 end
 
