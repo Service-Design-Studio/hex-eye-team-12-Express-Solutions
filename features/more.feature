@@ -22,23 +22,26 @@ Background: Topics have been added to database
     Then "2" seed branches should exist
 
 
-
-Scenario: I am in MBFC Branch and i want to get cash related service
-    Given I am at "MBFC Branch"
-    And I want to get a cash related service
+# Android
+Scenario: I am in MBFC Branch and I want to get cash related service
+    Given I am using "Android"
+    And I visit "/services?branch=MBFC"
     When I click on the "button" of "More"
     Then I should see "MBFC Branch" pre-selected for branch
-    When I choose cash related topic
-    And I click on "Get Queue Number" button
-    Then I should see headers "MBFC Branch, Cash Related"
+    When I select "Cash Related" 
+    And I click on the "Get Queue Number" button
+    Then I should see the headers "MBFC Branch, Cash Related, Tap QR Code"
 
-Scenario: I am not in any branch and i want to get cash related service
-    Given I am at "no branch"
-    And I want to get a cash related service
-    When I click on the More button
-    Then I should see "Ang Mo Kio Central Branch" pre-selected for branch
-    When I choose cash related topic
-    And I choose "MBFC Branch"
-    And I click on "Get Queue Number" button
-    Then I should see headers MBFC Branch and Cash Related
-# _____________________________________________NEW_____________________
+Scenario: I am not in any branch and I want to get cash related service
+    Given I am using "Android"
+    And I visit "/services"
+    When I click on the "button" of "More"
+    Then I should see "Branch name" pre-selected for branch
+    When I select "Cash Related" 
+    And I select "MBFC Branch"
+    And I click on the "Get Queue Number" button
+    Then I should see the headers "MBFC Branch, Cash Related, Tap QR Code"
+
+
+# iPhone
+# Web
