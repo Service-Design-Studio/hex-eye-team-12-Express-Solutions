@@ -4,7 +4,7 @@ As a DBS Customer
 I want to be able to queue
 So that that I can get a branch service
 
-Background: Services have been added to database
+Background: Topics have been added to database
     Given the following topics exist:
     | topic                 | 
     | Account Related       |
@@ -15,14 +15,11 @@ Background: Services have been added to database
     Then "4" seed topics should exist
 
 
-    Given the following branch exist:
-    | branch                | 
-    | MBFC Branch           |
-    | Kovan Branch          |
-    | Westgate Branch       |
-    | Woodlands Branch      |
-
-    Then "4" seed branches should exist
+    Given the following branches exist:
+    | bank | branch_name   | branch | sms_number |
+    | DBS  | MBFC Branch | MBFC  | 83184335 |
+    | POSB  | Bedok Central Branch | BedokCentral  | 83184358 |
+    Then "2" seed branches should exist
 
 
 
@@ -32,7 +29,7 @@ Scenario: I am in MBFC Branch and i want to get cash related service
     When I click on the "button" of "More"
     Then I should see "MBFC Branch" pre-selected for branch
     When I choose cash related topic
-    And I click on Get Queue Number button
+    And I click on "Get Queue Number" button
     Then I should see headers "MBFC Branch, Cash Related"
 
 Scenario: I am not in any branch and i want to get cash related service
@@ -42,6 +39,6 @@ Scenario: I am not in any branch and i want to get cash related service
     Then I should see "Ang Mo Kio Central Branch" pre-selected for branch
     When I choose cash related topic
     And I choose "MBFC Branch"
-    And I click on Get Queue Number button
+    And I click on "Get Queue Number" button
     Then I should see headers MBFC Branch and Cash Related
-
+# _____________________________________________NEW_____________________

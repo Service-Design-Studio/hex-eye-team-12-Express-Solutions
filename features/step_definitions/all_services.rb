@@ -64,3 +64,9 @@ end
       expect(page).to_not have_content header
     end
   end
+
+
+  When (/I click on the "(.*)" button/) do |button_name|
+    click_link_or_button button_name
+
+  end
