@@ -89,10 +89,9 @@ class ServicesController < ApplicationController
   def more
     branch = session[:branch]
     @counter_types = ["Digital", "Branch"]
-    @branch_name = Branch.find_by(branch: branch).branch_name
     all_locations_name = Branch.all_locations_name
     if branch != nil
-      
+      branch_name = Branch.find_by(branch: branch).branch_name
       all_locations_name.delete(@branch_name)
       all_locations_name.unshift(@branch_name)
     end
