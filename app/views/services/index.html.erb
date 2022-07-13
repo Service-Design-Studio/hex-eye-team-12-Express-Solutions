@@ -106,17 +106,13 @@
   div = document.getElementById("results");
 
   //Clear dropdown a
-    while (div.children.length > 0) {
-      div.removeChild(div.firstChild);
-    }
-    sleep(1000);
+    cleardropdown('results');
+
     searchDict =  await query(document.getElementById("myInput").value);
     console.log(searchDict);
     id = searchDict["top_5_index"];
     services = searchDict['top_5_services'];
     console.log(services);
-
-    //sleep(300);
   
     for (i = 0; i < 5; i++) {
       index = String(i);
@@ -127,19 +123,17 @@
       // a.innerText = service;
       a = document.createElement("a");
       a.innerText = service;
+      console.log(`services/${id[i]+2}/time_estimate`);
+      a.href = `services/${id[i]+2}/time_estimate`;
       //create attributes and set value
       a.setAttribute("id", id[i]);
       div.appendChild(a);
     }
 
-    while (div.children.length > 5) {
-      div.removeChild(div.firstChild);
-    }
+    refreshdropdown('results');
 
     if (document.getElementById("myInput").value == "") {
-      while (div.children.length > 0) {
-      div.removeChild(div.firstChild);
-    }
+      cleardropdown('results');
     }
 }
 
@@ -156,8 +150,22 @@ function query(inp) {
   return fetch('http://127.0.0.1:5000/predict?query='+inp)
   .then(response => response.json());
   // .then(data => console.log(data));
-  
   // return {'top_5_index': [1,2,3,4,5], 'top_5_services': ['Service 1', 'Service 2', 'Service 3', 'Service 4', 'Service 5']};
 }
+
+function cleardropdown(id) {
+  div = document.getElementById(id);
+  while (div.children.length > 0) {
+    div.removeChild(div.firstChild);
+  }
+}
+
+function refreshdropdown(id) {
+  div = document.getElementById(id);
+  while (div.children.length > 5) {
+    div.removeChild(div.firstChild);
+  }
+}
+
 
 </script>
