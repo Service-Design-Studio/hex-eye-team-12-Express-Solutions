@@ -92,11 +92,11 @@ class ServicesController < ApplicationController
     all_locations_name = Branch.all_locations_name
     if branch != nil
       branch_name = Branch.find_by(branch: branch).branch_name
-      all_locations_name.delete(@branch_name)
-      all_locations_name.unshift(@branch_name)
+      all_locations_name.delete(branch_name)
+      all_locations_name.unshift(branch_name)
     end
     @all_locations_name = all_locations_name
-    @topic = ["Account related","Cash related","Non-cash related","Others"]
+    @topic = ["Account Related","Cash Related","Non-Cash Related","Others"]
   end
 
   def more_QR
@@ -127,7 +127,6 @@ class ServicesController < ApplicationController
     @branch_name = branch_name
     @mobile = session[:mobile]
     allServices = AllService.all_category()
-    @topic = ["a","b"]
   end
 
   # GET /services/1 or /services/1.json
