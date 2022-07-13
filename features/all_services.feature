@@ -14,9 +14,11 @@ Background: Categories have been added to database
     Then "3" seed services should exist
     Given the following branches exist:
     | bank | branch_name   | branch | sms_number |
-    | DBS  | "MBFC Branch" |"MBFC"  | "83184335" |
+    | DBS  | MBFC Branch   | MBFC  | 83184335 |
+    | POSB | Bedok Central Branch | BedokCentral  | 83184358 |
+    Then "2" seed branches should exist
 
-    Then "1" seed branches should exist
+    Given I am using web
 
 Scenario: Customer uses a web link to access the One-Stop Service page 
     When I visit "/services"
