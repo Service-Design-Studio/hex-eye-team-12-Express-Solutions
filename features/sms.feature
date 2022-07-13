@@ -1,10 +1,8 @@
 Feature: Queue Number via SMS QR Code
 
-#Autofill information about customer journey and redirect to default SMS app, to get a Queue number
-
-As a DBS Customer;
-I want to communicate my service needs to the branch as simply as possible. (less than 3 clicks);
-So that I can get my queue number for the service I need.
+As a DBS Customer
+I want to communicate my service needs to the branch as simply as possible. (less than 3 clicks)
+So that I can get my queue number for the service I need
 
 Background: Categories have been added to database
     Given the following categories exist:

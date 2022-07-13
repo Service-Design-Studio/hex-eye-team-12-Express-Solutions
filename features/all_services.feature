@@ -33,7 +33,7 @@ Scenario: Customer goes to MBFC branch and scans QR Code
 Scenario: Customer tries a random url of our web service #sad path
     When I visit "/randomsite"
     Then I should see the headers "One-Stop Solutions, What are you looking for?"
-    Then I should not see the headers "Mars"
+    Then I should not see the headers "randomsite"
 
 #----------------------------------------------------------------------------------------------------
 
