@@ -1,7 +1,7 @@
 class AllService < ActiveRecord::Base
     def self.all_category 
         #find unique categories
-        return AllService.select(:category).distinct[1..-1]
+        return AllService.select(:category)
     end
 
     def self.top_services

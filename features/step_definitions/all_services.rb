@@ -24,9 +24,6 @@ end
 Given('I am using web') do
   page.driver.header('user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36')
 end
-Then('I should not see branch') do
-  pending # Write code here that turns the phrase above into concrete actions
-end
 
   # Scenario 1: Customer clicks on Cash Category
   Given /I visit "(.+)"$/ do |page_name|
@@ -67,6 +64,5 @@ end
 
 
   When (/I click on the "(.*)" button/) do |button_name|
-    click_link_or_button button_name
-
+    click_button button_name
   end

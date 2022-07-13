@@ -2,15 +2,12 @@ class ServicesController < ApplicationController
   before_action :set_service, only: %i[ show edit update destroy ]
   before_action :validate_params
 
-  
 
   # GET /services or /services.json
   def index
     #sort_by count
     @topServices = AllService.top_services()
     @allServices = AllService.all_category()
-    # @branch = params[:branch]
-    
   end
 
   # GET /services/:id/sub
