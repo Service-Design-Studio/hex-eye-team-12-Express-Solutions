@@ -15,21 +15,5 @@ When(/I select "(.*)"/) do |branch_name|
   end
 
 Then(/I should see a QR with "(.*)"/) do |qr|
-    #expect(page.body).to have_content qr
-    # expect(page.body).to have_xpath(qr)
-    # expect(page.body).to have_xpath("//a[@href => qr]")
-    # puts page.body
-    # page.find_link(qr)[:href]
-    #page.should have_xpath("//a[@href=#{qr}]")
-    # find_link(nil, href: qr)
-    
-    # page.should have_link("//a", :href => qr)
-    # expect(page).to have_link(nil, href: qr)
-    # expect(page).to have_link('testing123', href: qr)
-    # expect(page.body).to have_xpath("//a[contains(@href,#{qr})]")
-    # expect(page).to have_selector("a[href='"+qr+"]'")
-    # find(:href, qr)
-    # find(:xpath, "//a[@href='"+qr+"]'")
-    # expect(page).to have_link( :href=>qr)
-
+    expect(page.find(:xpath, "//figure[contains(@class, 'center')]/a")["href"]).to eq qr
 end
