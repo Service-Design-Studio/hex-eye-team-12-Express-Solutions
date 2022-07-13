@@ -96,6 +96,38 @@ class ServicesController < ApplicationController
       all_locations_name.unshift(@branch_name)
     end
     @all_locations_name = all_locations_name
+    @topic = ["Account related","Cash related","Non-cash related","Others"]
+  end
+
+  def more_QR
+    
+    #construct sms body here
+    topic = params[:topic]
+    branch = Branch.find_by(branch_name: params[:branch_name])
+    session[:branch] = branch.branch
+    branch_name = branch.branch_name
+    sms_number = branch.sms_number
+    if session[:ios]
+      mobile_body = "/?"
+    else
+      mobile_body = "?&"
+    end
+    body = "sms://+65#{sms_number}#{mobile_body}body=q #{topic}"
+    # generate QR code
+    @qr = RQRCode::QRCode.new(body).as_svg(
+      color: "000",
+      shape_rendering: "crispEdges",
+      module_size: 11,
+      standalone: true,
+      use_path: true,
+      viewbox: true)
+    @body = body
+    #other 
+
+    @branch_name = branch_name
+    @mobile = session[:mobile]
+    allServices = AllService.all_category()
+    @topic = ["a","b"]
   end
 
   # GET /services/1 or /services/1.json

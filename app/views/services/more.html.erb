@@ -5,36 +5,24 @@
     <hr style="height: 2px; color:black; background-color:gray">
   </div>
 
-  <div class="column is-full">
-    <h1 class='title' style = "font-size:30px">Choose a topic</h1>
-    <div class="select">
-      <select>
-        <option>Select</option>
-        <option>Transfer</option>
-        <option>blah</option>
-        <option>blahblah</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="column is-full">
-    <h1 class='title' style = "font-size:30px">Select your Branch</h1>
-    <div class="select">
-      <select>
-        <%@all_locations_name.each do |options|%>
-          <option><%=options%></option>
-        <%end%>
-      </select>
-    </div>
-  </div>
-  
-  <div class="column is-full"><br><br>
-    <button class="button is-medium is-responsive">
-      <p style="color:white; font-size:14px">Get Queue Number</p>
-    </button>
-  </div>
+ 
 
 
+
+    <div class="select is-rounded">
+      <%= form_with url: more_QR_path, method: :get, id: 'branch_form' do |form| %>
+
+        <h1 class='title' style = "font-size:30px">Choose a topic</h1>
+          <%= form.select :topic, @topic %>
+        <br>
+
+        <h1 class='title' style = "font-size:30px">Select your Branch</h1>
+          <%= form.select :branch_name, @all_locations_name %>
+        <br>
+
+        <%= form.submit "Get Queue Number", class: "button is-large is-responsive is-rounded",  style: "font-size:22px; color:white;"%>
+      <% end %>
+    </div><br>
 
 </center>
 
