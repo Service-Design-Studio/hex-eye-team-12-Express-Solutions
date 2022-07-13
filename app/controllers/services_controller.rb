@@ -65,11 +65,13 @@ class ServicesController < ApplicationController
     branch_name = branch.branch_name
     sms_number = branch.sms_number
     if session[:ios]
-      mobile_body = "/?"
+      mobile_body = "/&"
+      body = "sms:/+65#{sms_number}#{mobile_body}body=Q #{service}"
     else
       mobile_body = "?&"
+      body = "sms:+65#{sms_number}#{mobile_body}body=Q #{service}"
     end
-    body = "sms://+65#{sms_number}#{mobile_body}body=q #{service}"
+    
     # generate QR code
     @qr = RQRCode::QRCode.new(body).as_svg(
       color: "000",
@@ -108,11 +110,13 @@ class ServicesController < ApplicationController
     branch_name = branch.branch_name
     sms_number = branch.sms_number
     if session[:ios]
-      mobile_body = "/?"
+      mobile_body = "/&"
+      body = "sms:/+65#{sms_number}#{mobile_body}body=Q #{topic}"
     else
       mobile_body = "?&"
+      body = "sms:+65#{sms_number}#{mobile_body}body=Q #{topic}"
     end
-    body = "sms://+65#{sms_number}#{mobile_body}body=q #{topic}"
+    
     # generate QR code
     @qr = RQRCode::QRCode.new(body).as_svg(
       color: "000",
