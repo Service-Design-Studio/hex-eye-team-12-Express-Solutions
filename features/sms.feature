@@ -1,7 +1,10 @@
-Feature: Autofill information about customer journey and redirect to default SMS app, to get a Queue number
+Feature: Queue Number via SMS QR Code
 
-As a DBS Customer
-I want to contact the Bank for a Queue number without keying in what I was searching for
+#Autofill information about customer journey and redirect to default SMS app, to get a Queue number
+
+As a DBS Customer;
+I want to communicate my service needs to the branch as simply as possible. (less than 3 clicks);
+So that I can get my queue number for the service I need.
 
 Background: Categories have been added to database
     Given the following categories exist:
@@ -28,7 +31,7 @@ Scenario: Customer using Web, at MBFC Branch, clicks on Update Phone
     And I select "MBFC Branch" 
     And I click on the "Next" button
     Then I should see the headers "Update Phone, MBFC Branch, Scan QR Code"
-    And I should see a QR with "sms:+6583184335?&amp;body=Q Update Phone"
+    And I should see a QR with "sms:+6583184335?&body=Q Update Phone"
 
 Scenario: Customer using Android, at Bedok Central Branch, clicks on Account Opening
     Given I am using "Android"
@@ -37,7 +40,7 @@ Scenario: Customer using Android, at Bedok Central Branch, clicks on Account Ope
     And I select "Bedok Central Branch"
     And I click on the "Next" button
     Then I should see the headers "Account Opening, Bedok Central Branch, Tap QR Code"
-    And I should see a QR with "sms:+6583184358?&amp;body=Q Account Opening"
+    And I should see a QR with "sms:+6583184358?&body=Q Account Opening"
 
 Scenario: Customer using iPhone, at Tiong Bahru Branch, clicks on Cash Deposit
     Given I am using "iPhone"
@@ -46,4 +49,4 @@ Scenario: Customer using iPhone, at Tiong Bahru Branch, clicks on Cash Deposit
     And I select "Tiong Bahru Branch"
     And I click on the "Next" button
     Then I should see the headers "Deposit, Tiong Bahru Branch, Tap QR Code"
-    And I should see a QR with "sms:/+6583184382/&amp;body=Q Deposit"
+    And I should see a QR with "sms:/+6583184382/&body=Q Deposit"
