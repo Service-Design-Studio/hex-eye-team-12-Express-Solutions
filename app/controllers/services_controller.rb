@@ -8,7 +8,15 @@ class ServicesController < ApplicationController
     #sort_by count
     
     @topServices = AllService.top_services()
+<<<<<<< HEAD
     @allServices = AllService.all_category()
+=======
+    @allCategories = AllService.all_category()
+    @allServices = AllService.all
+    
+    # @branch = params[:branch]
+    
+>>>>>>> c1e3ff3 (set up AI enable search)
   end
 
   # GET /services/:id/sub

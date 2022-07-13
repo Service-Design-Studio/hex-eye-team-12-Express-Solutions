@@ -11,11 +11,20 @@
 >>>>>>> ef0447f (search bar wip 1)
     <h6 class="title is-3 has-text-left">What are you looking for?</h6>  
     <input class="input is-rounded" type="text" placeholder="🔍 Search for a service" id="myInput" onkeyup="filterFunction()">  
-    <div class="dropdown" id="results"></div>
+    <div class="dropdown display" id="results">
+      <%# <li id="1"></li>
+      <li id="2"></li>
+      <li id="3"></li>
+      <li id="4"></li>
+      <li id="5"></li> %>
+
+    </div>
   </div>
   <br>
   <br>
 
+
+  
   <div class="container">
     <h3 class="title is-2 has-text-left">Top Services</h3>
   </div>
@@ -53,7 +62,13 @@
 
   <div class="columns is-mobile is-multiline">
 
+<<<<<<< HEAD
     <% @allServices.each do |service| %>
+=======
+    <!%=  @allServices.where(id: 3)[0].service %>
+
+    <% @allCategories.each do |service| %>
+>>>>>>> c1e3ff3 (set up AI enable search)
 
     <% the_link2 = sub_services_url(service.category) %>
     <% the_services2 = service.category %>
@@ -79,16 +94,70 @@
 
   <button class="button" id="More"><%= link_to "More", more_services_path() %></button>
   <script>
+
+
+  
   async function filterFunction() {
+ 
   var input, filter, ul, li, a, i;
+  
   input = document.getElementById("myInput");
   filter = input.value.toUpperCase();
   div = document.getElementById("results");
+
+  //Clear dropdown a
+    while (div.children.length > 0) {
+      div.removeChild(div.firstChild);
+    }
+    sleep(1000);
+    searchDict =  await query(document.getElementById("myInput").value);
+    console.log(searchDict);
+    id = searchDict["top_5_index"];
+    services = searchDict['top_5_services'];
+    console.log(services);
+
+    //sleep(300);
   
-  
-  a = document.createElement("a");
-  a.innerText = "CASH";
-  div.appendChild(a);
-  
+    for (i = 0; i < 5; i++) {
+      index = String(i);
+      service = services[i];
+      console.log("Service: ",service);
+      // a = document.getElementById(index);
+      // console.log(a);
+      // a.innerText = service;
+      a = document.createElement("a");
+      a.innerText = service;
+      //create attributes and set value
+      a.setAttribute("id", id[i]);
+      div.appendChild(a);
+    }
+
+    while (div.children.length > 5) {
+      div.removeChild(div.firstChild);
+    }
+
+    if (document.getElementById("myInput").value == "") {
+      while (div.children.length > 0) {
+      div.removeChild(div.firstChild);
+    }
+    }
 }
+
+
+function sleep(ms) {
+  return new Promise(
+    resolve => setTimeout(resolve, ms)
+  );
+}
+
+
+function query(inp) {
+  // implement getrequest 
+  return fetch('http://127.0.0.1:5000/predict?query='+inp)
+  .then(response => response.json());
+  // .then(data => console.log(data));
+  
+  // return {'top_5_index': [1,2,3,4,5], 'top_5_services': ['Service 1', 'Service 2', 'Service 3', 'Service 4', 'Service 5']};
+}
+
 </script>
