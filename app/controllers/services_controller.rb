@@ -96,7 +96,7 @@ class ServicesController < ApplicationController
       all_locations_name.unshift(branch_name)
     end
     @all_locations_name = all_locations_name
-    @topic = ["Account Related","Cash Related","Non-Cash Related","Others"]
+    @topic = ["Account Related","Cash Related","Non-Cash Related","Others"] #add db later
   end
 
   def more_QR
