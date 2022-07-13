@@ -1,6 +1,6 @@
 <center>
   <div class="container">
-    <h6 class="subtitle has-text-left" ><%= session[:branch]%> Branch</h6>
+    <h6 class="subtitle has-text-left"><%=Branch.find_by(branch: session[:branch]).branch_name%></h6>
     <h3 class="title is-1 has-text-left"><%=@category%></h3>
   </div>
   <br>
