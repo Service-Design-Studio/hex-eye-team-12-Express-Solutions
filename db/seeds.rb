@@ -26,3 +26,7 @@ bank_details_table.each do |bank, branch_name, branch, sms_number|
     Branch.create!(:bank => bank, :branch_name => branch_name,:branch => branch, :sms_number => sms_number)
 end
 
+# topics_table = CSV.read("db/topics.csv")
+# topics_table.each do |topic|
+#     Topic.create!(:topic => topic)
+# end
