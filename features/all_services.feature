@@ -12,19 +12,23 @@ Background: Categories have been added to database
     | Personal Info Update      | UPDATE CUSTOMER PHONE     | Update Phone              | True          | 10000     |
 
     Then "3" seed services should exist
+    Given the following branches exist:
+    | bank | branch_name   | branch | sms_number |
+    | DBS  | "MBFC Branch" |"MBFC"  | "83184335" |
 
+    Then "1" seed branches should exist
 
-Scenario: Customer uses a QR Code link to access the One-Stop Service page 
+Scenario: Customer uses a web link to access the One-Stop Service page 
     When I visit "/services"
     Then I should see the headers "Top Services, Main Categories"
 
 #Dynamic Branch Naming
 
-Scenario: Customer goes to Eunos branch and scans QR Code
-    When I visit "/services?branch=Eunos"
-    Then I should see the headers "Eunos"
+Scenario: Customer goes to MBFC branch and scans QR Code
+    When I visit "/services?branch=MBFC"
+    Then I should see the headers "MBFC"
 
-Scenario: Customer tries to random url of our web service #sad path
+Scenario: Customer tries a random url of our web service #sad path
     When I visit "/randomsite"
     Then I should see the headers "One-Stop Solutions, What are you looking for?"
     Then I should not see the headers "Mars"

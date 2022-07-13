@@ -5,7 +5,6 @@ Given('the following categories exist:') do |all_service_table|
     all_service_table.hashes.each do |service|
         
         # each returned element will be a hash whose key is the table header.
-        # you should arrange to add that movie to the database here.
         AllService.create!(service)
 
     end
@@ -14,6 +13,18 @@ end
   Then /"(.*)" seed services should exist/ do | n_seeds |
     puts AllService
     AllService.count.should be n_seeds.to_i
+  end
+
+Given('the following branches exist:') do |branch_table|
+  # table is a Cucumber::MultilineArgument::DataTable
+    branch_table.hashes.each do |branch|
+        Branch.create!(branch)
+    end
+end
+  
+  Then /"(.*)" seed branches should exist/ do | n_seeds |
+    puts Branch
+    Branch.count.should be n_seeds.to_i
   end
   
   # Scenario 1: Customer clicks on Cash Category
