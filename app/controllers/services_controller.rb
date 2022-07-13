@@ -2,19 +2,7 @@ class ServicesController < ApplicationController
   before_action :set_service, only: %i[ show edit update destroy ]
   before_action :validate_params
 
-  def validate_params
-    locations = Branch.all_locations
-    branch = params[:branch]
-    if (locations.include? branch)
-      session[:branch] = params[:branch]
-    end
-    # #Check browser type
-    # uA = request.user_agent
-    # session[:ios] = uA.include? "iPhone"
-    # session[:mobile] = (uA.include? "iPhone") || (uA.include? "Android")
-    # session[:ua] = uA
-
-  end
+  
 
   # GET /services or /services.json
   def index

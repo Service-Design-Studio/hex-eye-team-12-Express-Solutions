@@ -36,8 +36,6 @@ Empty the test database
 bundle exec rails db:test:purge
 ```
 
-
-
 ## RSpec
 Generates rails_helper and spec_helper in "Spec"
 Requires *gem rspec-rails* in GEMFILE
