@@ -36,14 +36,3 @@ Scenario: Customer can't find his service on Main Page #sad path
     Then I click on the "button" of "More"
     Then I should see the headers "More, Get Queue Number"
 
-#Test----------------------------------------------------------------------------------------------------
-# Scenario: Customer clicks on a Top Service and is redirected to the Time-Estimate page
-#     Given I visit "/services"
-#     When I click on the "service" of "Cash Deposit"
-#     When I visit "/services/2/time_estimate"
-#     Then I should see the headers "Do it digitally" and "Do it at the customer counter"
-
-# Scenario: Customer clicks on Cash Category
-#     Given I visit "/services"
-#     When I click on the "category" of "Cash"
-#     Then I should see "1" services on "Cash"
