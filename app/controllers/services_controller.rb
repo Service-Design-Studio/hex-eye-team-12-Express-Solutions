@@ -28,12 +28,14 @@ class ServicesController < ApplicationController
     @digital_time = @service.digital_time
     @branch_time = @service.branch_time
 
-    @branch_name = Branch.find_by(branch: branch).branch_name
+    @branch_name = ""
+    
     all_locations_name = Branch.all_locations_name
     if branch != nil
       branch_name = Branch.find_by(branch: branch).branch_name
       all_locations_name.delete(branch_name)
       all_locations_name.unshift(branch_name)
+      @branch_name = branch_name
     end
     @all_locations_name = all_locations_name
   end

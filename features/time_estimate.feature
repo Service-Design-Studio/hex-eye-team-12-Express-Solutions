@@ -14,7 +14,8 @@ Background: Categories have been added to database
 
 
     Then "3" seed services should exist
-
+    Given I am using web
+    
 Scenario: Customer checks a migratable service
     Given I visit "/services"
     When I click on the "service" of "Update Phone"
