@@ -44,7 +44,7 @@
     <div class="columns is-multiline is-vcentered is-centered">
       <div class="column is-half is-four-fifths-mobile">
         <h6 class="has-text-left">Debug</h6>
-        <h6 class="has-text-left">Branch<%= session[:branch]%></h6>
+        <h6 class="has-text-left"><%= params[:branch] || session[:branch]%></h6>
         <h6 class="has-text-left">Mobile: <%= session[:mobile]%></h6>
         <h6 class="has-text-left">UA: <%= session[:ua]%></h6>
           <%= yield %>

@@ -1,8 +1,3 @@
-require "browser/aliases"
-Browser::Base.include(Browser::Aliases)
-
-
-
 class ServicesController < ApplicationController
   before_action :set_service, only: %i[ show edit update destroy ]
   before_action :validate_params
@@ -13,11 +8,11 @@ class ServicesController < ApplicationController
     if (locations.include? branch)
       session[:branch] = params[:branch]
     end
-    #Check browser type
-    uA = request.user_agent
-    session[:ios] = uA.include? "iPhone"
-    session[:mobile] = (uA.include? "iPhone") || (uA.include? "Android")
-    session[:ua] = uA
+    # #Check browser type
+    # uA = request.user_agent
+    # session[:ios] = uA.include? "iPhone"
+    # session[:mobile] = (uA.include? "iPhone") || (uA.include? "Android")
+    # session[:ua] = uA
 
   end
 
