@@ -29,6 +29,13 @@ $card-radius: 15px;
 
 $column-gap: 6px;
 
+
+
+.columns {
+  display: flex;
+  
+}
+
 .centertext {
     padding-left: 3%;
     padding-right: 3%;
@@ -36,6 +43,17 @@ $column-gap: 6px;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @include mobile {
+      font-size:15px;
+
+    }
+    @include tablet-only {
+      font-size:18px;
+    }
+    @include desktop{
+      font-size:20px;
+    }
   }
 
 
