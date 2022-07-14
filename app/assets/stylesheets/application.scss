@@ -10,7 +10,7 @@ $family-monospace: "Source Code Pro", monospace;
 
 $link: $white;
 
-$button-background-color: #454545;
+$button-background-color: #5a5a5a;
 $button-text-color: $white;
 
 
@@ -18,9 +18,23 @@ $box-padding: 18px;
 $box-background-color: #454545;
 $box-link-hover-shadow: $red;
 $box-link-active-shadow: $red;
-$box-radius: 8px;
+$box-radius: 10px;
 
 $progress-value-background-color: #bdbdbd;
+
+$card-content-padding: 10px;
+$card-radius: 15px;
+
+$column-gap: 6px;
+
+.centertext {
+    padding-left: 3%;
+    padding-right: 3%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 
 
