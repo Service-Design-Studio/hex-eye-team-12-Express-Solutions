@@ -50,7 +50,37 @@ bundle exec cucumber features/all_services.feature
 ## Markdown
 [Markdown Guide](https://agea.github.io/tutorial.md/)
 
+## Deployment
+### Dockerfile
 
+Add:
+
+    FROM ruby:2.7.6 AS rails-toolbox
+    ENV SECRET_KEY_BASE= # put secret key
+    RUN chmod u+x bin/rails
+
+### Gemfile
+
+Comment out:
+
+    gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+    gem "debug", platforms: %i[ mri mingw x64_mingw ]
+    
+Move Gem into all groups:
+
+    gem 'sqlite3', '~> 1.3' 
+
+### secrets.yml
+
+Add file from production branch.
+
+### Others
+
+Remove any .exe substrings, typically from 
+
+    bin/rails
+    bin/rake
+    bin/setup
 
 Resources:
 
