@@ -8,6 +8,12 @@ $subtitle-line-height: 1.5;
 $family-sans-serif: "Open Sans", Helvetica, Arial, sans-serif;
 $family-monospace: "Source Code Pro", monospace;
 
+// Disable the widescreen breakpoint
+$widescreen-enabled: false;
+
+// Disable the fullhd breakpoint
+$fullhd-enabled: false;
+
 // GLOBAL BUTTONS COLOR EDITS
 //---------------------------
 $link: $white;
@@ -29,11 +35,10 @@ $card-radius: 15px;
 
 $column-gap: 6px;
 
-
+$is-narrow: 300px;
 
 .columns {
   display: flex;
-  
 }
 
 .centertext {
@@ -46,13 +51,12 @@ $column-gap: 6px;
 
     @include mobile {
       font-size:15px;
-
     }
     @include tablet-only {
       font-size:18px;
     }
     @include desktop{
-      font-size:20px;
+      font-size:18px;
     }
   }
 
