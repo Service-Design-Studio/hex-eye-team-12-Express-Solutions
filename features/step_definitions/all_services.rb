@@ -1,5 +1,5 @@
 #Background
-Given('the following categories exist:') do |all_service_table|
+Given('the following services exist:') do |all_service_table|
   # table is a Cucumber::MultilineArgument::DataTable
   all_service_table.hashes.each do |service|
     AllService.create!(service)

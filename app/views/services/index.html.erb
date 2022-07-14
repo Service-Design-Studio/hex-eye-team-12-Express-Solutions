@@ -20,18 +20,18 @@
 
     <% @topServices.each do |service| %>
 
-    <% @the_link = time_estimate_url(service) %>
-    <% @the_services = service.service %>
-    <% @the_services = '' + @the_services + '' %>
-        
-      <div class="column is-half" id= <%= service.service %>> 
-        <a href=<%= @the_link %>>
-          <div class="box">
-              <center><p style="color:white; font-size:13px"><%= @the_services %></p></center>   
-          </div>
-        </a>
-      </div>
-    <% end %>
+      <% the_link = time_estimate_url(service) %>
+      <% the_services = service.service %>
+      <% the_services = '' + the_services + '' %>
+          
+        <div class="column is-half" id= <%= service.service %>> 
+          <a href=<%= the_link %>>
+            <div class="box">
+                <center><p style="color:white; font-size:13px"><%= the_services %></p></center>   
+            </div>
+          </a>
+        </div>
+      <% end %>
   </div>
 
   <div class="container">
@@ -41,21 +41,19 @@
 
   <div class="columns is-mobile is-multiline">
 
-    <!%= @allServices.inspect %>
-
     <% @allServices.each do |service| %>
 
-    <% @the_link2 = sub_services_url(service.category) %>
-    <% @the_services2 = service.category %>
+      <% the_link2 = sub_services_url(service.category) %>
+      <% the_services2 = service.category %>
 
-      <div class="column is-half"> 
-        <a href=<%= @the_link2 %>>
-          <div class="box">
-              <center><p style="color:white; font-size:13px"><%= @the_services2 %></p></center>   
-          </div>
-        </a>
-      </div>
-    <% end %>
+        <div class="column is-half"> 
+          <a href=<%= the_link2 %>>
+            <div class="box">
+                <center><p style="color:white; font-size:13px"><%= the_services2 %></p></center>   
+            </div>
+          </a>
+        </div>
+      <% end %>
   </div>
   <br>
 
