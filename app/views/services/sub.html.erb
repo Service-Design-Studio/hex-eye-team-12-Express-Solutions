@@ -14,11 +14,18 @@
     <% @the_services = service.service %>
 
       <div class="column is-half"> 
-        <a href=<%= @the_link %>>
-          <div class="box">
-              <center><p style="color:white; font-size:13px"><%= @the_services %></p></center>   
-          </div>
-        </a>
+
+        <div class="card-image">    
+          <figure class="image is-3by1">
+            <%= image_tag 'GreyBackground.png' %>
+          </figure>
+
+          <a href=<%= @the_link %>>
+            <div class="is-overlay centertext">
+                <center><p style="font-size:15px"><%= @the_services %></p></center>   
+            </div>
+          </a>
+        </div>
       </div>
     <% end %>
   </div>

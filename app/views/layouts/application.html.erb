@@ -10,17 +10,6 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
-    <style>
-      .columns {
-        display: flex;
-      }
-      .center {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 60%;
-      }
-    </style>
   </head>
 
   <body>
@@ -28,16 +17,15 @@
     <div class = "columns has-background-dark is-multiline">
 
       <div class="column is-half-mobile is-one-quarter-tablet is-one-quarter-desktop">
-        <figure class="image">
-          <%= image_tag 'dbs_logo.png' %>
-        </figure>
+          <figure class="image">
+            <%= image_tag 'dbs_logo.png' %>
+          </figure>
       </div>
 
-
-      <div class="column is-full is-full-mobile">    
-        <h1 class = "title" style="color:white"><%= link_to( "‏ ‏ ‎ ‎One-Stop Solutions", "/services")  %> </h1>
-        <hr style="height: 0.1px; visibility: hidden; margin-bottom:0px;">
-      </div>
+    <div class="column is-full is-full-mobile">    
+      <h1 class = "title" style="color:white"><%= link_to( "‏ ‏ ‎ ‎One-Stop Solutions", "/services")  %> </h1>
+      <hr style="height: 0.1px; visibility: hidden; margin-bottom:0px;">
+    </div>
 
     </div>
 
