@@ -27,7 +27,7 @@ Scenario: Customer using Web, at MBFC Branch, clicks on Update Phone
     When I visit "/services"
     And I click on the "service" of "Update Phone"
     And I select "MBFC Branch" 
-    And I click on the "Next" button
+    And I click on the "Get Queue Number" button
     Then I should see the headers "Update Phone, MBFC Branch, Scan QR Code"
     And I should see a QR with "sms:+6583184335?&body=Q Update Phone"
 
@@ -36,7 +36,7 @@ Scenario: Customer using Android, at Bedok Central Branch, clicks on Account Ope
     When I visit "/services"
     And I click on the "service" of "Account Opening"
     And I select "Bedok Central Branch"
-    And I click on the "Next" button
+    And I click on the "Get Queue Number" button
     Then I should see the headers "Account Opening, Bedok Central Branch, Tap QR Code"
     And I should see a QR with "sms:+6583184358?&body=Q Account Opening"
 
@@ -45,6 +45,6 @@ Scenario: Customer using iPhone, at Tiong Bahru Branch, clicks on Cash Deposit
     When I visit "/services"
     And I click on the "service" of "Deposit"
     And I select "Tiong Bahru Branch"
-    And I click on the "Next" button
+    And I click on the "Get Queue Number" button
     Then I should see the headers "Deposit, Tiong Bahru Branch, Tap QR Code"
     And I should see a QR with "sms:/+6583184382/&body=Q Deposit"
