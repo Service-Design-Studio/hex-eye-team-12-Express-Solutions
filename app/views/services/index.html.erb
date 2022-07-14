@@ -1,5 +1,3 @@
-
-
   <div class="container">
     <% if session[:branch] != nil %>
       <h6 class="subtitle"><%=Branch.find_by(branch: session[:branch]).branch_name%></h6>
@@ -12,7 +10,7 @@
   <br>
 
   <div class="container">
-  <h3 class="title is-1 has-text-left">Top Services</h3>
+    <h3 class="title is-2 has-text-left">Top Services</h3>
   </div>
   <br>
 
@@ -20,22 +18,29 @@
 
     <% @topServices.each do |service| %>
 
-      <% the_link = time_estimate_url(service) %>
-      <% the_services = service.service %>
-      <% the_services = '' + the_services + '' %>
-          
-        <div class="column is-half" id= <%= service.service %>> 
-          <a href=<%= the_link %>>
-            <div class="box">
-                <center><p style="color:white; font-size:13px"><%= the_services %></p></center>   
-            </div>
-          </a>
+    <% the_link = time_estimate_url(service) %>
+    <% the_services = service.service %>
+    <% the_services = '' + the_services + '' %>
+        
+      <div class="column is-half" id= <%= service.service %>> 
+
+        <div class="card-image">
+          <figure class="image is-3by1">
+            <%= image_tag 'GreyGradientBackground.png' %>
+          </figure>
+              <a href=<%= the_link %>>
+                <div class="is-overlay centertext">
+                    <center><p style="font-size: 15px;"><%= the_services %></p></center>
+                </div>
+              </a>   
         </div>
-      <% end %>
+
+      </div>
+    <% end %>
   </div>
 
   <div class="container">
-    <h3 class="title is-1 has-text-left">Main Categories</h3>
+    <h3 class="title is-2 has-text-left">Main Categories</h3>
   </div>
   <br>
 
@@ -43,17 +48,24 @@
 
     <% @allServices.each do |service| %>
 
-      <% the_link2 = sub_services_url(service.category) %>
-      <% the_services2 = service.category %>
+    <% the_link2 = sub_services_url(service.category) %>
+    <% the_services2 = service.category %>
 
-        <div class="column is-half"> 
+      <div class="column is-half"> 
+
+        <div class="card-image">
+          <figure class="image is-3by1">
+            <%= image_tag 'GreyGradientBackground.png' %>
+          </figure>
+
           <a href=<%= the_link2 %>>
-            <div class="box">
-                <center><p style="color:white; font-size:13px"><%= the_services2 %></p></center>   
+            <div class="is-overlay centertext">
+                <center><p style="font-size: 15px;"><%= the_services2 %></p></center>   
             </div>
           </a>
         </div>
-      <% end %>
+      </div>
+    <% end %>
   </div>
   <br>
 
