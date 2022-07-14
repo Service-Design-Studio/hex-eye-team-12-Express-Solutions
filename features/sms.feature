@@ -5,7 +5,7 @@ I want to communicate my service needs to the branch as simply as possible. (les
 So that I can get my queue number for the service I need
 
 Background: Categories have been added to database
-    Given the following categories exist:
+    Given the following services exist:
     | category	            | category_int   	            | service	        | migratable	| count	        | details                                   | digital_time  | branch_time |
     | Accounts	            | CASA OPENING ADDON PAYROLL	| Account Opening	| TRUE	        | 50	        | CASA Payroll Add-on Account Opening	    | 11            | 22          |
     | Cash	                | CASH DEPOSIT	                | Deposit	        | FALSE	        | 10000	        | Deposit cash into CASA / SGD$ FD accts	| 1             | 2           |
