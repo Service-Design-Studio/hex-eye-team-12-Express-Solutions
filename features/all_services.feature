@@ -5,13 +5,14 @@ I want to be able to find the service without hassle
 So that my banking needs can be fulfilled in a timely manner
 
 Background: Categories have been added to database
-    Given the following categories exist:
+    Given the following services exist:
     | category                  | category_int              | service                   | migratable    | count     |
     | Account Opening           | CASA OPENING ADDON        | Opening Addon             | True          | 50        |
     | Cash                      | CASH DEPOSIT              | Cash Deposit              | False         | 10000     |
     | Personal Info Update      | UPDATE CUSTOMER PHONE     | Update Phone              | True          | 10000     |
 
     Then "3" seed services should exist
+    
     Given the following branches exist:
     | bank | branch_name   | branch | sms_number |
     | DBS  | MBFC Branch   | MBFC  | 83184335 |
