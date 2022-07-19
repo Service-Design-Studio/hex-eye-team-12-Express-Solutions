@@ -10,8 +10,13 @@
   <div class="dropdown-container" id="search">
 >>>>>>> ef0447f (search bar wip 1)
     <h6 class="title is-3 has-text-left">What are you looking for?</h6>  
-    <input class="input is-rounded" type="text" placeholder="🔍 Search for a service" id="myInput" onkeyup="filterFunction()">  
-    <div class="dropdown display" id="results">
+    <input class="input is-rounded" type="text" placeholder="🔍 Search for a service" id="myInput" onkeyup="check_timeout()">  
+    <div class="dropdown display" id="results" style="display: none">
+      <a id="1"></a>
+      <a id="2"></a>
+      <a id="3"></a>
+      <a id="4"></a>
+      <a id="5"></a>
 
     </div>
   </div>
@@ -89,54 +94,67 @@
 
   <button class="button" id="More"><%= link_to "More", more_services_path() %></button>
   <script>
-
-  
+  var timeout = null;
+  function check_timeout() {
+    clearTimeout(timeout);
+    timeout = setTimeout(filterFunction(), 10000);
+    // console.log(timeout);
+    // console.log('timeout');
+  }
   async function filterFunction() {
  
-  var input, filter, ul, li, a, i;
+  var input, filter, div, a
   
   input = document.getElementById("myInput");
   filter = input.value.toUpperCase();
   div = document.getElementById("results");
-
+ setInterval(function() {
+    if(input=== document.activeElement) {
+        div.style.display = "block";
+        console.log('set to block')
+        if (input.value.length < 3) {
+          div.style.display = "none";
+        
+  }
+    } else {
+        div.style.display = "none";
+        console.log('set to none')
+    }
+}, 1000);
+ 
   //Clear dropdown a
-    cleardropdown('results');
+  // cleardropdown('results');
 
-    searchDict =  await query(document.getElementById("myInput").value);
-    console.log(searchDict);
-    id = searchDict["top_5_index"];
-    services = searchDict['top_5_services'];
-    console.log(services);
+  searchDict =  await query(input.value);
+  // console.log(searchDict);
+  id = searchDict["top_5_index"];
+  services = searchDict['top_5_services'];
+  // console.log(services);
   
     for (i = 0; i < 5; i++) {
       index = String(i);
       service = services[i];
-      console.log("Service: ",service);
+      // console.log("Service: ",service);
       // a = document.getElementById(index);
       // console.log(a);
       // a.innerText = service;
-      a = document.createElement("a");
+      a = document.getElementById(String(i+1));
       a.innerText = service;
-      console.log(`services/${id[i]+2}/time_estimate`);
+      // console.log(`services/${id[i]+2}/time_estimate`);
       a.href = `services/${id[i]+2}/time_estimate`;
       //create attributes and set value
-      a.setAttribute("id", id[i]);
-      div.appendChild(a);
+      // a.setAttribute("id", id[i]);
+      // div.appendChild(a);
     }
 
-    refreshdropdown('results');
+    // refreshdropdown(div,input.value);
 
-    if (document.getElementById("myInput").value == "") {
-      cleardropdown('results');
-    }
+    // if (document.getElementById("myInput").value == "") {
+    //   cleardropdown('results');
+    // }
 }
 
 
-function sleep(ms) {
-  return new Promise(
-    resolve => setTimeout(resolve, ms)
-  );
-}
 
 
 function query(inp) {
@@ -147,18 +165,27 @@ function query(inp) {
   // return {'top_5_index': [1,2,3,4,5], 'top_5_services': ['Service 1', 'Service 2', 'Service 3', 'Service 4', 'Service 5']};
 }
 
-function cleardropdown(id) {
-  div = document.getElementById(id);
-  while (div.children.length > 0) {
-    div.removeChild(div.firstChild);
-  }
-}
+// function cleardropdown(id) {
+//   div = document.getElementById(id);
+//   while (div.children.length > 0) {
+//     div.removeChild(div.firstChild);
+//   }
+// }
 
-function refreshdropdown(id) {
-  div = document.getElementById(id);
-  while (div.children.length > 5) {
-    div.removeChild(div.firstChild);
-  }
+function refreshdropdown(id,inp) {
+  // div = document.getElementById(id);
+  // while (div.children.length > 5) {
+  //   div.removeChild(div.firstChild);
+  // }
+  // console.log(inp)
+  //  console.log(inp.length < 3)
+  // if (inp.length < 3) {
+  //   div.style.display = "none";
+  //   console.log(inp)
+  // } else {
+  //   div.style.display = "block";
+  // }
+
 }
 
 
