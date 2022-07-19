@@ -8,15 +8,7 @@ class ServicesController < ApplicationController
     #sort_by count
     
     @topServices = AllService.top_services()
-<<<<<<< HEAD
     @allServices = AllService.all_category()
-=======
-    @allCategories = AllService.all_category()
-    @allServices = AllService.all
-    
-    # @branch = params[:branch]
-    
->>>>>>> c1e3ff3 (set up AI enable search)
   end
 
   # GET /services/:id/sub
@@ -25,13 +17,6 @@ class ServicesController < ApplicationController
     @category = params[:id]
     # @branch = params[:branch]
   end
-
-
-  # def search 
-  #   @search = params[:search]
-  #   puts @search
-  #   redirect_to services_url
-  # end
 
   # GET /services/:id/time_estimate
   def time_estimate

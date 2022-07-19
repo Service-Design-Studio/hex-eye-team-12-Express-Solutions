@@ -1,14 +1,8 @@
-<<<<<<< HEAD
   <div class="container">
     <% if session[:branch] != nil %>
       <h6 class="subtitle"><%=Branch.find_by(branch: session[:branch]).branch_name%></h6>
     <% end %>
-
-=======
-
-
   <div class="dropdown-container" id="search">
->>>>>>> ef0447f (search bar wip 1)
     <h6 class="title is-3 has-text-left">What are you looking for?</h6>  
     <input class="input is-rounded" type="text" placeholder="🔍 Search for a service" id="myInput" onkeyup="check_timeout()">  
     <div class="dropdown display" id="results" style="display: none">
@@ -62,13 +56,7 @@
 
   <div class="columns is-mobile is-multiline">
 
-<<<<<<< HEAD
     <% @allServices.each do |service| %>
-=======
-    <!%=  @allServices.where(id: 3)[0].service %>
-
-    <% @allCategories.each do |service| %>
->>>>>>> c1e3ff3 (set up AI enable search)
 
     <% the_link2 = sub_services_url(service.category) %>
     <% the_services2 = service.category %>
@@ -98,8 +86,6 @@
   function check_timeout() {
     clearTimeout(timeout);
     timeout = setTimeout(filterFunction(), 10000);
-    // console.log(timeout);
-    // console.log('timeout');
   }
   async function filterFunction() {
  
@@ -121,9 +107,6 @@
         console.log('set to none')
     }
 }, 1000);
- 
-  //Clear dropdown a
-  // cleardropdown('results');
 
   searchDict =  await query(input.value);
   // console.log(searchDict);
@@ -134,59 +117,18 @@
     for (i = 0; i < 5; i++) {
       index = String(i);
       service = services[i];
-      // console.log("Service: ",service);
-      // a = document.getElementById(index);
-      // console.log(a);
-      // a.innerText = service;
       a = document.getElementById(String(i+1));
       a.innerText = service;
-      // console.log(`services/${id[i]+2}/time_estimate`);
       a.href = `services/${id[i]+2}/time_estimate`;
-      //create attributes and set value
-      // a.setAttribute("id", id[i]);
-      // div.appendChild(a);
     }
-
-    // refreshdropdown(div,input.value);
-
-    // if (document.getElementById("myInput").value == "") {
-    //   cleardropdown('results');
-    // }
 }
-
-
-
 
 function query(inp) {
   // implement getrequest 
   return fetch('http://127.0.0.1:5000/predict?query='+inp)
   .then(response => response.json());
-  // .then(data => console.log(data));
-  // return {'top_5_index': [1,2,3,4,5], 'top_5_services': ['Service 1', 'Service 2', 'Service 3', 'Service 4', 'Service 5']};
 }
 
-// function cleardropdown(id) {
-//   div = document.getElementById(id);
-//   while (div.children.length > 0) {
-//     div.removeChild(div.firstChild);
-//   }
-// }
-
-function refreshdropdown(id,inp) {
-  // div = document.getElementById(id);
-  // while (div.children.length > 5) {
-  //   div.removeChild(div.firstChild);
-  // }
-  // console.log(inp)
-  //  console.log(inp.length < 3)
-  // if (inp.length < 3) {
-  //   div.style.display = "none";
-  //   console.log(inp)
-  // } else {
-  //   div.style.display = "block";
-  // }
-
-}
 
 
 </script>
