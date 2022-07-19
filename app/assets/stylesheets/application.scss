@@ -16,8 +16,8 @@ $fullhd-enabled: false;
 
 // GLOBAL BUTTONS COLOR EDITS
 //---------------------------
-$link: $white;
-$link-hover: #e4e4e4;
+$link: $black;
+$link-hover: #474747;
 //---------------------------
 
 $button-background-color: #5a5a5a;
@@ -33,13 +33,59 @@ $progress-value-background-color: #bdbdbd;
 $card-content-padding: 10px;
 $card-radius: 15px;
 
-$column-gap: 6px;
+$column-gap: 0.75rem;
 
 $is-narrow: 300px;
+
+.dbsheader {
+  background-color: #141414;
+  box-shadow: 5px 10px 10px rgb(0, 0, 0);
+}
+
+.gradientheader {
+  background-image: linear-gradient(rgb(255, 255, 255),rgb(188, 188, 188));
+}
+
+.gradienttopservices {
+  background-image: linear-gradient(rgb(204, 19, 19), rgb(128, 26, 26));
+}
+
+.squarebuttons-topservice{
+  // border: 1px outset blue; //display size of button
+  background-color: rgba(255, 255, 255, 0.101);
+  border-radius: 5%;
+  box-shadow: 0px 3px 3px rgba(255, 129, 129, 0.312);
+
+  height:125px;
+  width: 23%;
+
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: 35px;
+
+  cursor:pointer;
+}
+
+.gradientbody {
+  background: linear-gradient(rgb(24, 24, 24), rgb(45, 45, 45));
+  background-size:100% 100%;
+}
 
 .columns {
   display: flex;
 }
+
+.capsize{
+  max-width: 64px;
+  max-height: 64px;
+}
+
+.alignitemscenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .centertext {
     padding-left: 3%;
@@ -60,6 +106,16 @@ $is-narrow: 300px;
     }
   }
 
+  p.small {
+    line-height: 1.2;
+    font-size: 13px;
+  }
+
+  .blurry-text {
+    font-weight: 600;
+    color: transparent;
+    text-shadow: 0 0 0.7px rgba(255, 255, 255, 1);
+ }
 
 
 // import bulma and optionally the extensions

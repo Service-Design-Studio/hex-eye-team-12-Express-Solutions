@@ -1,73 +1,101 @@
-  <div class="container">
-    <% if session[:branch] != nil %>
-      <h6 class="subtitle"><%=Branch.find_by(branch: session[:branch]).branch_name%></h6>
-    <% end %>
+<div class="column is-full">
+  <div class="columns is-vcentered is-centered has-text-center">
 
-    <h6 class="title is-3 has-text-left">What are you looking for?</h6>  
-    <input class="input is-rounded" type="text" placeholder="🔍 Search for a service">  
+    <div class="column is-half-tablet is-four-fifths-mobile">
+      <% if session[:branch] != nil %>
+        <h6 class="subtitle alignitemscenter" style="color:white;"><%=Branch.find_by(branch: session[:branch]).branch_name%></h6>
+      <% end %>
+
+      <center><h6 class="title alignitemscenter" style="color:white;">What are you looking for?</h6></center><br>
+
+      <input class="input is-rounded" type="text" placeholder="🔍 Search for a service">  
+    </div>
+
   </div>
-  <br>
-  <br>
+</div>
 
-  <div class="container">
-    <h3 class="title is-2 has-text-left">Top Services</h3>
-  </div>
-  <br>
+<!--
+  blank vertical space
+  -->
+<div class="column is-full">
+</div>
 
-  <div class="columns is-mobile is-multiline">
-
-    <% @topServices.each do |service| %>
-
-    <% the_link = time_estimate_url(service) %>
-    <% the_services = service.service %>
-    <% the_services = '' + the_services + '' %>
-        
-      <div class="column is-half" id= <%= service.service %>> 
-
-        <div class="card-image">
-          <figure class="image is-3by1">
-            <%= image_tag 'GreyBackground.png' %>
-          </figure>
-              <a href=<%= the_link %>>
-                <div class="is-overlay centertext">
-                    <center><p><%= the_services %></p></center>
-                </div>
-              </a>   
-        </div>
-
-      </div>
-    <% end %>
-  </div>
+<div class="column is-full gradienttopservices">
 
   <div class="container">
-    <h3 class="title is-2 has-text-left">Main Categories</h3>
+    <h3 class="title is-3 alignitemscenter" style="color:white;">Top Services</h3>
   </div>
-  <br>
 
-  <div class="columns is-mobile is-multiline">
+  <div class="columns is-centered">
+    <div class="column is-11-mobile is-10-tablet is-7-desktop">
+      <div class="columns is-multiline is-centered is-vcentered has-text-center">
 
-    <% @allServices.each do |service| %>
+        <% @topServices.each do |service| %>
 
-    <% the_link2 = sub_services_url(service.category) %>
-    <% the_services2 = service.category %>
+        <% the_link = time_estimate_url(service) %>
+        <% the_services = service.service %>
+        <% the_services = '' + the_services + '' %>
 
-      <div class="column is-half"> 
 
-        <div class="card-image">
-          <figure class="image is-3by1">
-            <%= image_tag 'GreyBackground.png' %>
-          </figure>
-
-          <a href=<%= the_link2 %>>
-            <div class="is-overlay centertext">
-                <center><p><%= the_services2 %></p></center>   
-            </div>
+        <div class="column squarebuttons-topservice" id= <%= service.service %>> 
+          <a href=<%= the_link %>> 
+          <center><figure class="image capsize">
+            <%= image_tag 'testicon.png' %>
+          </figure></center>
           </a>
+
+          <hr style="height: 0px; visibility: hidden; margin-bottom:-10px;">
+
+          <center><p class="alignitemscenter small blurry-text"><%= the_services %></p></center>
+
         </div>
+        <% end %>
       </div>
-    <% end %>
+      <hr style="height: 0px; visibility: hidden; margin-bottom:-10px;">
+    </div>
   </div>
-  <br>
+</div>
+<br>
+
+
+<div class="column is-full">
+
+  <div class="container">
+    <h3 class="title is-3 alignitemscenter" style="color:white;">Main Categories</h3>
+    <hr style="height: 0px; visibility: hidden; margin-bottom:-15px;">
+  </div>
+  
+  <div class="columns is-centered">
+    <div class="column is-11-mobile is-10-tablet is-7-desktop">
+      <div class="columns is-mobile is-multiline">
+
+        <% @allServices.each do |service| %>
+
+        <% the_link2 = sub_services_url(service.category) %>
+        <% the_services2 = service.category %>
+
+          <div class="column is-4-mobile is-3-tablet is-3-desktop squarebuttons-categories"> 
+
+            <div class="card-image gradientheader">
+              <figure class="image is-1by1">
+                <%= image_tag '' %>
+              </figure>
+
+              <a href=<%= the_link2 %>>
+                <div class="is-overlay centertext">
+                    <center><p class="alignitemscenter blurry-text" style="font-size: 16px"><%= the_services2 %></p></center>   
+                </div>
+              </a>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+<br>
 
 
   <button class="button" id="More"><%= link_to "More", more_services_path() %></button>
