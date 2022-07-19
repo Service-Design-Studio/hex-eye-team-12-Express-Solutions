@@ -71,6 +71,7 @@ GEM
     bindex (0.8.1)
     bootsnap (1.12.0)
       msgpack (~> 1.2)
+    browser (5.3.1)
     builder (3.2.4)
     bulma-extensions-rails (6.2.7)
     bulma-rails (0.9.3)
@@ -136,6 +137,9 @@ GEM
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
+    debug (1.5.0)
+      irb (>= 1.3.6)
+      reline (>= 0.2.7)
     diff-lcs (1.5.0)
     digest (3.1.0)
     erubi (1.10.0)
@@ -148,6 +152,9 @@ GEM
     importmap-rails (1.1.0)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
+    io-console (0.5.11)
+    irb (1.4.1)
+      reline (>= 0.3.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -232,6 +239,8 @@ GEM
       zeitwerk (~> 2.5)
     rake (13.0.6)
     regexp_parser (2.5.0)
+    reline (0.3.1)
+      io-console (~> 0.5)
     rexml (3.2.5)
     rqrcode (2.1.1)
       chunky_png (~> 1.0)
@@ -285,6 +294,8 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2022.1)
+      tzinfo (>= 1.0.0)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -309,6 +320,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  browser
   bulma-extensions-rails
   bulma-rails (~> 0.9.3)
   byebug
@@ -316,6 +328,7 @@ DEPENDENCIES
   cucumber-rails
   cucumber-rails-training-wheels
   database_cleaner
+  debug
   importmap-rails
   jbuilder
   launchy
@@ -331,6 +344,7 @@ DEPENDENCIES
   sqlite3 (~> 1.3)
   stimulus-rails
   turbo-rails
+  tzinfo-data
   web-console
   webdrivers
 
