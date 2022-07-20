@@ -1,4 +1,4 @@
-<div class="column is-full">
+<div class="column is-full dbsbackground">
   <div class="columns is-vcentered is-centered has-text-center">
 
     <div class="column is-half-tablet is-four-fifths-mobile">
@@ -8,26 +8,23 @@
 
       <center><h6 class="title alignitemscenter" style="color:white;">What are you looking for?</h6></center><br>
 
-      <input class="input is-rounded" type="text" placeholder="🔍 Search for a service">  
+      <input class="input is-rounded" type="text" placeholder="🔍 Search for a service" style="margin-bottom:25px;">  
     </div>
 
   </div>
 </div>
 
-<!--
-  blank vertical space
-  -->
-<div class="column is-full">
-</div>
 
 <div class="column is-full gradienttopservices">
 
-  <div class="container">
-    <h3 class="title is-3 alignitemscenter" style="color:white;">Top Services</h3>
-  </div>
 
   <div class="columns is-centered">
     <div class="column is-11-mobile is-10-tablet is-7-desktop">
+
+      <div class="container alignitemscenter">
+        <h3 class="subtitle is-4" style="color:white; text-align: middle;">Top Services</h3>
+      </div>
+
       <div class="columns is-multiline is-centered is-vcentered has-text-center">
 
         <% @topServices.each do |service| %>
@@ -39,14 +36,14 @@
 
         <div class="column squarebuttons-topservice" id= <%= service.service %>> 
           <a href=<%= the_link %>> 
-          <center><figure class="image capsize">
-            <%= image_tag 'testicon.png' %>
+          <center><figure class="image capsize is-rounded">
+            <%= image_tag 'testicon_black.png' %>
           </figure></center>
           </a>
 
-          <hr style="height: 0px; visibility: hidden; margin-bottom:-10px;">
+          <hr style="height: 0px; visibility: hidden; margin-bottom:5px;">
 
-          <center><p class="alignitemscenter small blurry-text"><%= the_services %></p></center>
+          <center><p class="small blurry-text" style="text-align: middle;"><%= the_services %></p></center>
 
         </div>
         <% end %>
@@ -76,7 +73,7 @@
 
           <div class="column is-4-mobile is-3-tablet is-3-desktop squarebuttons-categories"> 
 
-            <div class="card-image gradientheader">
+            <div class="card-image">
               <figure class="image is-1by1">
                 <%= image_tag '' %>
               </figure>
