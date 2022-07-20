@@ -33,19 +33,20 @@
         <% the_services = service.service %>
         <% the_services = '' + the_services + '' %>
 
-
+      <a href=<%= the_link %>> 
         <div class="column squarebuttons-topservice" id= <%= service.service %>> 
-          <a href=<%= the_link %>> 
+          
           <center><figure class="image capsize is-rounded">
             <%= image_tag 'testicon_black.png' %>
           </figure></center>
-          </a>
+          
 
           <hr style="height: 0px; visibility: hidden; margin-bottom:5px;">
 
           <center><p class="small blurry-text" style="text-align: middle;"><%= the_services %></p></center>
-
+          </a>
         </div>
+        
         <% end %>
       </div>
       <hr style="height: 0px; visibility: hidden; margin-bottom:-10px;">
