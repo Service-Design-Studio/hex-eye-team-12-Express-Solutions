@@ -31,3 +31,8 @@ topics_table = CSV.read("db/topics.csv")
 topics_table.each do |topic|
     Topic.create!(:topic => topic)
 end
+
+duration_table = CSV.read("db/branch_time.csv")
+duration_table.each do |branch, id, wait_time|
+    Duration.create!(:branch => branch, :branch_id => id, :wait_time => wait_time)
+end
