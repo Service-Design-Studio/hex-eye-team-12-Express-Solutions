@@ -7,6 +7,7 @@
 $subtitle-line-height: 1.5;
 $family-sans-serif: "Open Sans", Helvetica, Arial, sans-serif;
 $family-monospace: "Source Code Pro", monospace;
+$family-primary: $family-sans-serif;
 
 // Disable the widescreen breakpoint
 $widescreen-enabled: false;
@@ -17,10 +18,11 @@ $fullhd-enabled: false;
 // GLOBAL BUTTONS COLOR EDITS
 //---------------------------
 $link: $white;
-$link-hover: #e4e4e4;
+$link-hover: #b0b0b0;
 //---------------------------
 
-$button-background-color: #5a5a5a;
+$button-background-color: rgb(255, 0, 0);
+
 
 $box-padding: 18px;
 $box-background-color: #454545;
@@ -33,12 +35,112 @@ $progress-value-background-color: #bdbdbd;
 $card-content-padding: 10px;
 $card-radius: 15px;
 
-$column-gap: 6px;
+$column-gap: 0.75rem;
 
 $is-narrow: 300px;
 
+.dbsbackground{
+  background-image: url("DBS_Towers,_SIA_Building_and_Capital_Tower.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.dbsheader {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 5px 10px 10px rgb(0, 0, 0);
+  max-height: 90px;
+}
+
+.gradientbody {
+  background: linear-gradient(rgb(255, 255, 255), rgb(246, 246, 246));
+  background-size:100% 100%;
+}
+
+.gradientheader {
+  background-image: linear-gradient(rgb(225, 225, 225),rgb(220, 220, 220));
+}
+
+.gradienttopservices {
+  //background-image: linear-gradient(rgb(212, 212, 212), rgb(212, 210, 212));
+  background-color: #ececec;
+}
+
+.gradientsubservices {
+  //background-image: linear-gradient(rgb(212, 212, 212), rgb(212, 210, 212));
+  background-color: #f0f0f0;
+}
+
+.squarebuttons-topservice{
+ //border: 2px outset rgb(200, 200, 200);
+ //background-color: rgb(255, 255, 255);
+ //border-radius: 5%;
+
+  height:142px;
+  width: 23%;
+  max-width: 150px;
+
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: 35px;
+
+  cursor:pointer;
+}
+
+.squarebuttons-categories{
+  // border: 1px outset blue; //display size of button
+  //background-color: rgba(255, 255, 255, 0.804);
+  //border-radius: 5%;
+
+  margin-left: 0%;
+  margin-right:0%;
+  margin-bottom: 0%;
+  margin-top: 0%;
+
+  cursor:pointer;
+
+  @include mobile {
+    height: 30px;
+    max-height: 30px;
+  }
+  @include tablet-only {
+    height: 35px;
+    max-height: 35px;
+  }
+  @include desktop{
+    height: 35px;
+    max-height: 35px;
+  }
+}
+
+.squarebuttons-subservice{ 
+   height:80px;
+   width: 100%;
+   min-width: 100%;
+   max-width: 100%;
+ 
+   margin-left: 0%;
+   margin-right: 0%;
+   margin-top: 25px;
+ 
+   cursor:pointer;
+ }
+
 .columns {
   display: flex;
+}
+
+.capsize{
+  min-width: 56px;
+  min-height: 56px;
+  max-width: 56px;
+  max-height: 56px;
+}
+
+.alignitemscenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .centertext {
@@ -60,8 +162,30 @@ $is-narrow: 300px;
     }
   }
 
+  p.small {
+    line-height: 1.2;
+    font-size: 13px;
+  }
 
+  .blurry-text {
+    font-weight: 525;
+    color: transparent;
+    text-shadow: 0 0 0.6px rgb(55, 55, 55);
+ }
 
+ .overlay{
+    background: rgba(39,62,84,0.22);
+    overflow: hidden;
+    height: 100%;
+    z-index: 2;
+ }
+
+.extraheight{
+  height: 250px;
+}
+.maxheight{
+  max-height: fit-content;
+}
 // import bulma and optionally the extensions
 @import "bulma";
 @import "bulma-extensions";
