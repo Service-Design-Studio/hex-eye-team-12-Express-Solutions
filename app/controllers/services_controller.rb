@@ -25,7 +25,6 @@ class ServicesController < ApplicationController
     @migratable = @service.migratable
     @digital_time = @service.digital_time
     @branch_time = @service.branch_time
-
     @branch_name = ""
     
     all_locations_name = Branch.all_locations_name
@@ -34,6 +33,11 @@ class ServicesController < ApplicationController
       all_locations_name.delete(branch_name)
       all_locations_name.unshift(branch_name)
       @branch_name = branch_name
+
+      #WIP: Adds branch time to the branch service time
+      branch_waiting_time = Duration.find_by(branch_id: branch).wait_time
+      @branch_time += branch_waiting_time
+
     end
     @all_locations_name = all_locations_name
   end
