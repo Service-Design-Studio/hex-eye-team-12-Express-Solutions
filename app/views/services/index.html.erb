@@ -22,7 +22,7 @@
     <div class="column is-11-mobile is-10-tablet is-7-desktop">
 
       <div class="container alignitemscenter">
-        <h3 class="subtitle is-4" style="color:white; text-align: middle;">Top Services</h3>
+        <h3 class="subtitle is-4" style="text-align: middle;">Top Services</h3>
       </div>
 
       <div class="columns is-multiline is-centered is-vcentered has-text-center">
@@ -35,18 +35,19 @@
 
       <a href=<%= the_link %>> 
         <div class="column squarebuttons-topservice" id= <%= service.service %>> 
-          
+          <hr style="height: 2.5px; background-color:rgb(204,0,0); margin-top:-22px;">
+
           <center><figure class="image capsize is-rounded">
             <%= image_tag 'testicon_black.png' %>
           </figure></center>
           
 
-          <hr style="height: 0px; visibility: hidden; margin-bottom:5px;">
+          <hr style="height: 0px; visibility: hidden; margin-bottom:-5px;">
 
           <center><p class="small blurry-text" style="text-align: middle;"><%= the_services %></p></center>
           </a>
         </div>
-        
+
         <% end %>
       </div>
       <hr style="height: 0px; visibility: hidden; margin-bottom:-10px;">
@@ -59,7 +60,7 @@
 <div class="column is-full">
 
   <div class="container">
-    <h3 class="title is-3 alignitemscenter" style="color:white;">Main Categories</h3>
+    <h3 class="subtitle is-4 alignitemscenter" style="color:rgb(39, 39, 39);">Main Categories</h3>
     <hr style="height: 0px; visibility: hidden; margin-bottom:-15px;">
   </div>
   
@@ -72,19 +73,22 @@
         <% the_link2 = sub_services_url(service.category) %>
         <% the_services2 = service.category %>
 
-          <div class="column is-4-mobile is-3-tablet is-3-desktop squarebuttons-categories"> 
-
-            <div class="card-image">
-              <figure class="image is-1by1">
-                <%= image_tag '' %>
-              </figure>
-
-              <a href=<%= the_link2 %>>
-                <div class="is-overlay centertext">
-                    <center><p class="alignitemscenter blurry-text" style="font-size: 16px"><%= the_services2 %></p></center>   
+          <div class="column is-6-mobile is-3-tablet is-3-desktop"> 
+            <a href=<%= the_link2 %>>
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <%= image_tag '' %>
+                  </figure>
                 </div>
-              </a>
-            </div>
+
+                <hr style="height: 0px; visibility: hidden; margin-bottom:-15px;">
+
+                <div class="content squarebuttons-categories">
+                    <center><p class="alignitemscenter blurry-text" style="font-size: 14px"><%= the_services2 %></p></center>   
+                </div>
+              </div>
+            </a>
           </div>
         <% end %>
 
@@ -93,7 +97,13 @@
   </div>
 
 </div>
-<br>
 
+<div class="column is-full">
+</div>
 
-  <button class="button" id="More"><%= link_to "More", more_services_path() %></button>
+<button class="button" id="More"><%= link_to "More", more_services_path() %></button>
+
+<div class="column is-full">
+</div>
+<div class="column is-full">
+</div>

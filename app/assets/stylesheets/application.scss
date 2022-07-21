@@ -17,11 +17,12 @@ $fullhd-enabled: false;
 
 // GLOBAL BUTTONS COLOR EDITS
 //---------------------------
-$link: $black;
-$link-hover: #474747;
+$link: $white;
+$link-hover: #b0b0b0;
 //---------------------------
 
-$button-background-color: #5a5a5a;
+$button-background-color: rgb(255, 0, 0);
+
 
 $box-padding: 18px;
 $box-background-color: #454545;
@@ -52,17 +53,18 @@ $is-narrow: 300px;
 }
 
 .gradientheader {
-  background-image: linear-gradient(rgb(255, 255, 255),rgb(188, 188, 188));
+  background-image: linear-gradient(rgb(225, 225, 225),rgb(220, 220, 220));
 }
 
 .gradienttopservices {
-  background-image: linear-gradient(rgb(151, 0, 0), rgb(221, 67, 67));
+  //background-image: linear-gradient(rgb(212, 212, 212), rgb(212, 210, 212));
+  background-color: #e9e9e9;
 }
 
 .squarebuttons-topservice{
-  border: 2px outset rgb(200, 200, 200);
-  background-color: rgb(255, 255, 255);
-  border-radius: 5%;
+ //border: 2px outset rgb(200, 200, 200);
+ //background-color: rgb(255, 255, 255);
+ //border-radius: 5%;
 
 
   height:142px;
@@ -78,19 +80,32 @@ $is-narrow: 300px;
 
 .squarebuttons-categories{
   // border: 1px outset blue; //display size of button
-  background-color: rgba(255, 255, 255, 0.804);
-  border-radius: 5%;
+  //background-color: rgba(255, 255, 255, 0.804);
+  //border-radius: 5%;
 
   margin-left: 0%;
   margin-right:0%;
-  margin-bottom: 1%;
-  margin-top: 1%;
+  margin-bottom: 0%;
+  margin-top: 0%;
 
   cursor:pointer;
+
+  @include mobile {
+    height: 30px;
+    max-height: 30px;
+  }
+  @include tablet-only {
+    height: 35px;
+    max-height: 35px;
+  }
+  @include desktop{
+    height: 35px;
+    max-height: 35px;
+  }
 }
 
 .gradientbody {
-  background: linear-gradient(rgb(255, 255, 255), rgb(211, 211, 211));
+  background: linear-gradient(rgb(255, 255, 255), rgb(246, 246, 246));
   background-size:100% 100%;
 }
 
@@ -108,7 +123,6 @@ $is-narrow: 300px;
   justify-content: center;
   align-items: center;
 }
-
 
 .centertext {
     padding-left: 3%;
@@ -137,7 +151,14 @@ $is-narrow: 300px;
   .blurry-text {
     font-weight: 525;
     color: transparent;
-    text-shadow: 0 0 0.7px rgb(55, 55, 55);
+    text-shadow: 0 0 0.6px rgb(55, 55, 55);
+ }
+
+ .overlay{
+    background: rgba(39,62,84,0.22);
+    overflow: hidden;
+    height: 100%;
+    z-index: 2;
  }
 
 
