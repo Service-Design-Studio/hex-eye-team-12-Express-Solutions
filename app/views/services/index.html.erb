@@ -10,12 +10,8 @@
       <center><h6 class="title alignitemscenter" style="color:white;">What are you looking for?</h6></center><br>
 
       <div class="container">
-        <% if session[:branch] != nil %>
-          <h6 class="subtitle"><%=Branch.find_by(branch: session[:branch]).branch_name%></h6>
-        <% end %>
 
-        <div class="dropdown-container" id="search">
-          <h6 class="title is-3 has-text-left">What are you looking for?</h6>  
+        <div class="dropdown-container" id="search"> 
           
           <input class="input is-rounded" type="text" placeholder="🔍 Search for a service" id="myInput" onkeyup="check_timeout()">  
           
