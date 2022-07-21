@@ -2,7 +2,8 @@ class CreateAllServices < ActiveRecord::Migration[7.0]
   def change
     create_table :all_services do |t|
       t.string :category
-      t.string :category_id
+      t.integer :category_id
+      t.string :service_id
       t.string :service
       t.string :migratable
       t.integer :count
