@@ -6,7 +6,7 @@ So that my banking needs can be fulfilled in a timely manner
 
 Background: Categories have been added to database
     Given the following services exist:
-    | category                  | category_id              | service                   | migratable    | count     |
+    | category                  | service_id                | service                   | migratable    | count     |
     | Account Opening           | CASA OPENING ADDON        | Opening Addon             | True          | 50        |
     | Cash                      | CASH DEPOSIT              | Cash Deposit              | False         | 10000     |
     | Personal Info Update      | UPDATE CUSTOMER PHONE     | Update Phone              | True          | 10000     |
