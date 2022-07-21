@@ -63,7 +63,7 @@ $is-narrow: 300px;
 
 .gradienttopservices {
   //background-image: linear-gradient(rgb(212, 212, 212), rgb(212, 210, 212));
-  background-color: #e9e9e9;
+  background-color: #ececec;
 }
 
 .gradientsubservices {
@@ -180,7 +180,12 @@ $is-narrow: 300px;
     z-index: 2;
  }
 
-
+.extraheight{
+  height: 250px;
+}
+.maxheight{
+  max-height: fit-content;
+}
 // import bulma and optionally the extensions
 @import "bulma";
 @import "bulma-extensions";

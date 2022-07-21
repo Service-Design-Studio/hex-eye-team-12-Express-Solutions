@@ -1,47 +1,52 @@
 <center>
+<div class="column is-full">
+  <br><h1 class='title'><%= @service.service%></h1>
+</div>
+
+<% if @migratable == 'TRUE'%>
+
   <div class="column is-full">
-    <br><h1 class='title'><%= @service.service%></h1>
+    <div>
+      <b><p style="font-size:25px; color:DimGray">Do it digitally</p></b>
+        <% @digital_time = @digital_time.to_s + ' min' %>
+        <h2>Estimated time: <b><%= @digital_time %></b> </h2><br>
+
+        <button class="button is-large is-responsive is-rounded">
+          <p style="font-size:22px; color:white;">Start</p>
+        </button>
+    </div>
   </div>
-    <% if @migratable == 'TRUE'%>
 
-      <div class="column is-full">
-        <div>
-          <b><p style="font-size:25px; color:DimGray">Do it digitally</p></b>
-            <% @digital_time = @digital_time.to_s + ' min' %>
-            <h2>Estimated time: <b><%= @digital_time %></b> </h2><br>
-
-            <button class="button is-large is-responsive is-rounded">
-              <p style="font-size:22px; color:white;">Start</p>
-            </button>
-        </div>
-      </div>
-
-      <div class="column is-full">
-        <div>
-          <hr style="height: 4px; color:black; background-color:gray;">
-            <div class="columns is-centered is-vcentered">
-              <h3 class="title is-5 is-vcentered">OR</h3>
-            </div> 
-        </div>
-      </div><br>
-
-
-  <% end %>
+  <div class="column is-full">
+    <div>
+      <hr style="height: 4px; color:black; background-color:gray;">
+        <div class="columns is-centered is-vcentered">
+          <h3 class="title is-5 is-vcentered">OR</h3>
+        </div> 
+    </div>
+  </div>
   
+<% end %>
 
-  <div class="column is-full">
-    <b><p style="font-size:25px; color:DimGray">Do it at a branch</p></b>
 
-    <% @branch_time  = @branch_time.to_s + ' min' %>
-    <h2>Estimated time: <b> <%= @branch_time %> </b></h2><br>
-    <div class="select is-rounded">
-    <%= form_with url: show_QR_path, method: :get, id: 'branch_form' do |form| %>
-      <%= form.select :branch_name, @all_locations_name %>
-      <br>
-      <%= form.submit "Get Queue Number", class: "button is-large is-responsive is-rounded",  style: "font-size:22px; color:white;"%>
-    <% end %>
-    </div><br>
-  </div>
+<div class="column is-full">
+  <b><p style="font-size:25px; color:DimGray">Do it at a branch</p></b>
+
+  <% @branch_time  = @branch_time.to_s + ' min' %>
+  <h2>Estimated time: <b> <%= @branch_time %> </b></h2><br>
+  <div class="select is-rounded">
+  <%= form_with url: show_QR_path, method: :get, id: 'branch_form' do |form| %>
+    <%= form.select :branch_name, @all_locations_name %>
+    <br>
+    <%= form.submit "Get Queue Number", class: "button is-large is-responsive is-rounded",  style: "font-size:22px; color:white;"%>
+  <% end %>
+  </div><br>
+</div>
+
+<div class="column is-full extraheight">
+</div>
+<div class="column is-full extraheight">
+</div>
 </center>
 
 
