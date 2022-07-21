@@ -6,7 +6,7 @@ So that my banking needs can be fulfilled in a timely manner
 
 Background: Categories have been added to database
     Given the following services exist:
-    | category                  | category_int              | service                   | migratable    | count     |
+    | category                  | category_id              | service                   | migratable    | count     |
     | Account Opening           | CASA OPENING ADDON        | Opening Addon             | True          | 50        |
     | Cash                      | CASH DEPOSIT              | Cash Deposit              | False         | 10000     |
     | Personal Info Update      | UPDATE CUSTOMER PHONE     | Update Phone              | True          | 10000     |
@@ -33,7 +33,7 @@ Scenario: Customer goes to MBFC branch and scans QR Code
 
 Scenario: Customer tries a random url of our web service #sad path
     When I visit "/randomsite"
-    Then I should see the headers "One-Stop Solutions, What are you looking for?"
+    Then I should see the headers "What are you looking for?"
     Then I should not see the headers "randomsite"
 
 #----------------------------------------------------------------------------------------------------
