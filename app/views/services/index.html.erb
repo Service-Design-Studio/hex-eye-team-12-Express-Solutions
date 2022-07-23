@@ -45,14 +45,15 @@
 
         <% the_link = time_estimate_url(service) %>
         <% the_services = service.service %>
-        <% the_services = '' + the_services + '' %>
+        <% img_link = service.service_image_link.to_s %>
+        
 
       <a href=<%= the_link %>> 
-        <div class="column squarebuttons-topservice" id= <%= service.service %>> 
+        <div class="column squarebuttons-topservice" id= <%= the_services %>> 
           <hr style="height: 2.5px; background-color:rgb(204,0,0); margin-top:-22px;">
 
           <center><figure class="image capsize is-rounded">
-            <%= image_tag 'icons/Update Particulars.png' %>
+            <%= image_tag img_link %>
           </figure></center>
           
 
@@ -155,7 +156,7 @@
         service = services[i];
         a = document.getElementById(String(i+1));
         a.innerText = service;
-        a.href = `services/${id[i]+2}/time_estimate`;
+        a.href = time_estimate_url(service);
       }
   }
 
