@@ -37,3 +37,7 @@
  
 # data_cleaning.ipynb
 *.ipynb
+
+
+# ignore pycache folder from searchbar flask feature
+__pycache__/
