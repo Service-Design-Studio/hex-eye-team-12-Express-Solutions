@@ -72,10 +72,6 @@ $is-narrow: 300px;
 }
 
 .squarebuttons-topservice{
- //border: 2px outset rgb(200, 200, 200);
- //background-color: rgb(255, 255, 255);
- //border-radius: 5%;
-
   height:142px;
   width: 23%;
   max-width: 150px;
@@ -87,11 +83,19 @@ $is-narrow: 300px;
   cursor:pointer;
 }
 
-.squarebuttons-categories{
-  // border: 1px outset blue; //display size of button
-  //background-color: rgba(255, 255, 255, 0.804);
-  //border-radius: 5%;
+.topservicebutton {
+  background-color: transparent;
+  height:142px;
+}
 
+.topservicebutton:hover {
+  background-color: #9c9c9c2b;
+  height:142px;
+
+  transform: translateY(-5px);
+}
+
+.textarea-categories{
   margin-left: 0%;
   margin-right:0%;
   margin-bottom: 0%;
@@ -113,18 +117,50 @@ $is-narrow: 300px;
   }
 }
 
+.categoriesbutton:hover{
+  transform: translateY(-5px);
+}
+
 .squarebuttons-subservice{ 
-   height:80px;
-   width: 100%;
-   min-width: 100%;
-   max-width: 100%;
+  background-color: transparent;
+
+  height:80px;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
  
-   margin-left: 0%;
-   margin-right: 0%;
-   margin-top: 25px;
+  margin-left: 0%;
+  margin-right: 0%;
+  margin-top: 25px;
  
-   cursor:pointer;
+  cursor:pointer;
  }
+
+.squarebuttons-subservice:hover{
+  background-color: #9c9c9c2b;
+
+  transform: translateY(-5px);
+}
+
+.popoutbuttons{
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #ff0000;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 7px #999;
+}
+.popoutbuttons:hover{
+  background-color: #d80000;
+}
+.popoutbuttons:active{
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
 
 .columns {
   display: flex;
