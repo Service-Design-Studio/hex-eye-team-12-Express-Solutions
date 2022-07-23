@@ -11,7 +11,7 @@
         <% @digital_time = @digital_time.to_s + ' min' %>
         <h2>Estimated time: <b><%= @digital_time %></b> </h2><br>
 
-        <button class="button is-large is-responsive is-rounded">
+        <button class="popoutbuttons">
           <p style="font-size:22px; color:white;">Start</p>
         </button>
     </div>
@@ -38,7 +38,7 @@
   <%= form_with url: show_QR_path, method: :get, id: 'branch_form' do |form| %>
     <%= form.select :branch_name, @all_locations_name %>
     <br>
-    <%= form.submit "Get Queue Number", class: "button is-large is-responsive is-rounded",  style: "font-size:22px; color:white;"%>
+    <%= form.submit "Get Queue Number", class: "popoutbuttons",  style: "font-size:22px; color:white;"%>
   <% end %>
   </div><br>
 </div>

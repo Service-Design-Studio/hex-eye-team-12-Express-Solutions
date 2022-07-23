@@ -48,20 +48,21 @@
         <% img_link = service.service_image_link.to_s %>
         
 
-      <a href=<%= the_link %>> 
-        <div class="column squarebuttons-topservice" id= <%= the_services %>> 
-          <hr style="height: 2.5px; background-color:rgb(204,0,0); margin-top:-22px;">
+        <a href=<%= the_link %>> 
+          <div class="column squarebuttons-topservice" id= <%= the_services %>> 
+            <div class="topservicebutton">
+              <hr style="height: 2.5px; background-color:rgb(204,0,0); margin-top:-22px;">
+              
+              <center><figure class="image capsize is-rounded">
+                <%= image_tag img_link %>
+              </figure></center>
+              
+              <hr style="height: 0px; visibility: hidden; margin-bottom:-5px;">
 
-          <center><figure class="image capsize is-rounded">
-            <%= image_tag img_link %>
-          </figure></center>
-          
-
-          <hr style="height: 0px; visibility: hidden; margin-bottom:-5px;">
-
-          <center><p class="small blurry-text" style="text-align: middle;"><%= the_services %></p></center>
-          </a>
-        </div>
+              <center><p class="small blurry-text" style="text-align: middle;"><%= the_services %></p></center>
+            </div>
+        </a>
+          </div>
 
         <% end %>
       </div>
@@ -87,7 +88,7 @@
         <% the_link2 = sub_services_url(service.category) %>
         <% the_services2 = service.category %>
 
-          <div class="column is-6-mobile is-3-tablet is-3-desktop"> 
+          <div class="column is-6-mobile is-3-tablet is-3-desktop categoriesbutton"> 
             <a href=<%= the_link2 %>>
               <div class="card">
                 <div class="card-image">
@@ -98,7 +99,7 @@
 
                 <hr style="height: 0px; visibility: hidden; margin-bottom:-15px;">
 
-                <div class="content squarebuttons-categories">
+                <div class="content textarea-categories">
                     <center><p class="alignitemscenter blurry-text" style="font-size: 14px"><%= the_services2 %></p></center>   
                 </div>
               </div>
