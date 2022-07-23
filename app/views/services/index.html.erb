@@ -30,17 +30,19 @@
 
 </div>
 
+<div class="column is-full" style='margin-top:-10px;'>
+</div>
 
-<div class="column is-full gradienttopservices">
+<div class="container alignitemscenter">
+      <h3 class="title is-4" style="text-align: middle;">Top Services</h3>
+</div>
 
+<div class="column is-full" style='margin-top:-10px;'>
+</div>
 
+<div class="column is-full gradienttopservices" style='box-shadow: 0 7px rgb(220,220,220);'>
   <div class="columns is-centered">
     <div class="column is-11-mobile is-10-tablet is-7-desktop">
-
-      <div class="container alignitemscenter">
-        <h3 class="subtitle is-4" style="text-align: middle;">Top Services</h3>
-      </div>
-
       <div class="columns is-multiline is-centered is-vcentered has-text-center">
 
         <% @topServices.each do |service| %>
@@ -53,7 +55,7 @@
         <a href=<%= the_link %>> 
           <div class="column squarebuttons-topservice" id= <%= the_services %>> 
             <div class="topservicebutton">
-              <hr style="height: 2.5px; background-color:rgb(204,0,0); margin-top:-22px;">
+              <hr style="height: 2.5px; background-color:rgb(204,0,0); margin-top:-50px;">
               
               <center><figure class="image capsize is-rounded">
                 <%= image_tag img_link %>
@@ -72,12 +74,14 @@
     </div>
   </div>
 </div>
-<br>
+
+<div class="column is-full" style='margin-top:-15px;'>
+</div>
   
 <div class="column is-full">
 
   <div class="container">
-    <h3 class="subtitle is-4 alignitemscenter" style="color:rgb(39, 39, 39);">Main Categories</h3>
+    <h3 class="title is-4 alignitemscenter" style="color:rgb(39, 39, 39);">Main Categories</h3>
     <hr style="height: 0px; visibility: hidden; margin-bottom:-15px;">
   </div>
   
