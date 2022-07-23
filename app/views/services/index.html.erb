@@ -1,8 +1,8 @@
-
 <div class="column is-full dbsbackground">
-  <div class="columns is-vcentered is-centered has-text-center">
+  <div class="columns is-multiline is-vcentered is-centered has-text-center">
 
     <div class="column is-half-tablet is-four-fifths-mobile">
+
       <% if session[:branch] != nil %>
         <h6 class="subtitle alignitemscenter" style="color:white;"><%=Branch.find_by(branch: session[:branch]).branch_name%></h6>
       <% end %>
@@ -10,11 +10,8 @@
       <center><h6 class="title alignitemscenter" style="color:white;">What are you looking for?</h6></center><br>
 
       <div class="container">
-
-        <div class="dropdown-container" id="search"> 
-          
-          <input class="input is-rounded" type="text" placeholder="🔍 Search for a service" id="myInput" onkeyup="check_timeout()">  
-          
+        <div class="dropdown-container" id="search">    
+          <input class="input is-rounded" type="text" placeholder="🔍 Search for a service" id="myInput" onkeyup="check_timeout()">    
           <div class="dropdown display" id="results" style="display: none">
             <a id="1"></a>
             <a id="2"></a>
@@ -22,10 +19,15 @@
             <a id="4"></a>
             <a id="5"></a>
           </div>
-        </div>  
+        </div> 
       </div>
     </div>
+
   </div>
+
+  <div class="column is-full" style='margin-top:-15px;'>
+  </div>
+
 </div>
 
 
@@ -116,7 +118,7 @@
 <div class="column is-full">
 </div>
 
-<button class="button" id="More"><%= link_to "More", more_services_path() %></button>
+<button class="popoutbuttons" id="More"><%= link_to "More", more_services_path() %></button>
 
 <script>
   var timeout = null;

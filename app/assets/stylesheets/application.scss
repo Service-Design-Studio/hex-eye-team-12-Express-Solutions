@@ -15,7 +15,7 @@ $widescreen-enabled: false;
 // Disable the fullhd breakpoint
 $fullhd-enabled: false;
 
-// GLOBAL BUTTONS COLOR EDITS
+// GLOBAL BUTTONS DEFAULT COLOR
 //---------------------------
 $link: $white;
 $link-hover: #b0b0b0;
@@ -50,6 +50,7 @@ $is-narrow: 300px;
   background-color: rgb(255, 255, 255);
   box-shadow: 5px 10px 10px rgb(0, 0, 0);
   max-height: 90px;
+  $link:black;
 }
 
 .gradientbody {
@@ -76,8 +77,8 @@ $is-narrow: 300px;
   width: 23%;
   max-width: 150px;
 
-  margin-left: 1%;
-  margin-right: 1%;
+  margin-left: 0%;
+  margin-right: 0%;
   margin-top: 35px;
 
   cursor:pointer;
@@ -87,7 +88,6 @@ $is-narrow: 300px;
   background-color: transparent;
   height:142px;
 }
-
 .topservicebutton:hover {
   background-color: #9c9c9c2b;
   height:142px;
@@ -116,7 +116,6 @@ $is-narrow: 300px;
     max-height: 35px;
   }
 }
-
 .categoriesbutton:hover{
   transform: translateY(-5px);
 }
@@ -135,7 +134,6 @@ $is-narrow: 300px;
  
   cursor:pointer;
  }
-
 .squarebuttons-subservice:hover{
   background-color: #9c9c9c2b;
 
@@ -149,7 +147,7 @@ $is-narrow: 300px;
   cursor: pointer;
   outline: none;
   color: #fff;
-  background-color: #ff0000;
+  background-color: #eb0000;
   border: none;
   border-radius: 30px;
   box-shadow: 0 7px #999;
@@ -160,6 +158,33 @@ $is-narrow: 300px;
 .popoutbuttons:active{
   box-shadow: 0 3px #666;
   transform: translateY(4px);
+}
+
+.More{
+  $link:black; 
+  color:black;
+}
+
+.selectedtext{
+  padding: 15px 25px;
+  font-size: 20px;
+  font-weight: 525;
+  color:#999;
+  text-align: center;
+  outline: none;
+  color: #fff;
+  background-color: rgb(204,0,0);
+  border: none;
+  border-radius: 100px;
+}
+
+.boxoutline{
+  @include tablet-only {
+    outline: 3px dashed rgb(204,0,0);
+  }
+  @include desktop{
+    outline: 3px dashed rgb(204,0,0);
+  }
 }
 
 .columns {
@@ -177,51 +202,59 @@ $is-narrow: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .centertext {
-    padding-left: 3%;
-    padding-right: 3%;
+  padding-left: 3%;
+  padding-right: 3%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    @include mobile {
-      font-size:15px;
-    }
-    @include tablet-only {
-      font-size:18px;
-    }
-    @include desktop{
-      font-size:18px;
-    }
+  @include mobile {
+    font-size:15px;
   }
-
-  p.small {
-    line-height: 1.2;
-    font-size: 13px;
+  @include tablet-only {
+    font-size:18px;
   }
+  @include desktop{
+    font-size:18px;
+  }
+}
 
-  .blurry-text {
-    font-weight: 525;
-    color: transparent;
-    text-shadow: 0 0 0.6px rgb(55, 55, 55);
- }
+p.small {
+  line-height: 1.2;
+  font-size: 13px;
+}
 
- .overlay{
-    background: rgba(39,62,84,0.22);
-    overflow: hidden;
-    height: 100%;
-    z-index: 2;
- }
+.blurry-text {
+  font-weight: 525;
+  color: transparent;
+  text-shadow: 0 0 0.6px rgb(55, 55, 55);
+}
+
+.overlay{
+  background: rgba(39,62,84,0.22);
+  overflow: hidden;
+  height: 100%;
+  z-index: 2;
+}
 
 .extraheight{
   height: 250px;
 }
+
 .maxheight{
   max-height: fit-content;
 }
+
+.maxwidth_desktop{
+  max-width: 450px;
+}
+
+
 // import bulma and optionally the extensions
 @import "bulma";
 @import "bulma-extensions";
