@@ -17,22 +17,23 @@
       <div class="columns is-multiline is-centered is-vcentered has-text-center">
 
         <% @services.each do |service| %>
-        <% @the_link = time_estimate_url(service) %>
-        <% @the_services = service.service %>
+        <% the_link = time_estimate_url(service) %>
+        <% img_link = service.service_image_link.to_s %>
+        <% the_services = service.service %>
 
-        <a href=<%= @the_link %>> 
-          <div class="column squarebuttons-subservice" id= <%= @the_services %>> 
+        <a href=<%= the_link %>> 
+          <div class="column squarebuttons-subservice" id= <%= the_services %>> 
 
             <article class="media">
               <figure class="media-left">
                 <p class="image capsize">
-                  <%= image_tag 'testicon_black.png' %>    
+                  <%= image_tag img_link %>    
                 </p>
               </figure>
 
               <div class="media-content">
                 <div class="content">
-                  <p class="small blurry-text" style="text-align: middle; font-size: 16px; padding-top: 18px; padding-bottom: 8px;"><%= @the_services %></p>
+                  <p class="small blurry-text" style="text-align: middle; font-size: 16px; padding-top: 18px; padding-bottom: 8px;"><%= the_services %></p>
                 </div>
               </div>
             </article>
