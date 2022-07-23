@@ -18,7 +18,7 @@ $fullhd-enabled: false;
 // GLOBAL BUTTONS DEFAULT COLOR
 //---------------------------
 $link: $white;
-$link-hover: #b0b0b0;
+$link-hover: #ffffff;
 //---------------------------
 
 $button-background-color: rgb(255, 0, 0);
@@ -73,15 +73,13 @@ $is-narrow: 300px;
 }
 
 .squarebuttons-topservice{
-  height:142px;
+  height:80px;
   width: 23%;
   max-width: 150px;
 
   margin-left: 0%;
   margin-right: 0%;
   margin-top: 35px;
-
-  cursor:pointer;
 }
 
 .topservicebutton {
@@ -96,24 +94,17 @@ $is-narrow: 300px;
 }
 
 .textarea-categories{
-  margin-left: 0%;
-  margin-right:0%;
-  margin-bottom: 0%;
-  margin-top: 0%;
 
   cursor:pointer;
 
   @include mobile {
     height: 30px;
-    max-height: 30px;
   }
   @include tablet-only {
     height: 35px;
-    max-height: 35px;
   }
   @include desktop{
-    height: 35px;
-    max-height: 35px;
+    height: 37px;
   }
 }
 .categoriesbutton:hover{
@@ -141,22 +132,24 @@ $is-narrow: 300px;
 }
 
 .popoutbuttons{
-  padding: 15px 25px;
-  font-size: 24px;
+  
+  padding: 10px 22px;
+  font-size: 16px;
   text-align: center;
+  
   cursor: pointer;
   outline: none;
   color: #fff;
   background-color: #eb0000;
   border: none;
-  border-radius: 30px;
-  box-shadow: 0 7px #999;
+  border-radius: 5px;
+  box-shadow: 0 4px #999;
 }
 .popoutbuttons:hover{
   background-color: #d80000;
 }
 .popoutbuttons:active{
-  box-shadow: 0 3px #666;
+  box-shadow: 0 1px #666;
   transform: translateY(4px);
 }
 
