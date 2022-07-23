@@ -117,20 +117,23 @@
 </div>
 
 <button class="button" id="More"><%= link_to "More", more_services_path() %></button>
+
 <script>
   var timeout = null;
+
   function check_timeout() {
     clearTimeout(timeout);
     timeout = setTimeout(filterFunction(), 10000);
   }
+
   async function filterFunction() {
-  
-    var input, filter, div, a
-    
+    var input, filter, div, a 
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
     div = document.getElementById("results");
+    
     setInterval(function() {
+      
       if(input=== document.activeElement) {
           div.style.display = "block";
           console.log('set to block')
@@ -163,6 +166,7 @@
     return fetch('http://127.0.0.1:5000/predict?query='+inp)
     .then(response => response.json());
   }
+
 </script>
 
 <div class="column is-full">
