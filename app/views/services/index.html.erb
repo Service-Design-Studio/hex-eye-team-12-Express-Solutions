@@ -93,20 +93,21 @@
 
         <% the_link2 = sub_services_url(service.category) %>
         <% the_services2 = service.category %>
-
+        
           <div class="column is-6-mobile is-3-tablet is-3-desktop categoriesbutton"> 
             <a href=<%= the_link2 %>>
               <div class="card">
+                
                 <div class="card-image">
                   <figure class="image is-4by3">
-                    <%= image_tag '' %>
+                    <%= image_tag "categories/apply_for_digibank.jpg" %>
                   </figure>
                 </div>
 
                 <hr style="height: 0px; visibility: hidden; margin-bottom:-15px;">
 
                 <div class="content textarea-categories">
-                    <center><p class="alignitemscenter blurry-text" style="font-size: 14px"><%= the_services2 %></p></center>   
+                    <center><p class="alignitemscenter blurry-text" style="font-size: 13px;"><%= the_services2 %></p></center>   
                 </div>
               </div>
             </a>
