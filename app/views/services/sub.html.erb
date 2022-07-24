@@ -22,23 +22,26 @@
         <% the_services = service.service %>
 
         <a href=<%= the_link %>> 
-          <div class="column squarebuttons-subservice" id= <%= the_services %>> 
+          <div class="column squarebuttons-subservice is-full" id= <%= the_services %>> 
 
-            <article class="media">
-              <figure class="media-left">
-                <p class="image capsize">
-                  <%= image_tag img_link %>    
-                </p>
-              </figure>
+            <div class="card" style='padding-top:12px; padding-bottom:1px; overflow-y:hidden;'>
 
-              <div class="media-content">
-                <div class="content">
-                  <p class="small blurry-text" style="text-align: middle; font-size: 16px; padding-top: 18px; padding-bottom: 8px;"><%= the_services %></p>
+              <article class="media">
+                <figure class="media-left" style="padding-left:25px;">
+                  <p class="image capsize">
+                    <%= image_tag img_link %>    
+                  </p>
+                </figure>
+
+                <div class="media-content" style='overflow-y:hidden;'>
+                  <div class="content">
+                    <p class="small blurry-text" style="text-align: middle; font-size: 16px; padding-top: 18px;"><%= the_services %></p>
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
 
-            <hr style="height: 2px; background-color:rgb(204,0,0); margin-top:20px;">
+              <hr style="height: 2px; background-color:rgb(204,0,0); margin-top:-15px; margin-bottom:10px;">
+            </div>
         </a>
       </div>
       <% end %>

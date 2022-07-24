@@ -40,7 +40,7 @@
 <div class="column is-full" style='margin-top:-10px;'>
 </div>
 
-<div class="column is-full gradienttopservices" style='box-shadow: 0 7px rgb(220,220,220);'>
+<div class="column is-full gradienttopservices" style='box-shadow: 0 5px rgb(220,220,220);'>
   <div class="columns is-centered">
     <div class="column is-11-mobile is-10-tablet is-7-desktop">
       <div class="columns is-multiline is-centered is-vcentered has-text-center">
@@ -93,14 +93,16 @@
 
         <% the_link2 = sub_services_url(service.category) %>
         <% the_services2 = service.category %>
+        <% cat_link = service.cat_image_link.to_s %>
         
+
           <div class="column is-6-mobile is-3-tablet is-3-desktop categoriesbutton"> 
             <a href=<%= the_link2 %>>
               <div class="card">
                 
                 <div class="card-image">
                   <figure class="image is-4by3">
-                    <%= image_tag "categories/apply_for_digibank.jpg" %>
+                    <%= image_tag cat_link %>
                   </figure>
                 </div>
 
