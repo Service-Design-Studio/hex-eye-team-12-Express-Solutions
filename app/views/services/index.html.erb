@@ -1,3 +1,8 @@
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<%= javascript_include_tag "autocomplete.js" %>
+
+
 <div class="column is-full dbsbackground">
   <div class="columns is-multiline is-vcentered is-centered has-text-center">
 
@@ -11,13 +16,10 @@
 
       <div class="container">
         <div class="dropdown-container" id="search">    
-          <input class="input is-rounded" type="text" placeholder="🔍 Search for a service" id="myInput" onkeyup="check_timeout()">    
+          <input class="input is-rounded" type="text" placeholder="🔍 Search for a service" id="myInput" />
+          <%# onkeyup="check_timeout()" >     %>
           <div class="dropdown display" id="results" style="display: none">
-            <a id="1"></a>
-            <a id="2"></a>
-            <a id="3"></a>
-            <a id="4"></a>
-            <a id="5"></a>
+            <%# <ul></ul> %>
           </div>
         </div> 
       </div>
@@ -123,57 +125,6 @@
 </div>
 
 <button class="popoutbuttons" id="More"><%= link_to "More", more_services_path() %></button>
-
-<script>
-  var timeout = null;
-
-  function check_timeout() {
-    clearTimeout(timeout);
-    timeout = setTimeout(filterFunction(), 10000);
-  }
-
-  async function filterFunction() {
-    var input, filter, div, a 
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    div = document.getElementById("results");
-    
-    setInterval(function() {
-      
-      if(input=== document.activeElement) {
-          div.style.display = "block";
-          console.log('set to block')
-          if (input.value.length < 3) {
-            div.style.display = "none";
-            }
-      } else {
-            div.style.display = "none";
-            console.log('set to none')
-        }
-    }, 1000);
-
-    searchDict =  await query(input.value);
-    // console.log(searchDict);
-    id = searchDict["top_5_index"];
-    services = searchDict['top_5_services'];
-    // console.log(services);
-    
-      for (i = 0; i < 5; i++) {
-        index = String(i);
-        service = services[i];
-        a = document.getElementById(String(i+1));
-        a.innerText = service;
-        a.href = time_estimate_url(service);
-      }
-  }
-
-  function query(inp) {
-    // implement getrequest 
-    return fetch('http://127.0.0.1:5000/predict?query='+inp)
-    .then(response => response.json());
-  }
-
-</script>
 
 <div class="column is-full">
 </div>
