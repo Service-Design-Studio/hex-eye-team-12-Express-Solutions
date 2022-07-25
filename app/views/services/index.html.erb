@@ -166,7 +166,7 @@
         service = services[i];
         a = document.getElementById(String(i+1));
         a.innerText = service;
-        a.href = time_estimate_url(service);
+        a.href = `/services/${i+1}/time_estimate`;
       }
   }
 
