@@ -1,5 +1,6 @@
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
 <%= javascript_include_tag "autocomplete.js" %>
 
 
@@ -16,10 +17,11 @@
 
       <div class="container">
         <div class="dropdown-container" id="search">    
-          <input class="input is-rounded" type="text" placeholder="🔍 Search for a service" id="myInput" />
+          <input class="input is-rounded" type="text" placeholder="🔍 Search for a service" id="myInput" onkeyup='filterFunction()'/>
           <%# onkeyup="check_timeout()" >     %>
           <div class="dropdown display" id="results" style="display: none">
             <%# <ul></ul> %>
+            <a></a>
           </div>
         </div> 
       </div>
