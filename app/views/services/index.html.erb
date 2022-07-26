@@ -1,17 +1,23 @@
 <div class="column is-full dbsbackground">
 
-  <div class="column is-full" style='margin-top:140px;'>
+  <div class="column is-full" style='margin-top:7vh;'>
   </div>
 
   <div class="columns is-multiline is-vcentered is-centered has-text-center">
 
     <div class="column is-half-tablet is-four-fifths-mobile">
 
-      <% if session[:branch] != nil %>
-        <h6 class="subtitle alignitemscenter" style="color:white;"><%=Branch.find_by(branch: session[:branch]).branch_name%></h6>
-      <% end %>
+      <div class="container alignitemscenter">
+        <h3 class="title is-3" style="text-align: middle; color:white;">Inspirational DBS quote here</h3>
+      </div>
 
-      <center><h6 class="title alignitemscenter" style="color:white;">What are you looking for?</h6></center><br>
+      <div class="column is-full" style='margin-top:6vh;'>
+      </div>
+
+
+      <% if session[:branch] != nil %>
+        <h4 class="subtitle is-4 alignitemscenter" style="color:white;"><%=Branch.find_by(branch: session[:branch]).branch_name%></h4>
+      <% end %>
 
       <div class="container">
         <div class="dropdown-container" id="search">    
@@ -28,53 +34,58 @@
     </div>
   </div>
 
-  <div class="column is-full" style='margin-top:-5px;'>
+  <div class="column is-full" style='margin-top:3vh;'>
   </div>
 
   <div class="container alignitemscenter">
-      <h3 class="title is-4" style="text-align: middle; color:white;">Top Services</h3>
+      <h3 class="title" style="text-align: middle; color:white; font-size:28px;">Are you looking for these?</h3>
   </div>
 
-  <div class="column is-full" style='margin-top:-10px;'>
+  <div class="column is-full" style='margin-top:5px;'>
   </div>
 
   <div class="column is-full gradienttopservices" style='box-shadow: 0 5px rgb(220,220,220);'>
-      <div class="columns is-centered">
-        <div class="column is-11-mobile is-10-tablet is-7-desktop">
-          <div class="columns is-multiline is-centered is-vcentered has-text-center">
+    <div class="columns is-centered">
+      <div class="column is-11-mobile is-10-tablet is-7-desktop">
+        <div class="columns is-multiline is-centered is-vcentered has-text-center">
 
-            <% @topServices.each do |service| %>
+          <% @topServices.each do |service| %>
 
-            <% the_link = time_estimate_url(service) %>
-            <% the_services = service.service %>
-            <% img_link = service.service_image_link.to_s %>
-            
+          <% the_link = time_estimate_url(service) %>
+          <% the_services = service.service %>
+          <% img_link = service.service_image_link.to_s %>
+          
 
-            <a href=<%= the_link %>> 
-              <div class="column squarebuttons-topservice" id= <%= the_services %>> 
-                <div class="topservicebutton">
-                  <hr style="height: 2.5px; background-color:rgb(204,0,0); margin-top:-50px;">
-                  
-                  <center><figure class="image capsize is-rounded">
-                    <%= image_tag img_link %>
-                  </figure></center>
-                  
-                  <hr style="height: 0px; visibility: hidden; margin-bottom:-5px;">
+          <a href=<%= the_link %>> 
+            <div class="column squarebuttons-topservice" id= <%= the_services %>> 
+              <div class="topservicebutton">
+                <hr style="height: 2.5px; background-color:rgb(204,0,0); margin-top:-50px;">
+                
+                <center><figure class="image capsize is-rounded">
+                  <%= image_tag img_link %>
+                </figure></center>
+                
+                <hr style="height: 0px; visibility: hidden; margin-bottom:-5px;">
 
-                  <center><p class="small blurry-text" style="text-align: middle;"><%= the_services %></p></center>
-                </div>
-            </a>
+                <center><p class="small blurry-text" style="text-align: middle;"><%= the_services %></p></center>
               </div>
+          </a>
+            </div>
 
-            <% end %>
-          </div>
-          <hr style="height: 0px; visibility: hidden; margin-bottom:-10px;">
+          <% end %>
         </div>
+        <hr style="height: 0px; visibility: hidden; margin-bottom:-10px;">
       </div>
     </div>
+  </div>
 
+
+
+  <center><figure class="image is-48x48" style='margin-top:4vh;'>
+    <%= image_tag 'arrowdown.png' %>
+  </figure></center>
+  
 </div>
-
 
 <div class="column is-full" style='margin-top:-15px;'>
 </div>
@@ -82,7 +93,7 @@
 <div class="column is-full">
 
   <div class="container">
-    <h3 class="title is-4 alignitemscenter" style="color:rgb(39, 39, 39);">Main Categories</h3>
+    <h3 class="title is-4 alignitemscenter" style="color:rgb(39, 39, 39);">Categories</h3>
     <hr style="height: 0px; visibility: hidden; margin-bottom:-15px;">
   </div>
   
