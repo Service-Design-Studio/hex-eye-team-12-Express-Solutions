@@ -46,7 +46,7 @@ function wrapper() {
     ul = document.getElementsByTagName("ul");  // where is the element with tagname "ul"?
 }
 // if input not focused, then hide the list
-$('#myInput').focusout($('ul').style.display = "none");
+// $('#myInput').focusout($('ul').style.display = "none");
 
 $(function () {
     // the array below is hardcoded but there is probably a way to get this from the database
@@ -129,36 +129,36 @@ async function filterFunction() {
     input = document.getElementById("myInput");
     // console.log("Input: " + input.value);
     filter = input.value.toUpperCase();
-    myUl = document.getElementById("myUl");
     ul = document.getElementsByTagName("ul")
     console.log(ul)
     searchDict = await query(input.value);
     // console.log("S:" + searchDict);
-    li = document.createElement("li");
     
     id = searchDict["top_5_index"];
     services = searchDict['top_5_services'];
     // await new Promise(resolve => setTimeout(resolve, 300));
     
     if (ul['ui-id-1'].style.display === "block") {
-    li.innerText = "------Do you mean-------";
-
-    ul['ui-id-1'].appendChild(li);
-    
-    for (i = 0; i < 5; i++) {
-        
-        li = document.createElement("li");
-        li.innerText = services[i];
-            // li.innerHTML += "<a href='services/" + String(id[i]+2) + "/time_estimate'>" + "</a>"; // attempt at making the ML suggestions clickable
-        ul['ui-id-1'].appendChild(li);
-      }
-    } else {
-      console.log("here")
-      while (ul['ui-id-1'].firstChild) {
-        ul['ui-id-1'].removeChild(ul['ui-id-1'].firstChild);
-      }
+      console.log('add on')
       li = document.createElement("li");
-    li.innerText = "------Do you mean-------";
+      li.innerText = "------Do you mean-------";
+      ul['ui-id-1'].appendChild(li);
+      // populate ml result
+      for (i = 0; i < 5; i++) {    
+        let index = id[i];
+          $("<li></li>")
+              .data("ui-autocomplete-item", services[i])
+              .append("<a href='services/" + String(index+2) + "/time_estimate'>" + services[i] + "</a>")
+              .appendTo(ul);
+        }
+      } else { // if the list is not visible, show it
+        console.log("no auto complete")
+        while (ul['ui-id-1'].firstChild) {
+          ul['ui-id-1'].removeChild(ul['ui-id-1'].firstChild);
+        }
+      li = document.createElement("li");
+      li.innerText = "------Do you mean-------";
+      ul['ui-id-1'].appendChild(li);
       for (i = 0; i < 5; i++) {
         let index = id[i];
         $("<li></li>")
@@ -170,7 +170,8 @@ async function filterFunction() {
         //     // li.innerHTML += "<a href='services/" + String(id[i]+2) + "/time_estimate'>" + "</a>"; // attempt at making the ML suggestions clickable
         // ul['ui-id-1'].appendChild(li);
       }
-      ul['ui-id-1'].style.display = "block";
+      if (ul['ui-id-1'].childElementCount > 0) {
+      ul['ui-id-1'].style.display = "block";}
       console.log(ul[0])
 
       
