@@ -1,24 +1,24 @@
-Amended_Category,Category_ID,Txn Category L4 (Clean),Service,Digital Time,Branch Time,Migratable,Monthly Count,Details,service_image_link,service_alt_text,cat_image_link,cat_alt_text
-Accounts,2,CASA OPENING ADDON PAYROLL,Account Opening,11,22,TRUE,50,Current Savings accounts Payroll Add-on Account Opening,,,,
-Accounts,2,ACCOUNT CLOSURE,Account Closure,11,22,TRUE,7500,Closure of FCCA / FCFD / CASA / CPF accounts,,,,
-Accounts,2,ACCOUNT UPDATE,Account Update ,11,22,FALSE,150,Closure of FCCA / FCFD / CASA / CPF accounts,,,,
-Accounts,2,CLOSURE CASH WITHDRAWAL,Closure Cash Withdrawal,11,22,FALSE,2500,Close Savings Account & withdraw funds via cash,,,,
-Accounts,2,CLOSURE ADVICE WITHDRAWAL,Closure Advice Withdrawal,11,22,FALSE,100,Close Savings Account  & withdraw funds via cheque,,,,
-ATM/Debit Card,4,ATM CARD ISSUANCE,ATM Card Issuance,5,10,TRUE,2500,Issue ATM Card,,,,
-ATM/Debit Card,4,ATM CARD REPLACEMENT,ATM Card Replacement,5,10,TRUE,2500,Replace ATM card to ATM/Debit Card,,,,
-ATM/Debit Card,4,DEBIT CARD ISSUANCE,Debit Card Issuance,5,10,TRUE,7500,Issue Debit Card,,,,
-ATM/Debit Card,4,DEBIT CARD REPLACEMENT,Debit Card Replacement,5,10,TRUE,7500,Replace Debit card to ATM/Debit Card,,,,
-ATM/Debit Card,4,DEBIT CARD ACTIVATION VIA BBSA,Activate Debit Card,5,10,TRUE,150,Activate Debit Card,,,,
-ATM/Debit Card,4,ATM CARD ACTIVATION VIA BBSA,Activate ATM Card,5,10,TRUE,50,Activate ATM Card,,,,
-ATM/Debit Card,4,ATM CARD UPDATE VIA BBSA,Update ATM Card,5,10,FALSE,50,Update ATM Card,,,,
-ATM/Debit Card,4,DEBIT CARD UPDATE VIA BBSA,Update Debit Card,5,10,FALSE,50,Update Debit Card,,,,
-Apply for Digibank,1,IBSIGNUP VIA BRANCH,Apply for Digibank,3,5,TRUE,350,Internet banking signup for Current Savings accounts opening customer via branch,,,,
-Statement Request,6,STATEMENT REQUEST,Statement Request,3,5,TRUE,50,Request statement for Foreign currency current account,,,,
-Tokens Replacement,7,TOKENS REPLACEMENT,Tokens Replacement,3,5,TRUE,150,Internet Banking tokens replacement,,,,
-Personal Info Update,5,UPDATE CUSTOMER ADDRESS,Update Address,3,5,TRUE,2500,Update Customer Address,,,,
-Personal Info Update,5,UPDATE CUSTOMER EMAIL,Update Email,3,5,TRUE,7500,Update Customer Email,,,,
-Personal Info Update,5,UPDATE CUSTOMER PARTICULARS,Update Particulars,3,5,TRUE,20000,Update Customer Particulars,,,,
-Personal Info Update,5,UPDATE CUSTOMER PHONE,Update Phone,3,5,TRUE,10000,Update Customer Phone,,,,
-Funds Transfer,3,FUND TRANSFER,Current/Savings Account,3,5,TRUE,7500,Transfer funds from Current Savings accounts accounts,,,,
-Funds Transfer,3,OTT,Overseas Remittance,6,12,TRUE,2500,Outward telegraphic transfer from Current Savings accounts,,,,
-Funds Transfer,3,TRF FROM FCCA,Foreign Currency Current Account,3,5,TRUE,50,Fund Transfer from Foreign currency current account,,,,
+Amended_Category,Category_ID,Txn Category L4 (Clean),Service,Digital Time,Branch Time,Migratable,Monthly Count,Details,service_image_link,service_alt_text,cat_image_link,cat_alt_text,description
+Accounts,2,CASA OPENING ADDON PAYROLL,Account Opening,11,22,TRUE,50,Current Savings accounts Payroll Add-on Account Opening,,,,,"Open a new account with us anytime, anywhere with digibank using these easy steps."
+Accounts,2,ACCOUNT CLOSURE,Account Closure,11,22,TRUE,7500,Closure of FCCA / FCFD / CASA / CPF accounts,,,,,Close your DBS/POSB Deposit Account via digibank Online.
+Accounts,2,ACCOUNT UPDATE,Account Update ,11,22,FALSE,150,Closure of FCCA / FCFD / CASA / CPF accounts,,,,,Updating of personal particulars have never been simpler. No more queueing up at the branch to update your personal details
+Accounts,2,CLOSURE CASH WITHDRAWAL,Closure Cash Withdrawal,11,22,FALSE,2500,Close Savings Account & withdraw funds via cash,,,,,"Close Savings Account & withdraw funds via cash. Account Closure is permanent, and cannot be reinstated."
+Accounts,2,CLOSURE ADVICE WITHDRAWAL,Closure Advice Withdrawal,11,22,FALSE,100,Close Savings Account  & withdraw funds via cheque,,,,,"Close Savings Account  & withdraw funds via cheque. Account Closure is permanent, and cannot be reinstated."
+ATM/Debit Card,4,ATM CARD ISSUANCE,ATM Card Issuance,5,10,TRUE,2500,Issue ATM Card,,,,,Apply for a ATM Card via digibank
+ATM/Debit Card,4,ATM CARD REPLACEMENT,ATM Card Replacement,5,10,TRUE,2500,Replace ATM card to ATM/Debit Card,,,,,Replace or block your ATM card(s) immediately using our online services and request for a replacement instantly.
+ATM/Debit Card,4,DEBIT CARD ISSUANCE,Debit Card Issuance,5,10,TRUE,7500,Issue Debit Card,,,,,Apply for a Debit Card via digibank
+ATM/Debit Card,4,DEBIT CARD REPLACEMENT,Debit Card Replacement,5,10,TRUE,7500,Replace Debit card to ATM/Debit Card,,,,,Replace or block your Debit card(s) immediately using our online services and request for a replacement instantly.
+ATM/Debit Card,4,DEBIT CARD ACTIVATION VIA BBSA,Activate Debit Card,5,10,TRUE,150,Activate Debit Card,,,,,You can activate your new Debit card easily using digibank
+ATM/Debit Card,4,ATM CARD ACTIVATION VIA BBSA,Activate ATM Card,5,10,TRUE,50,Activate ATM Card,,,,,You can activate your new ATM card easily using digibank
+ATM/Debit Card,4,ATM CARD UPDATE VIA BBSA,Update ATM Card,5,10,FALSE,50,Update ATM Card,,,,,"With our enhanced digibank mobile, you can now update yourATM Cards, Withdrawal limit instantly!"
+ATM/Debit Card,4,DEBIT CARD UPDATE VIA BBSA,Update Debit Card,5,10,FALSE,50,Update Debit Card,,,,,"With our enhanced digibank mobile, you can now update your Debit Card's NETS, Withdrawal and 3rd Party Funds Transfer limit instantly!"
+Apply for Digibank,1,IBSIGNUP VIA BRANCH,Apply for Digibank,3,5,TRUE,350,Internet banking signup for Current Savings accounts opening customer via branch,,,,,"Register and activate your digibank now and experience a simpler way of banking anytime, anywhere."
+Statement Request,6,STATEMENT REQUEST,Statement Request,3,5,TRUE,50,Request statement for Foreign currency current account,,,,,You can now easily retrieve your statements via digibank.
+Tokens Replacement,7,TOKENS REPLACEMENT,Tokens Replacement,3,5,TRUE,150,Internet Banking tokens replacement,,,,,"With Digital Token, you no longer need to wait for SMS OTPs or depend on your physical token to authenticate your banking transactions."
+Personal Info Update,5,UPDATE CUSTOMER ADDRESS,Update Address,3,5,TRUE,2500,Update Customer Address,,,,,Change your address with us easily via digibank
+Personal Info Update,5,UPDATE CUSTOMER EMAIL,Update Email,3,5,TRUE,7500,Update Customer Email,,,,,"Keep your email address updated to receive your transaction alerts, so you are notified of your account activities."
+Personal Info Update,5,UPDATE CUSTOMER PARTICULARS,Update Particulars,3,5,TRUE,20000,Update Customer Particulars,,,,,"Update your Personal Details, Signature Records or Passport Number (for foreigners) if you have recently changed it."
+Personal Info Update,5,UPDATE CUSTOMER PHONE,Update Phone,3,5,TRUE,10000,Update Customer Phone,,,,,"Keep your mobile number updated and ensure your transaction alerts on digibank app and mobile device are turned on, so you are notified of your account activities."
+Funds Transfer,3,FUND TRANSFER,Current/Savings Account,3,5,TRUE,7500,Transfer funds from Current Savings accounts accounts,,,,,Transfer funds easily to another DBS/POSB account via digibank or our DBS/POSB ATM.
+Funds Transfer,3,OTT,Overseas Remittance,6,12,TRUE,2500,Outward telegraphic transfer from Current Savings accounts,,,,,"digibank allows you to perform Overseas Funds Transfer to over 200+ markets in more than 30+ currencies anywhere, anytime."
+Funds Transfer,3,TRF FROM FCCA,Foreign Currency Current Account,3,5,TRUE,50,Fund Transfer from Foreign currency current account,,,,,Enable your Card for overseas usage to transact and withdraw foreign currency overseas.
