@@ -1,6 +1,43 @@
-// require('fuzzy-dropdown');
 
-// Subesh's JS code
+function debounce(func, wait) {
+    let timeout;
+    console.log(wait)
+    console.log(func)
+  
+    return () => {
+      const later = () => {
+        // clearTimeout(timeout);
+        func;
+      };
+  
+    //   clearTimeout(timeout);
+      console.log(later)
+      timeout = setTimeout(later, wait);
+    };
+  };
+
+// const debounce = (func, delay) => { 
+
+//     let debounceTimer 
+
+//     return function() { 
+
+//         const context = this
+
+//         const args = arguments 
+
+//             clearTimeout(debounceTimer) 
+
+//                 debounceTimer  = setTimeout(() => func.apply(context, args), delay) 
+
+//     } 
+// }  
+
+
+function test() {
+    let op = console.log("test")
+}
+
 
 $(function () {
     // the array below is hardcoded but there is probably a way to get this from the database
@@ -29,28 +66,14 @@ $(function () {
         "Foreign Currency Current Account"];
     
     // JQuery's autocomplete function
-
-    // function to redirect to the appropriate time-estimate page
-    // function showResult(event, ui) {
-    //     window.location.replace(`http://127.0.0.1:3000/services/${index}/time_estimate`);
-    // }
-
-    // $('#myInput').change(function () {
-    //     window.location = "services/+ $('#myInput').val() +/time_estimate";
-    // });
-
-
     $("#myInput").autocomplete({
         source: services,
         autofocus: true
-        // select: function (event, ui) {
-            
-        // } // need to implement the "showResult" function, I think similar to your "query" function
     }).data("ui-autocomplete")._renderItem = function( ul, item ) {
         let txt = String(item.value).replace(new RegExp(this.term, "gi"), "<b>$&</b>");
         //find index of service in services array
         let index = services.indexOf(item.value);
-        console.log(index);
+        // console.log(index);
 
         return $("<li></li>")
             .data("ui-autocomplete-item", item)
@@ -58,78 +81,80 @@ $(function () {
             .appendTo(ul);
         };
 });
-    
-// Getter
-var autoFocus = $( "#myInput" ).autocomplete( "option", "autoFocus" );
- 
-// Setter
-$("#myInput").autocomplete("option", "autoFocus", true);
 
+// Debounce attempt
+// $('#myInput').keyup(debounce(filterFunction()), 3000);
+// debouncedFn = $.debounce(filterFunction(), 3000);
 
 // Jeff's JS code
 
-var timeout = null;
+var end_time = new Date();
+var start_time = new Date();
+var last_time = new Date();
 
-function check_timeout() {
-  clearTimeout(timeout);
-  timeout = setTimeout(filterFunction(), 10000);
+
+function check_timer() {
+    start_time = new Date().getTime();
+    // clearInterval(timer)
+    let diff = start_time - end_time
+    console.log("diff")
+    console.log(diff)
+    if (diff > 3000) {
+    filterFunction()
+    console.log('dont repeat')
+    end_time = new Date();
+    
+    }else if (start_time - last_time > 2000) {
+        filterFunction();
+        console.log('send in the last');
+        last_time = new Date();}
+    
+
+    // clearInterval(timer)
+
 }
 
 async function filterFunction() {
-    var input, filter, div, a
+    var input, filter, div
     input = document.getElementById("myInput");
+    // console.log("Input: " + input.value);
     filter = input.value.toUpperCase();
     div = document.getElementById("results");
-    ul = document.getElementsByTagName("ul");
-    console.log(ul);
-    //apend "a" to ul
+    ul = document.getElementsByTagName("ul");  // where is the element with tagname "ul"?
    
-  
-    // setInterval(function () {
-    
-    //     if (input === document.activeElement) {
-    //         div.style.display = "block";
-    //         console.log('set to block')
-    //         if (input.value.length < 3) {
-    //             div.style.display = "none";
-    //         }
-    //     } else {
-    //         div.style.display = "none";
-    //         console.log('set to none')
-    //     }
-    // }, 1000);
-
     searchDict = await query(input.value);
-    console.log(searchDict);
+    // console.log("S:" + searchDict);
     li = document.createElement("li");
-    // check_timeout();
     li.innerText = "------Do you mean-------";
-        //delay for 10 seconds
+    
     ul[0].appendChild(li);
 
-  id = searchDict["top_5_index"];
-  services = searchDict['top_5_services'];
+    id = searchDict["top_5_index"];
+    services = searchDict['top_5_services'];
+    
+
   // console.log(services);
-  await new Promise(resolve => setTimeout(resolve, 100));
+    await new Promise(resolve => setTimeout(resolve, 1000));
     for (i = 0; i < 5; i++) {
+            
         li = document.createElement("li");
+        console.log(li.element.childElementCount)
         li.innerText = services[i];
-        //delay for 10 seconds
-        ul[0].appendChild(li);
-    //   index = String(i);
-    //   service = services[i];
-    //   a = document.getElementById(String(i+1));
-    //   a.innerText = service;
-    //   a.href = time_estimate_url(service);
-    }
+            // li.innerHTML += "<a href='services/" + String(id[i]+2) + "/time_estimate'>" + "</a>"; // attempt at making the ML suggestions clickable
+            
+            ul[0].appendChild(li);
+        }
 }
+
+// right now the behaviour is such that we need to type really fast in order for the AI results to appear nicely (1 time without repeating)
+
 // set a timeout 
 var timeout = 0
 function query(inp) {
   // implement getrequest
-    if (timeout > 3000) {
-        timeout = 0 // reset timeout
+    
         return fetch('http://127.0.0.1:5000/predict?query=' + inp)
             .then(response => response.json());
-    }
+    
 }
+
