@@ -1,43 +1,52 @@
 
-function debounce(func, wait) {
-    let timeout;
-    console.log(wait)
-    console.log(func)
+// function debounce(func, wait) {
+//     let timeout;
+//     console.log(wait)
+//     console.log(func)
   
-    return () => {
-      const later = () => {
-        // clearTimeout(timeout);
-        func;
-      };
+//     return () => {
+//       const later = () => {
+//         input = document.getElementById("myInput")
+//         clearTimeout(timeout);
+//         func
+//       };
   
-    //   clearTimeout(timeout);
-      console.log(later)
-      timeout = setTimeout(later, wait);
-    };
-  };
+//       clearTimeout(timeout);
+//       console.log(later)
+//       timeout = setTimeout(later, wait);
+//     };
+//   };
 
-// const debounce = (func, delay) => { 
+function debounce(func, delay)  { 
 
-//     let debounceTimer 
-
-//     return function() { 
-
-//         const context = this
-
-//         const args = arguments 
-
-//             clearTimeout(debounceTimer) 
-
-//                 debounceTimer  = setTimeout(() => func.apply(context, args), delay) 
-
-//     } 
-// }  
+    let debounceTimer 
 
 
-function test() {
-    let op = console.log("test")
+    return function() { 
+
+        const context = this
+
+        
+
+            clearTimeout(debounceTimer) 
+
+                debounceTimer  = setTimeout(() => func.apply(context), delay) 
+
+    } 
+}  
+
+
+function wrapper() {
+    let output = filterFunction();
+    var input, filter, div
+    input = document.getElementById("myInput");
+    // console.log("Input: " + input.value);
+    filter = input.value.toUpperCase();
+    div = document.getElementById("results");
+    ul = document.getElementsByTagName("ul");  // where is the element with tagname "ul"?
 }
-
+// if input not focused, then hide the list
+$('#myInput').focusout($('ul').style.display = "none");
 
 $(function () {
     // the array below is hardcoded but there is probably a way to get this from the database
@@ -115,41 +124,74 @@ function check_timer() {
 }
 
 async function filterFunction() {
+ 
     var input, filter, div
     input = document.getElementById("myInput");
     // console.log("Input: " + input.value);
     filter = input.value.toUpperCase();
-    div = document.getElementById("results");
-    ul = document.getElementsByTagName("ul");  // where is the element with tagname "ul"?
-   
+    myUl = document.getElementById("myUl");
+    ul = document.getElementsByTagName("ul")
+    console.log(ul)
     searchDict = await query(input.value);
     // console.log("S:" + searchDict);
     li = document.createElement("li");
-    li.innerText = "------Do you mean-------";
     
-    ul[0].appendChild(li);
-
     id = searchDict["top_5_index"];
     services = searchDict['top_5_services'];
+    // await new Promise(resolve => setTimeout(resolve, 300));
     
+    if (ul['ui-id-1'].style.display === "block") {
+    li.innerText = "------Do you mean-------";
 
-  // console.log(services);
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    ul['ui-id-1'].appendChild(li);
+    
     for (i = 0; i < 5; i++) {
-            
+        
         li = document.createElement("li");
-        console.log(li.element.childElementCount)
         li.innerText = services[i];
             // li.innerHTML += "<a href='services/" + String(id[i]+2) + "/time_estimate'>" + "</a>"; // attempt at making the ML suggestions clickable
-            
-            ul[0].appendChild(li);
-        }
+        ul['ui-id-1'].appendChild(li);
+      }
+    } else {
+      console.log("here")
+      while (ul['ui-id-1'].firstChild) {
+        ul['ui-id-1'].removeChild(ul['ui-id-1'].firstChild);
+      }
+      li = document.createElement("li");
+    li.innerText = "------Do you mean-------";
+      for (i = 0; i < 5; i++) {
+        let index = id[i];
+        $("<li></li>")
+            .data("ui-autocomplete-item", services[i])
+            .append("<a href='services/" + String(index+2) + "/time_estimate'>" + services[i] + "</a>")
+            .appendTo(ul);
+        // li = document.createElement("li");
+        // li.innerText = services[i];
+        //     // li.innerHTML += "<a href='services/" + String(id[i]+2) + "/time_estimate'>" + "</a>"; // attempt at making the ML suggestions clickable
+        // ul['ui-id-1'].appendChild(li);
+      }
+      ul['ui-id-1'].style.display = "block";
+      console.log(ul[0])
+
+      
+
+    }
+    
+
+   
+    
+      // if (myUl.firstChild){
+      //   //set style
+      //   myUl.style.display = "block";
+      //   // div.style.display = "block";
+      // } else{
+      //   // div.style.display = "none";
+      // }
+      // console.log(myUl)
+      
 }
 
-// right now the behaviour is such that we need to type really fast in order for the AI results to appear nicely (1 time without repeating)
 
-// set a timeout 
-var timeout = 0
 function query(inp) {
   // implement getrequest
     
