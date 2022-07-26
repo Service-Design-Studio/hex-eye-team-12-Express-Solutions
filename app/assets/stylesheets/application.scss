@@ -253,11 +253,11 @@ p.small {
 @import "bulma-extensions";
 
 // custom scss works here or in the relevant files
-.dropdown-container #results {
+.dropdown-container #results #myUl {
     display: block;
     position: absolute;
 }
-.dropdown-container a {
+.dropdown-container ul {
     color: black;
     position: relative;
     padding: 12px 16px;
