@@ -1,8 +1,8 @@
 #Background
 require 'csv'
-Given /the data in "(.+)"$/ do |file|
+Given /the data in sub.csv/ do 
     # table is a Cucumber::MultilineArgument::DataTable
-    service_table = CSV.read("features/step_csv/#{file}")
+    service_table = CSV.read("features/step_csv/sub.csv")
     service_table.each do |category, category_id,service_id, service, digital_time, branch_time, migratable, count, details, 
                             service_image_link, service_alt_text, cat_image_link, cat_alt_text, description|
         AllService.create!( :category => category,
