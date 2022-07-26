@@ -36,24 +36,34 @@ $card-content-padding: 10px;
 $card-radius: 10px;
 $card-shadow: 0px 1px 6px 0.3px rgb(186, 186, 186);
 
-$column-gap: 0.75rem;
+$column-gap: 0.65rem;
 
 $is-narrow: 300px;
+
+.dbsheader {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 5px 10px 10px rgb(0, 0, 0);
+  max-height: 85px;
+  $link:black;
+}
 
 .dbsbackground{
   background-image: url("DBS_Towers,_SIA_Building_and_Capital_Tower.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height:82vh;
-  min-height:525px;
+  height:83vh;
+  min-height:580px;
 }
 
-.dbsheader {
-  background-color: rgb(255, 255, 255);
-  box-shadow: 5px 10px 10px rgb(0, 0, 0);
-  max-height: 90px;
-  $link:black;
+.dbsbackground-subcat{
+  background-image: url("subcat-background.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+
+  min-height:580px;
+  height:100vh;
 }
 
 .gradientbody {
@@ -101,6 +111,15 @@ $is-narrow: 300px;
 }
 .card:hover{
   background-color:rgb(250, 250, 250);
+}
+
+.subcatcard{
+  min-width:140px;
+  max-height:220px;
+
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 15px;
 }
 
 .textarea-categories{
@@ -236,6 +255,18 @@ p.small {
   font-weight: 525;
   color: transparent;
   text-shadow: 0 0 0.6px rgb(55, 55, 55);
+}
+
+.variable-fontsize{
+  @include mobile {
+    font-size: 11px;
+  }
+  @include tablet-only {
+    font-size: 12px;
+  }
+  @include desktop{
+    font-size: 13px;
+  }
 }
 
 .overlay{
