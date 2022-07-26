@@ -45,6 +45,7 @@ $is-narrow: 300px;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  height:700px;
 }
 
 .dbsheader {
@@ -64,8 +65,8 @@ $is-narrow: 300px;
 }
 
 .gradienttopservices {
-  //background-image: linear-gradient(rgb(212, 212, 212), rgb(212, 210, 212));
-  background-color: #edededf3;
+  background-image: linear-gradient(rgb(239, 239, 239), rgb(229, 229, 229));
+
 }
 
 .gradientsubservices {
@@ -113,6 +114,24 @@ $is-narrow: 300px;
   @include desktop{
     height: 37px;
   }
+}
+
+.textarea-categories-more{
+  cursor:pointer;
+
+  @include mobile {
+    height: 150px;
+  }
+  @include tablet-only {
+    height: 155px;
+  }
+  @include desktop{
+    height: 157px;
+  }
+}
+
+.categoriesbutton{
+  
 }
 .categoriesbutton:hover{
   transform: translateY(-5px);
