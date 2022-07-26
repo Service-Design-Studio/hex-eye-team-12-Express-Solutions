@@ -45,7 +45,8 @@ $is-narrow: 300px;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height:700px;
+  height:95vh;
+  min-height:570px;
 }
 
 .dbsheader {
@@ -113,20 +114,6 @@ $is-narrow: 300px;
   }
   @include desktop{
     height: 37px;
-  }
-}
-
-.textarea-categories-more{
-  cursor:pointer;
-
-  @include mobile {
-    height: 150px;
-  }
-  @include tablet-only {
-    height: 155px;
-  }
-  @include desktop{
-    height: 157px;
   }
 }
 
