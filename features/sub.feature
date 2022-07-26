@@ -9,7 +9,7 @@ Background: Services have been added to database
     Given the data in sub.csv
     Given I am using web
     
-Scenario: Customer looks at Personal Info Update service
+Scenario: Customer looks at the Personal Info Update category
     Given I visit "/services"
     When I click on the "category" of "Personal Info Update"
     Then I should see the headers "Keep your mobile number updated and ensure your transaction alerts on digibank app and mobile device are turned on, so you are notified of your account activities."
