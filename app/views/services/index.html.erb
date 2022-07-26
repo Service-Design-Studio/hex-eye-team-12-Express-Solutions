@@ -1,6 +1,6 @@
 <div class="column is-full dbsbackground">
 
-  <div class="column is-full" style='margin-top:4vh;'>
+  <div class="column is-full" style='margin-top:7vh;'>
   </div>
 
   <div class="columns is-multiline is-vcentered is-centered has-text-center">
@@ -8,18 +8,17 @@
     <div class="column is-half-tablet is-four-fifths-mobile">
 
       <div class="container alignitemscenter">
-        <h3 class="title is-3" style="text-align: middle; color:white;">Inspirational DBS quote here</h3>
+        <h3 class="title is-3" style="text-align: middle; color:white;">Live more, bank less.</h3>
       </div>
 
       <div class="column is-full" style='margin-top:4vh;'>
       </div>
 
-
       <% if session[:branch] != nil %>
         <h4 class="subtitle is-4 alignitemscenter" style="color:white;"><%=Branch.find_by(branch: session[:branch]).branch_name%></h4>
       <% end %>
       <% if session[:branch] == nil %>
-        <div class="column is-full" style='margin-top:2vh;'>
+        <div class="column is-full" style='margin-top:4.5vh;'>
         </div>
       <% end %>
 
@@ -38,17 +37,17 @@
     </div>
   </div>
 
-  <div class="column is-full" style='margin-top:1vh;'>
+  <div class="column is-full" style='margin-top:10vh;'>
   </div>
 
   <div class="container alignitemscenter">
-      <h3 class="title" style="text-align: middle; color:white; font-size:28px;">Are you looking for these?</h3>
+    <h3 class="title" style="text-align: middle; color:white; font-size:28px;">Are you looking for these?</h3>
   </div>
 
   <div class="column is-full" style='margin-top:5px;'>
   </div>
 
-  <div class="column is-full gradienttopservices" style='box-shadow: 0 5px rgb(220,220,220);'>
+  <div class="column is-full gradienttopservices" style='box-shadow: 0px 1px 0px 2px rgb(255,255,255);'>
     <div class="columns is-centered">
       <div class="column is-11-mobile is-10-tablet is-7-desktop">
         <div class="columns is-multiline is-centered is-vcentered has-text-center">
@@ -63,7 +62,7 @@
           <a href=<%= the_link %>> 
             <div class="column squarebuttons-topservice" id= <%= the_services %>> 
               <div class="topservicebutton">
-                <hr style="height: 2.5px; background-color:rgb(204,0,0); margin-top:-50px;">
+                <hr style="height: 2.5px; background-color:rgb(204,0,0); margin-top:-46px;">
                 
                 <center><figure class="image capsize is-rounded">
                   <%= image_tag img_link %>
@@ -81,6 +80,8 @@
         <hr style="height: 0px; visibility: hidden; margin-bottom:-10px;">
       </div>
     </div>
+
+    
   </div>
   
 </div>
@@ -113,7 +114,7 @@
               <div class="card-image">
                 <figure class="image is-4by3">
                   <%= image_tag cat_link %>
-                </figure>
+                </figure>     
               </div>
 
               <hr style="height: 0px; visibility: hidden; margin-bottom:-15px;">
@@ -132,14 +133,14 @@
 
               <div class="card-image">
                 <figure class="image is-4by3">
-                  <%= image_tag '' %>
+                  <%= image_tag 'categories/More.jpg' %>
                 </figure>
               </div>
 
               <hr style="height: 0px; visibility: hidden; margin-bottom:-15px;">
-              
+            
               <div class="content textarea-categories">
-                  <center><p class="alignitemscenter blurry-text" style="font-size: 13px;">edit</p></center>   
+                  <center><p class="alignitemscenter blurry-text" style="font-size: 13px;">Visit a branch now!</p></center>   
               </div>
             </div>
           <a>
