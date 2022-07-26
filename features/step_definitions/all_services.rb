@@ -66,3 +66,7 @@ end
   When (/I click on the "(.*)" button/) do |button_name|
     click_button button_name
   end
+
+  When(/^I go back$/) do
+    page.evaluate_script('window.history.back()')
+  end 
