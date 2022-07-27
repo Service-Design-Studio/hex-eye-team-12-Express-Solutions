@@ -118,14 +118,16 @@ $is-narrow: 300px;
 }
 
 .topservicebutton {
-  background-color: transparent;
-  height:142px;
+  background-color: rgb(252, 252, 252);
+  height:160px;
+  box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.2);
+  border-radius: 10px;
 }
 .topservicebutton:hover {
-  background-color: #9c9c9c2b;
-  height:149px;
+  background-color: #f9f9f9;
+  height:160px;
 
-  transform: translateY(-5px);
+  transform: translateY(-3px);
 }
 
 .card{
@@ -327,7 +329,7 @@ p.small {
   height: 380px;
   width: 90vw;
   max-width: 800px;
-  background-color: rgb(235, 57, 57);
+  background-color: rgb(205, 49, 49);
   border-radius:50%;
 
   z-index: 0;
