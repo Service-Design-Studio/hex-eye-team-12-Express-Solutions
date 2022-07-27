@@ -42,6 +42,8 @@ Running Cucumber for a specific feature file
 
         bundle exec rails db:test:prepare
 
+## [JS Testing Guide](testingJSguide.md)
+
 ## Markdown
 [Markdown Guide](https://agea.github.io/tutorial.md/)
 
