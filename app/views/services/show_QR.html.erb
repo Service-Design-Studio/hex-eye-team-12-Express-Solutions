@@ -1,30 +1,37 @@
-<div class="columns is-multiline is-mobile is-vcentered is-centered">
+<div class="column is-full-mobile is-8-tablet is-6-desktop gradientbody boxoutline">
 
-  <div class="column is-three-quarters">
-  
-    <center><h1 class='title'><%= @branch_name %></h1></center>
-    <center><h2 class='title'><%= @service.service%></h2></center>
+  <div class="columns is-mobile is-multiline is-vcentered is-centered boxoutline">
+
+    <div class="column is-11 alignitemscenter">
+      <p style='font-size:18px'>I want a service for</p>
+      <button class='selectedtext' style='font-size:18px; background-color: rgb(235,76,46);'><%= @service.service%></button>
+    </div>
+
+    <div class="column is-11 alignitemscenter">
+      <p style='font-size:18px; margin-top:-10px;'>at the</p>
+      <button class='selectedtext' style='font-size:18px;'><%= @branch_name %></button>
+    </div>
+
+    <% if @mobile
+      @text = 'Tap';
+    else
+      @text = 'Scan';
+    end %>
+
+    <div class="column is-full alignitemscenter">
+      <p style="font-size:25px; color:DimGray"><b><%= @text %></b> QR Code</p>
+      <p style="font-size:15px; color:DimGray">to send SMS for your</p>
+      <p style="font-size:15px; color:DimGray">Queue Number</p>
+    </div>
+
+    <div class="column is-half-tablet is-11-mobile maxwidth_desktop alignitemscenter">
+      <figure class="center"><%= link_to @qr.html_safe, @body %></figure>
+    </div>
+
   </div>
-  <% if @mobile
-    @text = 'Tap';
-  else
-    @text = 'Scan';
-  end %>
 
-  <div class="column is-three-quarters">
-    <center><p style="font-size:25px; color:DimGray"><b><%= @text %></b> QR Code</p></center>
+</div>
 
-    <center><p style="font-size:15px; color:DimGray">to send SMS for your</p></center>
-    <center><p style="font-size:15px; color:DimGray">Queue Number</p></center>
-  </div>
 
-  </div>
-
-  <div class="column is-full">
-      <figure class="center">
-        <%= link_to @qr.html_safe, @body %>
-      </figure>
-  </div>
-  
-
+<div class="column is-full extraheight">
 </div>
