@@ -1,15 +1,15 @@
-<div class="column is-full-mobile is-8-tablet is-6-desktop gradientbody boxoutline">
+<div class="column is-full-mobile is-8-tablet is-6-desktop gradientbody" style='margin-top:25px;'>
 
   <div class="columns is-mobile is-multiline is-vcentered is-centered boxoutline">
 
     <div class="column is-11 alignitemscenter">
       <p style='font-size:18px'>I want a service for</p>
-      <button class='selectedtext' style='font-size:18px; background-color: rgb(235,76,46);'><%= @service.service%></button>
+      <p style='font-size:22px; color: black; font-weight:550;'><%= @service.service%></p>
     </div>
 
     <div class="column is-11 alignitemscenter">
       <p style='font-size:18px; margin-top:-10px;'>at the</p>
-      <button class='selectedtext' style='font-size:18px;'><%= @branch_name %></button>
+      <p style='font-size:22px; color: black; font-weight:550;'><%= @branch_name %></p>
     </div>
 
     <% if @mobile

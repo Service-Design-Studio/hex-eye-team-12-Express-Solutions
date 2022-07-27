@@ -19,10 +19,10 @@ Background: Services have been added to database
 Scenario: Customer checks a migratable service
     Given I visit "/services"
     When I click on the "service" of "Update Phone"
-    Then I should see the headers "Do it digitally, Do it at a branch"
+    Then I should see the headers "Get it done with Digibank in, Wait in the Queue"
 
 Scenario: Customer checks the non-migratable service
     Given I visit "/services"
     When I click on the "service" of "Deposit"
-    Then I should see the headers "Do it at a branch"
-    And I should not see the headers "Do it digitally"
+    Then I should see the headers "Wait in the Queue"
+    And I should not see the headers "Get it done with Digibank in"
