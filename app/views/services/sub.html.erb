@@ -1,11 +1,10 @@
 <div class="column is-full dbsbackground-subcat" style='height=100vh'>
 
-  <div class="column is-full" style='margin-top:0px;'>
-  </div>
+  <div class="column is-full" style='margin-top:0px;'> </div>
 
   <div class="container">
     <% if session[:branch] != nil %>
-    <h6 class="subtitle alignitemscenter" style="color:white;"><%=Branch.find_by(branch: session[:branch]).branch_name%></h6>
+      <h6 class="subtitle alignitemscenter" style="color:white;"><%=Branch.find_by(branch: session[:branch]).branch_name%></h6>
     <% end %>
     <% if session[:branch] == nil %>
       <div class="column is-full" style='margin-top:4vh;'>
@@ -30,38 +29,14 @@
           <% the_link = time_estimate_url(service) %>
           <% img_link = service.service_image_link.to_s %>
           <% the_services = service.service %>
+           <% description = service.description %>
           
           <div class="column is-6-mobile is-3-tablet is-3-desktop"> 
             <a href=<%= the_link %>>
               <div class="column is-11">
-              
-
                 <div class="card subcatcard">
-
-        <% @services.each do |service| %>
-        <% the_link = time_estimate_url(service) %>
-        <% img_link = service.service_image_link.to_s %>
-        <% the_services = service.service %>
-        <% description = service.description %>
-
-        <a href=<%= the_link %>> 
-          <div class="column squarebuttons-subservice is-full" id= <%= the_services %>> 
-
-            <div class="card" style='padding-top:12px; padding-bottom:1px; overflow-y:hidden;'>
-
-              <article class="media">
-                <figure class="media-left" style="padding-left:25px;">
-                  <p class="image capsize">
-                    <%= image_tag img_link %>    
-                  </p>
-                </figure>
-
-                <div class="media-content" style='overflow-y:hidden;'>
-                  <div class="content">
-                    <p class="small blurry-text" style="text-align: middle; font-size: 16px; padding-top: 18px;"><%= the_services %></p>
-                    <p class="small blurry-text" style="text-align: middle; font-size: 16px; padding-top: 18px; padding-bottom: 8px;"><%= description %></p>
+                  <div class="column is-full">     
                   </div>
-
                   <center><figure class="image is-48x48">
                     <%= image_tag img_link %>
                   </figure></center>
@@ -73,7 +48,7 @@
                   </div>
 
                   <div class="content variable-fontsize">
-                    <p class="alignitemscenter blurry-text">lorem ipsum blah bah blah blah blah blah blah la</p>   
+                    <p class="alignitemscenter blurry-text"> <%= description %></p>   
                   </div>
 
                 </div>
