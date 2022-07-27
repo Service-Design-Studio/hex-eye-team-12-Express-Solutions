@@ -11,6 +11,11 @@ function check(){
   } else{
 
     popup.style.visibility = "hidden";
+    if(document.activeElement !== input){
+      while(ul['ui-id-1'].numChildren > 1){
+        ul['ui-id-1'].removeChild(ul['ui-id-1'].firstChild);
+      }
+    }
     
   }
 
