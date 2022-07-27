@@ -20,45 +20,21 @@ Then I should see the headers "Update Phone, Get it done with Digibank in, Wait 
 Scenario: Customer keys in non-matching search terms (ML)
 Given I type in "change " into the search bar
 And I should not see "change" in the dropdown
-Then I click on the ML button
-And I should see "Update Particulars" in the dropdown
-Then I click on the "Update Particulars" in the dropdown
-And I should see the headers "Update Particulars, Get it done with Digibank in, Wait in the Queue"
+And I should see "Update ATM Card" in the dropdown
+Then I click on the "Update ATM Card" in the dropdown
+And I should see the headers "Update ATM Card, Wait in the Queue"
 
 @javascript
 Scenario: Customer selects wrong service and returns to main page
 Given I type in "Update" into the search bar
-When I click on the "Update Phone" in the dropdown
-And I should see the headers "Update Phone, Get it done with Digibank in, Wait in the Queue"
+When I click on the "Update Address" in the dropdown
+And I should see the headers "Update Address, Get it done with Digibank in, Wait in the Queue"
 Then I go back
-And I will see "Update Phone" in the search bar
+And I will see "Update Address" in the search bar
 
-
-#Ideal Searchbar implement
-
-# @javascript
-# Scenario: Customer keys in non-matching search terms (ML)
-# Given I type in "change " into the search bar
-# Then I should not see "change" in the dropdown
-# But I should see "Update Particulars" in the dropdown
-# Then I click on the "Update Particulars" in the dropdown
-# And I should see the headers "Update Particulars, Get it done with Digibank in, Wait in the Queue"
-
-# @javascript
-# Scenario: Customer selects wrong service and returns to main page
-# Given I type in "Update" into the search bar
-# When I click on the "Update Phone" in the dropdown
-# And I should see the headers "Update Phone, Get it done with Digibank in, Wait in the Queue"
-# Then I go back
-# And I will see "Update" in the search bar
-
-
-
-#Scenario 4
-
-# Scenario: Customer does not find keyword in the search bar
-# Given I type in "1234567890" into the search bar
-# When I see the dropdown without any options
-# Then I should see "No results found" in the dropdown
-# And I click on the "button" of "More"
-# Then I should see the headers "More"
+@javascript
+Scenario: Customer does not find keyword in the search bar
+Given I type in "randomstuff" into the search bar
+Then I should see "No results found" in the dropdown
+And I click on the "card" of "Visit a branch"
+Then I should see the headers "Unable to find the service that you need?"

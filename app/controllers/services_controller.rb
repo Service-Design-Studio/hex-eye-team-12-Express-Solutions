@@ -5,8 +5,9 @@ class ServicesController < ApplicationController
 
   # GET /services or /services.json
   def index
-    #sort_by count
     
+    @services_sb =  AllService.services
+    #sort_by count
     @topServices = AllService.top_services()
     @allServices = AllService.all_category()
   end
