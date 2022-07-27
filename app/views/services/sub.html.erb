@@ -1,64 +1,33 @@
-<div class="column is-full dbsbackground">
+<center>
   <div class="container">
     <% if session[:branch] != nil %>
-    <h6 class="subtitle alignitemscenter" style="color:white;"><%=Branch.find_by(branch: session[:branch]).branch_name%></h6>
+    <h6 class="subtitle has-text-left"><%=Branch.find_by(branch: session[:branch]).branch_name%></h6>
     <% end %>
-    <h3 class="title is-1 alignitemscenter" style="color:white;"><%=@category%></h3>
+    <h3 class="title is-1 has-text-left"><%=@category%></h3>
   </div>
-</div>
+  <br>
 
+  <div class="columns is-mobile is-multiline">
+    <% @services.each do |service| %>
+    
+    <% @the_link = time_estimate_url(service) %>
+    <% @the_services = service.service %>
 
-<div class="column is-full gradientsubservices">
+      <div class="column is-half"> 
 
+        <div class="card-image">    
+          <figure class="image is-3by1">
+            <%= image_tag 'GreyBackground.png' %>
+          </figure>
 
-  <div class="columns is-centered">
-    <div class="column is-11-mobile is-7-tablet is-7-desktop">
-
-      <div class="columns is-multiline is-centered is-vcentered has-text-center">
-
-        <% @services.each do |service| %>
-        <% the_link = time_estimate_url(service) %>
-        <% img_link = service.service_image_link.to_s %>
-        <% the_services = service.service %>
-        <% description = service.description %>
-
-        <a href=<%= the_link %>> 
-          <div class="column squarebuttons-subservice is-full" id= <%= the_services %>> 
-
-            <div class="card" style='padding-top:12px; padding-bottom:1px; overflow-y:hidden;'>
-
-              <article class="media">
-                <figure class="media-left" style="padding-left:25px;">
-                  <p class="image capsize">
-                    <%= image_tag img_link %>    
-                  </p>
-                </figure>
-
-                <div class="media-content" style='overflow-y:hidden;'>
-                  <div class="content">
-                    <p class="small blurry-text" style="text-align: middle; font-size: 16px; padding-top: 18px;"><%= the_services %></p>
-                    <p class="small blurry-text" style="text-align: middle; font-size: 16px; padding-top: 18px; padding-bottom: 8px;"><%= description %></p>
-                  </div>
-                </div>
-              </article>
-
-              <hr style="height: 2px; background-color:rgb(204,0,0); margin-top:-15px; margin-bottom:10px;">
+          <a href=<%= @the_link %>>
+            <div class="is-overlay centertext">
+                <center><p><%= @the_services %></p></center>   
             </div>
-        </a>
+          </a>
+        </div>
       </div>
-      <% end %>
-
-      </div>
-    </div>
+    <% end %>
   </div>
 
-  <div class="column is-full">
-  </div>
-  <div class="column is-full">
-  </div>
-</div>
-
-<div class="column is-full extraheight">
-</div>
-<div class="column is-full extraheight">
-</div>
+</center>
