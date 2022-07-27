@@ -9,7 +9,6 @@ function check(){
     filterFunction();
 
   } else{
-
     popup.style.visibility = "hidden";
     if(document.activeElement !== input){
       while(ul['ui-id-1'].numChildren > 1){
@@ -20,7 +19,6 @@ function check(){
   }
 
 }
-setInterval(check,3000)
 
 // function debounce(func, delay)  { 
 
