@@ -23,6 +23,15 @@ $link-hover: #ffffff;
 
 $button-background-color: rgb(255, 0, 0);
 
+// .show {
+//   visibility: visible;
+//   }
+
+
+// .hide {
+//   visibility: hidden;
+//   }
+
 
 $box-padding: 18px;
 $box-background-color: #454545;
@@ -180,6 +189,12 @@ $is-narrow: 300px;
   }
 }
 
+.displayText{
+ color:rgb(220, 220, 220);
+ text-shadow: 0 0 0 #bdbdbd;
+ margin-top: 20px;
+}
+
 .columns {
   display: flex;
 }
@@ -253,9 +268,11 @@ p.small {
 @import "bulma-extensions";
 
 // custom scss works here or in the relevant files
-.dropdown-container #results #myUl {
+.dropdown-container #results  {
     display: block;
-    position: absolute;
+    position: relative;
+  
+
 }
 .dropdown-container ul {
     color: black;
