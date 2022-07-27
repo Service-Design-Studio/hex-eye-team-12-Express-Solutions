@@ -5,6 +5,7 @@ class AddBranchName < ActiveRecord::Migration[7.0]
       t.string :branch_name
       t.string :branch
       t.string :sms_number
+      t.integer :wait_time
     end
    end
 end
