@@ -47,7 +47,8 @@ Before('@javascript') do
   # as Cucumber::Rails::Database.javascript_strategy overrides
   # this setting.
   DatabaseCleaner.strategy = :truncation
-  Capybara.current_driver = :selenium
+  # Capybara.current_driver = :selenium_chrome
+  Capybara.current_driver = :selenium_chrome_headless
 end
 
 Before('not @javascript') do
