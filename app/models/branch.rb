@@ -1,3 +1,5 @@
+require 'json'
+
 class Branch < ActiveRecord::Base
     # From model, get all the branch names in an array called locations
     def self.all_locations
@@ -13,5 +15,13 @@ class Branch < ActiveRecord::Base
             locations_name.append(row.branch_name)
         end
         return locations_name
+    end
+
+    def self.all_durations
+        branch_time_dict = {}
+        Branch.all.each do |row|
+            branch_time_dict[row.branch_name] = row.wait_time
+        end
+        return branch_time_dict.to_json
     end
 end

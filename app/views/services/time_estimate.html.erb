@@ -1,3 +1,5 @@
+<%= javascript_include_tag "time_estimate.js" %>
+
 <div class="column is-full dbsbackground-timeestimate" style='z-index:2;'>
   <div class="column is-full">
     <h1 class='title alignitemscenter' style='font-size:44px; color:white;'><%= @service.service%></h1>
@@ -10,6 +12,9 @@
 <% end %>
 
 <% if @migratable == 'TRUE'%>
+  <div class="column is-full alignitemscenter">
+    <b><p style="font-size:45px; color:DimGray">Digital Service</p></b>
+  </div>
 
   <div class=oval>
   </div>
@@ -56,20 +61,46 @@
 
 <% end %>
 
+<center>
 <div class="column is-full alignitemscenter" style='margin-top:-20px;'>
   <p style="font-size:26px; color:DimGray">Wait in the Queue</p>
 
   <% @branch_time  = @branch_time.to_s + ' min' %>
-  <h2>Estimated time: <b style='color:rgb(220,0,0); font-size:22px'> <%= @branch_time %> </b></h2><br>
-  <div class="select is-rounded">
+  <h2>Estimated time: <b id="branchtime"> <%= @total_time %> </b></h2><br>
+
+  <div data-time-dict='<%= @branch_time_dict %>' id="data-time-dict" ></div>
+  <div data-service-time=<%= @service_time %> id="data-service-time"></div>
+
+  <div class="select is-rounded" id='branch_dropdown'>
   <%= form_with url: show_QR_path, method: :get, id: 'branch_form' do |form| %>
-    <%= form.select :branch_name, @all_locations_name %>
+    <%= 
+    form.select :branch_name, @all_locations_name,
+    {},
+    {:onchange => "changeTime(this.value)"}
+     %>
+
     <br>
     <center><%= form.submit "Get Queue Number", class: "popoutbuttons-orange",  style: "font-size:18px; color:white;"%></center>
   <% end %>
 
   </div>
 </div>
+</center>
 
 <div class="column is-full extraheight">
 </div>
+<div class="column is-full extraheight">
+</div>
+<div><%= @branch_time_dict %></div>
+<script>
+
+let br = document.getElementById("data-time-dict")
+x.dict = "<%= @branch_time_dict %>";
+"<%= @branch_time_dict %>"
+
+</script>
+
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script>
