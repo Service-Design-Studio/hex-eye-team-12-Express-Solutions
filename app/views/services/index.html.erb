@@ -1,3 +1,9 @@
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<%= javascript_include_tag "autocomplete.js" %>
+
+
 <div class="column is-full dbsbackground">
 
   <div class="column is-full" style='margin-top:7vh;'>
@@ -24,13 +30,13 @@
 
       <div class="container">
         <div class="dropdown-container" id="search">    
-          <input class="input is-rounded" type="text" placeholder="🔍 Search for a service" id="myInput" onkeyup="check_timeout()">    
-          <div class="dropdown display" id="results" style="display: none">
-            <a id="1"></a>
-            <a id="2"></a>
-            <a id="3"></a>
-            <a id="4"></a>
-            <a id="5"></a>
+          <input title="press enter for more" class="input is-rounded" type="text" placeholder="🔍 Search for a service" id="myInput"  />
+
+          <div class="dropdown display" id="results" style="display: block position: relative">
+           
+            <span class="displayText" id="displayText" style="visibility: hidden"><element onclick="filterFunction()">Click here for more</element></span>
+
+          </div>
           </div>
         </div> 
       </div>
