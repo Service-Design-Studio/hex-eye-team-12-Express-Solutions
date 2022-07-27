@@ -23,7 +23,7 @@ Background: Categories have been added to database
 
 Scenario: Customer uses a web link to access the One-Stop Service page 
     When I visit "/services"
-    Then I should see the headers "Are you looking for these?, Categories"
+    Then I should see the headers "Is this what you are looking for?, Categories"
 
 #Dynamic Branch Naming
 
@@ -33,13 +33,13 @@ Scenario: Customer goes to MBFC branch and scans QR Code
 
 Scenario: Customer tries a random url of our web service #sad path
     When I visit "/randomsite"
-    Then I should see the headers "Are you looking for these?"
+    Then I should see the headers "Is this what you are looking for?"
     Then I should not see the headers "randomsite"
 
 #----------------------------------------------------------------------------------------------------
 
 Scenario: Customer can't find his service on Main Page #sad path
     When I visit "/services"
-    Then I click on the "card" of "Visit a branch now!"
-    Then I should see the headers "More"
+    Then I click on the "card" of "Visit a branch"
+    Then I should see the headers "Unable to find the service that you need?"
 

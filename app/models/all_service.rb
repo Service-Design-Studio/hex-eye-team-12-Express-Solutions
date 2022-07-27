@@ -5,7 +5,7 @@ class AllService < ActiveRecord::Base
     end
 
     def self.top_services
-        return AllService.all.sort_by(&:count).reverse[0..3]
+        return AllService.all.sort_by(&:count).reverse[0..2]
     end
 
 end

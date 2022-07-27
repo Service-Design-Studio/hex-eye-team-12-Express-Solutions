@@ -1,24 +1,29 @@
 <center>
 
-  <div class="column is-full">
-    <h1 class='title' style = "font-size:45px">More</h1>
+  <div class="column is-11-mobile is-full-tablet is-full-desktop" style='margin-top:40px;'>
+    <h1 class='title' style = "font-size:38px">Unable to find the service that you need?</h1>
+
+    <h1 class='subtitle' style = "font-size:28px; margin-top:5px; margin-bottom:10px;">Get your queue number and visit a bank!</h1>
   </div>
 
   <%= form_with url: more_QR_path, method: :get, id: 'branch_form' do |form| %>
 
-    <h1 style = "font-size:30px"><b>Choose a topic</b></h1>
+    <p style="font-size:24px; display:inline-block; margin-right:10px;">I want a</p>
+
     <div class="select is-rounded" id='topic_selector'>
       <%= form.select :topic, @topic %>
     </div>
+
+    <p style="font-size:24px; display:inline-block; margin-left:10px;">service</p>
     <br><br>
 
-    <h1 style = "font-size:30px"><b>Select your Branch</b></h1>
-    <div class="select is-rounded" id='branch_selector'>
+    <p style="font-size:24px; display:inline-block; margin-right:10px;">at</p>
+    <div class="select select-longer is-rounded" id='branch_selector'>
       <%= form.select :branch_name, @all_locations_name %>
     </div>
     <br><br>
 
-    <%= form.submit "Get Queue Number", class: "button is-large is-responsive is-rounded",  style: "font-size:18px; color:white;"%>
+    <%= form.submit "Next", class: "button is-large is-responsive is-rounded",  style: "font-size:18px; color:white;"%>
     <% end %>
 
 <div class="column is-full extraheight">

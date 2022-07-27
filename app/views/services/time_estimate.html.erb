@@ -1,82 +1,66 @@
-<div class="column is-full dbsbackground-timeestimate">
-
+<div class="column is-full dbsbackground-timeestimate" style='z-index:2;'>
   <div class="column is-full">
-    <br><h1 class='title alignitemscenter' style='color:white;'><%= @service.service%></h1>
+    <h1 class='title alignitemscenter' style='font-size:44px; color:white;'><%= @service.service%></h1>
   </div>
-
 </div>
 
-
-<div class="column is-full">
-</div>
 
 <% if @migratable == 'TRUE'%>
-  <div class="column is-full alignitemscenter">
-    <b><p style="font-size:45px; color:DimGray">Digital Service</p></b>
+  <div class=oval>
   </div>
 
-  <div class='columns is-centered' style='margin:10px 10px 10px 10px; font-size:20px;'>
-    <div class="column is-full">
 
-      <div class="card-content" style='text-align:left;'>
-      
-        <div class='columns' style='margin-right:10px; margin-left:-20px;'>  
-          <figure class="image is-48x48" style='margin-right:8px; margin-top:5px;'>
-            <%= image_tag 'queue.png' %>
-          </figure>
-
-          <p style='margin-top:10px;'>Skip the Queue!</p>
-        </div>
-
-        <div class='columns' style='margin-right:10px; margin-left:-20px; margin-bottom:5px;'>  
-          <figure class="image is-48x48" style='margin-right:8px; margin-top:5px;'>
-            <%= image_tag 'time.png' %>
-          </figure>
-
-          <p style='margin-top:10px;'>Save your time!</p>
-        </div>
-
-      </div>
-
-        <a href= "<%= @deep_link %>">
-          <button class="popoutbuttons"> 
-            <p style="font-size:22px; color:white;" >Start</p>
-          </button>
-        </a>
+  <div class="columns is-multiline is-mobile is-centered overlay-shape" style='min-height=80vh; margin-top:-370px;'>
+    <div class="column is-9-mobile is-full-tablet is-full-desktop alignitemscenter" style='margin-bottom:-25px;'>
+      <p style="font-size:36px; font-weight:600; line-height:45px; color:white;">Get it done with Digibank in</p>
     </div>
-  </div>
-
-  <div class="column is-full alignitemscenter">
-
-    <% @digital_time = @digital_time.to_s + ' min' %>
-    <h2 style='font-size:22px;'>Estimated time: <b><%= @digital_time %></b> </h2><br>
-
-    <button class="popoutbuttons">
-      <p style="font-size:22px; color:white;">Start</p>
-    </button>
-
-  </div>
-
-  <div class="column is-full">
-    <div>
-      <hr style="height: 4px; color:black; background-color:gray;">
-
+    <div class="column is-full alignitemscenter" style='margin-bottom:-35px;'>
+      <% @digital_time = @digital_time.to_s + ' min' %>
+      <h2 style='font-size:32px; font-weight:525; color:white; margin-top:0px;'><b style='font-size:38px;'><%= @digital_time %></b> </h2><br>
     </div>
+
+    <div class="column is-full alignitemscenter" style='margin-top:60px;'>
+      <center><figure class="image is-48x48" style='align-content:center;'>
+        <%= image_tag 'queue.png' %>
+      </figure>
+
+      <p style='margin-top:10px;'>Skip the Queue! No need to wait.</p>
+        
+      <figure class="image is-48x48" style='margin-right:8px; margin-top:5px;'>
+        <%= image_tag 'time.png' %>
+      </figure>
+
+      <p style='margin-top:10px;'>Easy steps. Save your time!</p>
+
+    </div></center>
+
   </div>
   
+
+  <a href= "<%= @deep_link %>">
+    <div class="column is-full alignitemscenter">
+      <button class="popoutbuttons">
+        <b><p style="font-size:32px; color:white;">Go</p></b>
+      </button>
+    </div>
+  </a>
+
+  <div class="column is-full">
+    <hr style="height: 2px; color:black; background-color:gray; margin-top:15px; box-shadow: 0px -15px 26px rgba(25, 25, 25, 0.95);">
+  </div>
+
 <% end %>
 
-
-<div class="column is-full">
-  <b><p style="font-size:25px; color:DimGray">Do it at a branch</p></b>
+<div class="column is-full alignitemscenter" style='margin-top:-20px;'>
+  <p style="font-size:26px; color:DimGray">Wait in the Queue</p>
 
   <% @branch_time  = @branch_time.to_s + ' min' %>
-  <h2>Estimated time: <b> <%= @branch_time %> </b></h2><br>
+  <h2>Estimated time: <b style='color:rgb(220,0,0); font-size:22px'> <%= @branch_time %> </b></h2><br>
   <div class="select is-rounded">
   <%= form_with url: show_QR_path, method: :get, id: 'branch_form' do |form| %>
     <%= form.select :branch_name, @all_locations_name %>
     <br>
-    <%= form.submit "Get Queue Number", class: "popoutbuttons",  style: "font-size:22px; color:white;"%>
+    <%= form.submit "Get Queue Number", class: "popoutbuttons-orange",  style: "font-size:16px; color:white;"%>
   <% end %>
   </div><br>
 </div>
