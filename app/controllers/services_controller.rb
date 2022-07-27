@@ -26,9 +26,10 @@ class ServicesController < ApplicationController
     @digital_time = @service.digital_time
     @branch_time = @service.branch_time
     @branch_name = ""
+    @deep_link = @service.deep_link
     
     all_locations_name = Branch.all_locations_name
-    if branch != nil
+    if branch != nil #or branch!='Branch' or branch!="Branch name"
       branch_name = Branch.find_by(branch: branch).branch_name
       all_locations_name.delete(branch_name)
       all_locations_name.unshift(branch_name)
@@ -37,7 +38,6 @@ class ServicesController < ApplicationController
       #WIP: Adds branch time to the branch service time
       branch_waiting_time = Duration.find_by(branch_id: branch).wait_time
       @branch_time += branch_waiting_time
-
     end
     @all_locations_name = all_locations_name
   end
