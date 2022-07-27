@@ -169,10 +169,37 @@ async function filterFunction() {
   console.log(ul)
   searchDict = await query(input.value);
   // console.log("S:" + searchDict);
-  
+  console.log(searchDict)
   id = searchDict["top_5_index"];
   services = searchDict['top_5_services'];
-  // await new Promise(resolve => setTimeout(resolve, 300));
+  let n = id.length
+  console.log(n)
+  if (n == 0) {
+    console.log(1000)
+    while (ul['ui-id-1'].firstChild) {
+      ul['ui-id-1'].removeChild(ul['ui-id-1'].firstChild);
+  }
+  while (ul[0].firstChild) {
+    ul[0].removeChild(ul[0].firstChild);
+  }
+  let li = document.createElement("li");
+
+  li.innerText = "No results found, please try another search.";
+  //set inner text as bold
+  // center text
+  li.style = "text-align: center;";
+  li.style.fontWeight = "bold";
+  //set inner text as italic 
+  li.style.fontStyle = "italic";
+  ul['ui-id-1'].appendChild(li);
+  console.log(li)
+  let divResult = document.getElementById('results')
+  console.log(divResult);
+  divResult.appendChild(ul['ui-id-1'])
+  ul['ui-id-1'].style.position = "absolute";
+  ul['ui-id-1'].style.display = "block";
+    
+  }else{
   
   if (ul['ui-id-1'].style.display === "block") {
     return true
@@ -206,26 +233,18 @@ async function filterFunction() {
     
     
     console.log( ul)
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < n; i++) {
       let index = id[i];
       $('<li class="ui-menu-item" id="ui-id-6" tabindex="-1"></li>')
           .data("ui-autocomplete-item", services[i])
           .append("<a id='" + services[i] + "' href='services/" + String(index+2) + "/time_estimate'>" + services[i] + "</a>")
           .appendTo(ul['ui-id-1']);
     }
-    if (ul['ui-id-1'].childElementCount > 0 ) {
+  }
+    // if (ul['ui-id-1'].childElementCount > 0 ) {
     ul['ui-id-1'].style.display = "block";
    
-    
- 
-    //set ul position to the dev result position 
-    // ul['ui-id-1'].style.position = "relative";
-    // ul[0].style.position = "relative";
-  
-    
-    
-  }
-   
+
 
   }
   
