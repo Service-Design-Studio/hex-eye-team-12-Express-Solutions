@@ -16,6 +16,39 @@
 //       timeout = setTimeout(later, wait);
 //     };
 //   };
+// $('#myInput').tooltip({content : "Search for a service"})
+
+function check(){
+  var input = document.getElementById("myInput");
+  var popup = document.getElementById("displayText");
+
+  let ul= document.getElementsByTagName('ul')
+  if (ul[0].style.display ==='none' && input.value.length > 0) {
+    console.log('if')
+
+    // $('#myInput').tooltip({content : "Search for a service"})
+    //hide tooltip
+    // window.prompt("Enter your name");
+    //change chass to "show"
+    popup.style.visibility = "visible";
+    
+
+    // $('#myInput').tooltip({title: function(){return "press enter"}})
+  } else{
+    console.log('else')
+    // $('#myInput').tooltip({content : ""})
+    // $('#myInput').removeAttr('title')
+    // window.prompt("Enter your name");
+    // $('#myInput').classList.toggle("show")
+    // popup.classList.toggle("show");
+    // popup.classList.values = "hide";
+    popup.style.visibility = "hidden";
+    
+    // $('#myInpput').tooltip({title: function(){return ""}})
+  }
+
+}
+setInterval(check,3000)
 
 function debounce(func, delay)  { 
 
