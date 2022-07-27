@@ -1,73 +1,184 @@
-  <div class="container">
-    <% if session[:branch] != nil %>
-      <h6 class="subtitle"><%=Branch.find_by(branch: session[:branch]).branch_name%></h6>
-    <% end %>
+<div class="column is-full dbsbackground">
+  <div class="columns is-multiline is-vcentered is-centered has-text-center">
 
-    <h6 class="title is-3 has-text-left">What are you looking for?</h6>  
-    <input class="input is-rounded" type="text" placeholder="🔍 Search for a service">  
+    <div class="column is-half-tablet is-four-fifths-mobile">
+
+      <% if session[:branch] != nil %>
+        <h6 class="subtitle alignitemscenter" style="color:white;"><%=Branch.find_by(branch: session[:branch]).branch_name%></h6>
+      <% end %>
+
+      <center><h6 class="title alignitemscenter" style="color:white;">What are you looking for?</h6></center><br>
+
+      <div class="container">
+        <div class="dropdown-container" id="search">    
+          <input class="input is-rounded" type="text" placeholder="🔍 Search for a service" id="myInput" onkeyup="check_timeout()">    
+          <div class="dropdown display" id="results" style="display: none">
+            <a id="1"></a>
+            <a id="2"></a>
+            <a id="3"></a>
+            <a id="4"></a>
+            <a id="5"></a>
+          </div>
+        </div> 
+      </div>
+    </div>
+
   </div>
-  <br>
-  <br>
 
-  <div class="container">
-    <h3 class="title is-2 has-text-left">Top Services</h3>
+  <div class="column is-full" style='margin-top:-15px;'>
   </div>
-  <br>
 
-  <div class="columns is-mobile is-multiline">
+</div>
 
-    <% @topServices.each do |service| %>
+<div class="column is-full" style='margin-top:-10px;'>
+</div>
 
-    <% the_link = time_estimate_url(service) %>
-    <% the_services = service.service %>
-    <% the_services = '' + the_services + '' %>
+<div class="container alignitemscenter">
+      <h3 class="title is-4" style="text-align: middle;">Top Services</h3>
+</div>
+
+<div class="column is-full" style='margin-top:-10px;'>
+</div>
+
+<div class="column is-full gradienttopservices" style='box-shadow: 0 5px rgb(220,220,220);'>
+  <div class="columns is-centered">
+    <div class="column is-11-mobile is-10-tablet is-7-desktop">
+      <div class="columns is-multiline is-centered is-vcentered has-text-center">
+
+        <% @topServices.each do |service| %>
+
+        <% the_link = time_estimate_url(service) %>
+        <% the_services = service.service %>
+        <% img_link = service.service_image_link.to_s %>
         
-      <div class="column is-half" id= <%= service.service %>> 
 
-        <div class="card-image">
-          <figure class="image is-3by1">
-            <%= image_tag 'GreyBackground.png' %>
-          </figure>
-              <a href=<%= the_link %>>
-                <div class="is-overlay centertext">
-                    <center><p><%= the_services %></p></center>
-                </div>
-              </a>   
-        </div>
+        <a href=<%= the_link %>> 
+          <div class="column squarebuttons-topservice" id= <%= the_services %>> 
+            <div class="topservicebutton">
+              <hr style="height: 2.5px; background-color:rgb(204,0,0); margin-top:-50px;">
+              
+              <center><figure class="image capsize is-rounded">
+                <%= image_tag img_link %>
+              </figure></center>
+              
+              <hr style="height: 0px; visibility: hidden; margin-bottom:-5px;">
 
+              <center><p class="small blurry-text" style="text-align: middle;"><%= the_services %></p></center>
+            </div>
+        </a>
+          </div>
+
+        <% end %>
       </div>
-    <% end %>
+      <hr style="height: 0px; visibility: hidden; margin-bottom:-10px;">
+    </div>
   </div>
+</div>
+
+<div class="column is-full" style='margin-top:-15px;'>
+</div>
+  
+<div class="column is-full">
 
   <div class="container">
-    <h3 class="title is-2 has-text-left">Main Categories</h3>
+    <h3 class="title is-4 alignitemscenter" style="color:rgb(39, 39, 39);">Main Categories</h3>
+    <hr style="height: 0px; visibility: hidden; margin-bottom:-15px;">
   </div>
-  <br>
+  
+  <div class="columns is-centered">
+    <div class="column is-11-mobile is-10-tablet is-7-desktop">
+      <div class="columns is-mobile is-multiline">
 
-  <div class="columns is-mobile is-multiline">
+        <% @allServices.each do |service| %>
 
-    <% @allServices.each do |service| %>
+        <% the_link2 = sub_services_url(service.category) %>
+        <% the_services2 = service.category %>
+        <% cat_link = service.cat_image_link.to_s %>
+        
 
-    <% the_link2 = sub_services_url(service.category) %>
-    <% the_services2 = service.category %>
+          <div class="column is-6-mobile is-3-tablet is-3-desktop categoriesbutton"> 
+            <a href=<%= the_link2 %>>
+              <div class="card">
+                
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <%= image_tag cat_link %>
+                  </figure>
+                </div>
 
-      <div class="column is-half"> 
+                <hr style="height: 0px; visibility: hidden; margin-bottom:-15px;">
 
-        <div class="card-image">
-          <figure class="image is-3by1">
-            <%= image_tag 'GreyBackground.png' %>
-          </figure>
+                <div class="content textarea-categories">
+                    <center><p class="alignitemscenter blurry-text" style="font-size: 13px;"><%= the_services2 %></p></center>   
+                </div>
+              </div>
+            </a>
+          </div>
+        <% end %>
 
-          <a href=<%= the_link2 %>>
-            <div class="is-overlay centertext">
-                <center><p><%= the_services2 %></p></center>   
-            </div>
-          </a>
-        </div>
       </div>
-    <% end %>
+    </div>
   </div>
-  <br>
 
+</div>
 
-  <button class="button" id="More"><%= link_to "More", more_services_path() %></button>
+<div class="column is-full">
+</div>
+
+<button class="popoutbuttons" id="More"><%= link_to "More", more_services_path() %></button>
+
+<script>
+  var timeout = null;
+
+  function check_timeout() {
+    clearTimeout(timeout);
+    timeout = setTimeout(filterFunction(), 10000);
+  }
+
+  async function filterFunction() {
+    var input, filter, div, a 
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("results");
+    
+    setInterval(function() {
+      
+      if(input=== document.activeElement) {
+          div.style.display = "block";
+          console.log('set to block')
+          if (input.value.length < 3) {
+            div.style.display = "none";
+            }
+      } else {
+            div.style.display = "none";
+            console.log('set to none')
+        }
+    }, 1000);
+
+    searchDict =  await query(input.value);
+    // console.log(searchDict);
+    id = searchDict["top_5_index"];
+    services = searchDict['top_5_services'];
+    // console.log(services);
+    
+      for (i = 0; i < 5; i++) {
+        index = String(i);
+        service = services[i];
+        a = document.getElementById(String(i+1));
+        a.innerText = service;
+        a.href = `/services/${id[i]+2}/time_estimate`;
+      }
+  }
+
+  function query(inp) {
+    // implement getrequest 
+    return fetch('http://127.0.0.1:5000/predict?query='+inp)
+    .then(response => response.json());
+  }
+
+</script>
+
+<div class="column is-full">
+</div>
+<div class="column is-full">
+</div>
