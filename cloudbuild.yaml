@@ -15,7 +15,7 @@ steps:
     args:
       [
         "-c",
-        "/buildstep/execute.sh -i gcr.io/${PROJECT_ID}/${_SERVICE_NAME} -s ${PROJECT_ID}:${_REGION}:${_INSTANCE_NAME} -- bundle exec rake db:migrate"
+        "/buildstep/execute.sh -i gcr.io/${PROJECT_ID}/${_SERVICE_NAME} -s ${PROJECT_ID}:${_REGION}:${_INSTANCE_NAME} -- bundle exec rails db:migrate"
       ]
   - id: "run deploy"
     name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
@@ -34,7 +34,7 @@ substitutions:
   _SERVICE_NAME: hexeye-subesh-1
   _INSTANCE_NAME: hexeye-db-instance
 
-timeout: 6600s 
+timeout: 10000s 
 images:
   - "gcr.io/${PROJECT_ID}/${_SERVICE_NAME}"
 # [END cloudrun_rails_cloudbuild]
