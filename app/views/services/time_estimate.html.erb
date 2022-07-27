@@ -60,11 +60,11 @@
   <%= form_with url: show_QR_path, method: :get, id: 'branch_form' do |form| %>
     <%= form.select :branch_name, @all_locations_name %>
     <br>
-    <%= form.submit "Get Queue Number", class: "popoutbuttons-orange",  style: "font-size:16px; color:white;"%>
+    <center><%= form.submit "Get Queue Number", class: "popoutbuttons-orange",  style: "font-size:18px; color:white;"%></center>
   <% end %>
-  </div><br>
+
+  </div>
 </div>
-</center>
 
 <div class="column is-full extraheight">
 </div>
