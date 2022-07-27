@@ -1,12 +1,12 @@
 function check(){
   var input = document.getElementById("myInput");
   var popup = document.getElementById("displayText");
-
   let ul= document.getElementsByTagName('ul')
  
   if (ul[0].style.display ==='none' && input.value.length > 0 && document.activeElement === input) {
-    popup.style.visibility = "visible";
-    console.log("Popup")
+    // popup.style.visibility = "visible";
+    
+    filterFunction();
 
   } else{
 
