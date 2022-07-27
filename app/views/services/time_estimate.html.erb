@@ -1,28 +1,61 @@
-<center>
+<div class="column is-full dbsbackground-timeestimate">
+
+  <div class="column is-full">
+    <br><h1 class='title alignitemscenter' style='color:white;'><%= @service.service%></h1>
+  </div>
+
+</div>
+
+
 <div class="column is-full">
-  <br><h1 class='title'><%= @service.service%></h1>
 </div>
 
 <% if @migratable == 'TRUE'%>
+  <div class="column is-full alignitemscenter">
+    <b><p style="font-size:45px; color:DimGray">Digital Service</p></b>
+  </div>
 
-  <div class="column is-full">
-    <div>
-      <b><p style="font-size:25px; color:DimGray">Do it digitally</p></b>
-        <% @digital_time = @digital_time.to_s + ' min' %>
-        <h2>Estimated time: <b><%= @digital_time %></b> </h2><br>
+  <div class='columns is-centered' style='margin:10px 10px 10px 10px; font-size:20px;'>
+    <div class="column is-full">
 
-        <button class="popoutbuttons">
-          <p style="font-size:22px; color:white;">Start</p>
-        </button>
+      <div class="card-content" style='text-align:left;'>
+      
+        <div class='columns' style='margin-right:10px; margin-left:-20px;'>  
+          <figure class="image is-48x48" style='margin-right:8px; margin-top:5px;'>
+            <%= image_tag 'queue.png' %>
+          </figure>
+
+          <p style='margin-top:10px;'>Skip the Queue!</p>
+        </div>
+
+        <div class='columns' style='margin-right:10px; margin-left:-20px; margin-bottom:5px;'>  
+          <figure class="image is-48x48" style='margin-right:8px; margin-top:5px;'>
+            <%= image_tag 'time.png' %>
+          </figure>
+
+          <p style='margin-top:10px;'>Save your time!</p>
+        </div>
+
+      </div>
+
     </div>
+  </div>
+
+  <div class="column is-full alignitemscenter">
+
+    <% @digital_time = @digital_time.to_s + ' min' %>
+    <h2 style='font-size:22px;'>Estimated time: <b><%= @digital_time %></b> </h2><br>
+
+    <button class="popoutbuttons">
+      <p style="font-size:22px; color:white;">Start</p>
+    </button>
+
   </div>
 
   <div class="column is-full">
     <div>
       <hr style="height: 4px; color:black; background-color:gray;">
-        <div class="columns is-centered is-vcentered">
-          <h3 class="title is-5 is-vcentered">OR</h3>
-        </div> 
+
     </div>
   </div>
   
@@ -47,6 +80,6 @@
 </div>
 <div class="column is-full extraheight">
 </div>
-</center>
+
 
 

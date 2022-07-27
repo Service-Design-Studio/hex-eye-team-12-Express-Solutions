@@ -34,7 +34,7 @@ Background: Branches, Services, Topics have been added to database
 Scenario: I am not in any branch and I want to get cash related service from Android
     Given I am using "Android"
     And I visit "/services"
-    When I click on the "button" of "More"
+    When I click on the "card" of "Visit a branch now!"
     Then I should see "Branch name" pre-selected for branch
     When I select "Cash Related" 
     And I select "MBFC Branch"
@@ -46,7 +46,7 @@ Scenario: I am not in any branch and I want to get cash related service from And
 Scenario: I am in MBFC Branch and I want to get cash related service from Android
     Given I am using "Android"
     And I visit "/services?branch=MBFC"
-    When I click on the "button" of "More"
+    When I click on the "card" of "Visit a branch now!"
     Then I should see "MBFC Branch" pre-selected for branch
     When I select "Cash Related" 
     And I click on the "Get Queue Number" button
@@ -57,7 +57,7 @@ Scenario: I am in MBFC Branch and I want to get cash related service from Androi
 Scenario: I am not in any branch and I want to get cash related service from iPhone
     Given I am using "iPhone"
     And I visit "/services"
-    When I click on the "button" of "More"
+    When I click on the "card" of "Visit a branch now!"
     Then I should see "Branch name" pre-selected for branch
     When I select "Cash Related" 
     And I select "MBFC Branch"
@@ -69,7 +69,7 @@ Scenario: I am not in any branch and I want to get cash related service from iPh
 Scenario: I am in MBFC Branch and I want to get cash related service from iPhone
     Given I am using "iPhone"
     And I visit "/services?branch=MBFC"
-    When I click on the "button" of "More"
+    When I click on the "card" of "Visit a branch now!"
     Then I should see "MBFC Branch" pre-selected for branch
     When I select "Cash Related" 
     And I click on the "Get Queue Number" button
@@ -80,7 +80,7 @@ Scenario: I am in MBFC Branch and I want to get cash related service from iPhone
 Scenario: I am not in any branch and I want to get cash related service from web
     Given I am using web
     And I visit "/services"
-    When I click on the "button" of "More"
+    When I click on the "card" of "Visit a branch now!"
     Then I should see "Branch name" pre-selected for branch
     When I select "Cash Related" 
     And I select "MBFC Branch"
