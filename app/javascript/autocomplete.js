@@ -135,7 +135,7 @@ $(function () {
 
       return $("<li></li>")
           .data("ui-autocomplete-item", item)
-          .append("<a href='services/" + String(index+2) + "/time_estimate'>" + txt + "</a>")
+          .append("<a id='" + item.value + "' href='services/" + String(index+2) + "/time_estimate'>" + txt + "</a>")
           .appendTo(ul);
       };
 });
@@ -237,7 +237,7 @@ async function filterFunction() {
       let index = id[i];
       $('<li class="ui-menu-item" id="ui-id-6" tabindex="-1"></li>')
           .data("ui-autocomplete-item", services[i])
-          .append("<a href='services/" + String(index+2) + "/time_estimate'>" + services[i] + "</a>")
+          .append("<a id='" + services[i] + "' href='services/" + String(index+2) + "/time_estimate'>" + services[i] + "</a>")
           .appendTo(ul['ui-id-1']);
     }
   }
