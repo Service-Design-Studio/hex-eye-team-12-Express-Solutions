@@ -18,7 +18,9 @@ For Capybara + Cucumber, `features/support/env.rb` can be configured to use othe
         # as Cucumber::Rails::Database.javascript_strategy overrides
         # this setting.
         DatabaseCleaner.strategy = :truncation
-        Capybara.current_driver = :selenium
+        # Use non headless option if you want to see Capybara Selenium acting in a browser window
+        # Capybara.current_driver = :selenium_chrome
+        Capybara.current_driver = :selenium_chrome_headless
     end
 
     Before('not @javascript') do
