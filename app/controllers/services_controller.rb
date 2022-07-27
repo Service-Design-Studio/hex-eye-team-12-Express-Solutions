@@ -24,8 +24,10 @@ class ServicesController < ApplicationController
     @service = AllService.find(params[:id])
     @migratable = @service.migratable
     @digital_time = @service.digital_time
-    @branch_time = @service.branch_time
+    @service_time = @service.branch_time
     @branch_name = ""
+    @total_time = @service_time
+    @branch_time_dict = Branch.all_durations
     
     all_locations_name = Branch.all_locations_name
     if branch != nil
@@ -34,9 +36,8 @@ class ServicesController < ApplicationController
       all_locations_name.unshift(branch_name)
       @branch_name = branch_name
 
-      #WIP: Adds branch time to the branch service time
-      branch_waiting_time = Duration.find_by(branch_id: branch).wait_time
-      @branch_time += branch_waiting_time
+      #WIP: Adds branch time to the branch service time 
+      @total_time += Branch.find_by(branch: branch).wait_time
 
     end
     @all_locations_name = all_locations_name
