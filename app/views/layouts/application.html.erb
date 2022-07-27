@@ -14,32 +14,42 @@
 
   <body>
 
-    <div class = "columns has-background-dark is-multiline">
+    <div class = "columns is-mobile is-centered is-vcentered dbsheader is-multiline" >
 
-      <div class="column is-half-mobile is-one-quarter-tablet is-one-fifth-desktop">
-          <figure class="image">
-            <%= image_tag 'dbs_logo.png' %>
-          </figure>
+      <div class="column">
+        <hr style="height: 2px; background-color:rgb(204,0,0);">
       </div>
 
-    <div class="column is-full is-full-mobile">    
-      <h1 class = "title" style="color:white"><%= link_to( "‏ ‏ ‎ ‎One-Stop Solutions", "/services")  %> </h1>
-      <hr style="height: 0.1px; visibility: hidden; margin-bottom:0px;">
+      <div class="columns is-centered is-vcentered" style='margin-top:8px;'>
+        <div class="column" style="max-width:180px;">
+            <figure class="image">
+              <%= image_tag 'dbs_logo_black.png' %>
+            </figure>      
+        </div>
+        
+        <div class="column">
+          <a href="/services">    
+            <p style='color:black; font-size:17px; margin-left:-25px;'>One-Stop Solutions</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="column">
+        <hr style="height: 2px; background-color:rgb(204,0,0);">
+      </div>
     </div>
 
-    </div>
-
-    <div class="columns is-multiline is-vcentered is-centered">
-      <div class="column is-half is-four-fifths-mobile is-narrow-tablet-only is-4-desktop">
+    <div class="columns is-multiline is-vcentered is-centered is-mobile gradientbody maxheight">
         
       <!--
+        <div class="column is-half is-four-fifths-mobile is-narrow-tablet-only is-4-desktop">
         <h6 class="has-text-left">Debug</h6>
         <h6 class="has-text-left">Branch: <%= session[:branch]%></h6>
         <h6 class="has-text-left">Mobile: <%= session[:mobile]%></h6>
         <h6 class="has-text-left">UA: <%= session[:ua]%></h6>
         -->
-          <%= yield %>
-      </div>
+        <%= yield %>
+
     </div>
   
   </body>
