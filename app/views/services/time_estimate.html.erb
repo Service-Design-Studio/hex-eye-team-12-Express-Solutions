@@ -1,3 +1,5 @@
+<%= javascript_include_tag "time_estimate.js" %>
+
 <div class="column is-full dbsbackground-timeestimate">
 
   <div class="column is-full">
@@ -46,9 +48,11 @@
     <% @digital_time = @digital_time.to_s + ' min' %>
     <h2 style='font-size:22px;'>Estimated time: <b><%= @digital_time %></b> </h2><br>
 
-    <button class="popoutbuttons">
-      <p style="font-size:22px; color:white;">Start</p>
-    </button>
+    <a href=<%= "https://internet-banking.dbs.com.sg/IB/Welcome"   %>> 
+      <button class="popoutbuttons">
+        <p style="font-size:22px; color:white;">Start</p>
+      </button>
+    </a>
 
   </div>
 
@@ -66,10 +70,21 @@
   <b><p style="font-size:25px; color:DimGray">Do it at a branch</p></b>
 
   <% @branch_time  = @branch_time.to_s + ' min' %>
-  <h2>Estimated time: <b> <%= @branch_time %> </b></h2><br>
-  <div class="select is-rounded">
+  <h2>Estimated time: <b id="branchtime"> <%= @total_time %> </b></h2><br>
+
+
+
+  <div data-time-dict='<%= @branch_time_dict %>' id="data-time-dict" ></div>
+  <div data-service-time=<%= @service_time %> id="data-service-time"></div>
+
+  <div class="select is-rounded" id='branch_dropdown'>
   <%= form_with url: show_QR_path, method: :get, id: 'branch_form' do |form| %>
-    <%= form.select :branch_name, @all_locations_name %>
+    <%= 
+    form.select :branch_name, @all_locations_name,
+    {},
+    {:onchange => "changeTime(this.value)"}
+     %>
+
     <br>
     <%= form.submit "Get Queue Number", class: "popoutbuttons",  style: "font-size:22px; color:white;"%>
   <% end %>
@@ -81,6 +96,16 @@
 </div>
 <div class="column is-full extraheight">
 </div>
+<div><%= @branch_time_dict %></div>
+<script>
 
+let br = document.getElementById("data-time-dict")
+x.dict = "<%= @branch_time_dict %>";
+"<%= @branch_time_dict %>"
 
+</script>
 
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script>

@@ -22,17 +22,12 @@ AllService.create!( :category => category,
                     )
 end
 
-bank_details_table = CSV.read("db/sms_numbers.csv")
-bank_details_table.each do |bank, branch_name, branch, sms_number|
-    Branch.create!(:bank => bank, :branch_name => branch_name,:branch => branch, :sms_number => sms_number)
+bank_details_table = CSV.read("db/branch.csv")
+bank_details_table.each do |bank, branch_name, branch, sms_number, wait_time|
+    Branch.create!(:bank => bank, :branch_name => branch_name,:branch => branch, :sms_number => sms_number, :wait_time => wait_time)
 end
 
 topics_table = CSV.read("db/topics.csv")
 topics_table.each do |topic|
     Topic.create!(:topic => topic)
-end
-
-duration_table = CSV.read("db/branch_time.csv")
-duration_table.each do |branch, id, wait_time|
-    Duration.create!(:branch => branch, :branch_id => id, :wait_time => wait_time)
 end
