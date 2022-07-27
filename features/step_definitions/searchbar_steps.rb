@@ -10,7 +10,7 @@ end
 
 Then (/I should see "(.*)" in the dropdown/) do | keyword |
 
-    expect(page).to have_css("#results a", text: keyword)
+    expect(page).to have_css("ul", text: keyword)
     #
 end
 
