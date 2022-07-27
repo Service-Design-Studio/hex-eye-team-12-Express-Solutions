@@ -1,49 +1,17 @@
-// function debounce(func, wait) {
-//     let timeout;
-//     console.log(wait)
-//     console.log(func)
-  
-//     return () => {
-//       const later = () => {
-//         input = document.getElementById("myInput")
-//         clearTimeout(timeout);
-//         func
-//       };
-  
-//       clearTimeout(timeout);
-//       console.log(later)
-//       timeout = setTimeout(later, wait);
-//     };
-//   };
-// $('#myInput').tooltip({content : "Search for a service"})
-
 function check(){
   var input = document.getElementById("myInput");
   var popup = document.getElementById("displayText");
 
   let ul= document.getElementsByTagName('ul')
-  if (ul[0].style.display ==='none' && input.value.length > 0) {
-    console.log('if')
-
-    // $('#myInput').tooltip({content : "Search for a service"})
-    //hide tooltip
-    // window.prompt("Enter your name");
-    //change chass to "show"
+ 
+  if (ul[0].style.display ==='none' && input.value.length > 0 && document.activeElement === input) {
     popup.style.visibility = "visible";
-    
+    console.log("Popup")
 
-    // $('#myInput').tooltip({title: function(){return "press enter"}})
   } else{
-    console.log('else')
-    // $('#myInput').tooltip({content : ""})
-    // $('#myInput').removeAttr('title')
-    // window.prompt("Enter your name");
-    // $('#myInput').classList.toggle("show")
-    // popup.classList.toggle("show");
-    // popup.classList.values = "hide";
+
     popup.style.visibility = "hidden";
     
-    // $('#myInpput').tooltip({title: function(){return ""}})
   }
 
 }
@@ -68,47 +36,34 @@ function debounce(func, delay)  {
 }  
 
 
-function wrapper() {
-  let output = filterFunction();
-  var input, filter, div
-  input = document.getElementById("myInput");
-  // console.log("Input: " + input.value);
-  filter = input.value.toUpperCase();
-  div = document.getElementById("results");
-  ul = document.getElementsByTagName("ul");  // where is the element with tagname "ul"?
-}
-// if input not focused, then hide the list
-// $('#myInput').focusout($('ul').style.display = "none");
-// $(function enter() {
-//   setInterval(() => { document.getElementById("myInput").submit() },2000)
+// function wrapper() {
+//   let output = filterFunction();
+//   var input, filter, div
+//   input = document.getElementById("myInput");
+//   // console.log("Input: " + input.value);
+//   filter = input.value.toUpperCase();
+//   div = document.getElementById("results");
+//   ul = document.getElementsByTagName("ul");  // where is the element with tagname "ul"?
+// }
+
+
+// function check() {
+//   var input = document.getElementById("myInput");
+//   var popup = document.getElementById("displayText");
+
+//   let ul= document.getElementsByTagName('ul')
+//   //input is focus 
   
-//   // if (document.activeElement.id !== "myInput") {
-//   //   console.log("focus")
-//   //   document.getElementsByTagName("ul")['ui-id-1'].style.display = "none";
-//   // }
-// })
+//   if (ul[0].style.display ==='none' && input.value.length > 0 && document.activeElement === input) {
 
-// setTimeout(function() {
-//   $('#myInput').trigger('enter');
-// }, 2000);
+//     popup.style.visibility = "visible";
+//   } else{
 
-function check() {
-  var input = document.getElementById("myInput");
-  var popup = document.getElementById("displayText");
-
-  let ul= document.getElementsByTagName('ul')
-  //input is focus 
-  
-  if (ul[0].style.display ==='none' && input.value.length > 0 && document.activeElement === input) {
-
-    popup.style.visibility = "visible";
-  } else{
-
-    popup.style.visibility = "hidden";
+//     popup.style.visibility = "hidden";
    
-  }
+//   }
 
-}
+// }
 
  
 
@@ -157,38 +112,6 @@ $(function () {
           .appendTo(ul);
       };
 });
-
-// Debounce attempt
-// $('#myInput').keyup(debounce(filterFunction()), 3000);
-// debouncedFn = $.debounce(filterFunction(), 3000);
-
-// Jeff's JS code
-
-var end_time = new Date();
-var start_time = new Date();
-var last_time = new Date();
-
-
-// function check_timer() {
-//   start_time = new Date().getTime();
-//   // clearInterval(timer)
-//   let diff = start_time - end_time
-//   console.log("diff")
-//   console.log(diff)
-//   if (diff > 3000) {
-//   filterFunction()
-//   console.log('dont repeat')
-//   end_time = new Date();
-  
-//   }else if (start_time - last_time > 2000) {
-//       filterFunction();
-//       console.log('send in the last');
-//       last_time = new Date();}
-  
-
-//   // clearInterval(timer)
-
-// }
 
 async function filterFunction() {
  
@@ -251,38 +174,36 @@ async function filterFunction() {
     //set inner text as italic 
     li.style.fontStyle = "italic";
     ul['ui-id-1'].appendChild(li);
+
+    let divResult = document.getElementById('results')
+    console.log(divResult);
+    divResult.appendChild(ul['ui-id-1'])
+    
+    
+    console.log( ul)
     for (i = 0; i < 5; i++) {
       let index = id[i];
-      $("<li></li>")
+      $('<li class="ui-menu-item" id="ui-id-6" tabindex="-1"></li>')
           .data("ui-autocomplete-item", services[i])
           .append("<a href='services/" + String(index+2) + "/time_estimate'>" + services[i] + "</a>")
           .appendTo(ul['ui-id-1']);
-      // li = document.createElement("li");
-      // li.innerText = services[i];
-      //     // li.innerHTML += "<a href='services/" + String(id[i]+2) + "/time_estimate'>" + "</a>"; // attempt at making the ML suggestions clickable
-      // ul['ui-id-1'].appendChild(li);
     }
     if (ul['ui-id-1'].childElementCount > 0) {
-    ul['ui-id-1'].style.display = "block";}
-    console.log(ul[0])
-
-
+    ul['ui-id-1'].style.display = "block";
+   
     
+ 
+    //set ul position to the dev result position 
+    // ul['ui-id-1'].style.position = "relative";
+    // ul[0].style.position = "relative";
+  
+    
+    
+  }
+   
 
   }
   
-
- 
-  
-    // if (myUl.firstChild){
-    //   //set style
-    //   myUl.style.display = "block";
-    //   // div.style.display = "block";
-    // } else{
-    //   // div.style.display = "none";
-    // }
-    // console.log(myUl)
-    
 }
 
 
