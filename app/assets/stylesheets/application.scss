@@ -66,6 +66,16 @@ $is-narrow: 300px;
   height:100vh;
 }
 
+.dbsbackground-timeestimate{
+  background-image: url("digitalservice-background.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+
+  min-height:80px;
+  height:100px;
+}
+
 .gradientbody {
   background: linear-gradient(rgb(255, 255, 255), rgb(246, 246, 246));
   background-size:100% 100%;
