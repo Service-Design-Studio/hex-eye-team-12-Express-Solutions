@@ -7,6 +7,7 @@
 $subtitle-line-height: 1.5;
 $family-sans-serif: "Open Sans", Helvetica, Arial, sans-serif;
 $family-monospace: "Source Code Pro", monospace;
+$family-primary: $family-sans-serif;
 
 // Disable the widescreen breakpoint
 $widescreen-enabled: false;
@@ -14,13 +15,14 @@ $widescreen-enabled: false;
 // Disable the fullhd breakpoint
 $fullhd-enabled: false;
 
-// GLOBAL BUTTONS COLOR EDITS
+// GLOBAL BUTTONS DEFAULT COLOR
 //---------------------------
 $link: $white;
-$link-hover: #e4e4e4;
+$link-hover: #ffffff;
 //---------------------------
 
-$button-background-color: #5a5a5a;
+$button-background-color: rgb(255, 0, 0);
+
 
 $box-padding: 18px;
 $box-background-color: #454545;
@@ -31,35 +33,223 @@ $box-radius: 10px;
 $progress-value-background-color: #bdbdbd;
 
 $card-content-padding: 10px;
-$card-radius: 15px;
+$card-radius: 10px;
+$card-shadow: 0px 1px 6px 0.3px rgb(186, 186, 186);
 
-$column-gap: 6px;
+$column-gap: 0.75rem;
 
 $is-narrow: 300px;
+
+.dbsbackground{
+  background-image: url("DBS_Towers,_SIA_Building_and_Capital_Tower.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.dbsheader {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 5px 10px 10px rgb(0, 0, 0);
+  max-height: 90px;
+  $link:black;
+}
+
+.gradientbody {
+  background: linear-gradient(rgb(255, 255, 255), rgb(246, 246, 246));
+  background-size:100% 100%;
+}
+
+.gradientheader {
+  background-image: linear-gradient(rgb(225, 225, 225),rgb(220, 220, 220));
+}
+
+.gradienttopservices {
+  //background-image: linear-gradient(rgb(212, 212, 212), rgb(212, 210, 212));
+  background-color: #edededf3;
+}
+
+.gradientsubservices {
+  //background-image: linear-gradient(rgb(212, 212, 212), rgb(212, 210, 212));
+  background-color: #f0f0f0;
+}
+
+.squarebuttons-topservice{
+  height:80px;
+  width: 23%;
+  max-width: 150px;
+
+  margin-left: 0%;
+  margin-right: 0%;
+  margin-top: 35px;
+}
+
+.topservicebutton {
+  background-color: transparent;
+  height:142px;
+}
+.topservicebutton:hover {
+  background-color: #9c9c9c2b;
+  height:149px;
+
+  transform: translateY(-5px);
+}
+
+.card{
+
+}
+.card:hover{
+  background-color:rgb(250, 250, 250);
+}
+
+.textarea-categories{
+  cursor:pointer;
+
+  @include mobile {
+    height: 30px;
+  }
+  @include tablet-only {
+    height: 35px;
+  }
+  @include desktop{
+    height: 37px;
+  }
+}
+.categoriesbutton:hover{
+  transform: translateY(-5px);
+}
+
+.squarebuttons-subservice{ 
+  background-color: transparent;
+
+  height:80px;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  
+  margin-top: 25px;
+  margin-bottom: 0%;
+ 
+  cursor:pointer;
+ }
+.squarebuttons-subservice:hover{
+  transform: translateY(-8px);
+}
+
+.popoutbuttons{
+  
+  padding: 10px 22px;
+  font-size: 16px;
+  text-align: center;
+  
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #eb0000;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px #999;
+}
+.popoutbuttons:hover{
+  background-color: #d80000;
+}
+.popoutbuttons:active{
+  box-shadow: 0 1px #666;
+  transform: translateY(4px);
+}
+
+.More{
+  $link:black; 
+  color:black;
+}
+
+.selectedtext{
+  padding: 15px 25px;
+  font-size: 20px;
+  font-weight: 525;
+  color:#999;
+  text-align: center;
+  outline: none;
+  color: #fff;
+  background-color: rgb(204,0,0);
+  border: none;
+  border-radius: 100px;
+}
+
+.boxoutline{
+  @include tablet-only {
+    outline: 3px dashed rgb(204,0,0);
+  }
+  @include desktop{
+    outline: 3px dashed rgb(204,0,0);
+  }
+}
 
 .columns {
   display: flex;
 }
 
+.capsize{
+  min-width: 56px;
+  min-height: 56px;
+  max-width: 56px;
+  max-height: 56px;
+}
+
+.alignitemscenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .centertext {
-    padding-left: 3%;
-    padding-right: 3%;
+  padding-left: 3%;
+  padding-right: 3%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    @include mobile {
-      font-size:15px;
-    }
-    @include tablet-only {
-      font-size:18px;
-    }
-    @include desktop{
-      font-size:18px;
-    }
+  @include mobile {
+    font-size:15px;
   }
+  @include tablet-only {
+    font-size:18px;
+  }
+  @include desktop{
+    font-size:18px;
+  }
+}
 
+p.small {
+  line-height: 1.2;
+  font-size: 13px;
+}
+
+.blurry-text {
+  font-weight: 525;
+  color: transparent;
+  text-shadow: 0 0 0.6px rgb(55, 55, 55);
+}
+
+.overlay{
+  background: rgba(39,62,84,0.22);
+  overflow: hidden;
+  height: 100%;
+  z-index: 2;
+}
+
+.extraheight{
+  height: 250px;
+}
+
+.maxheight{
+  max-height: fit-content;
+}
+
+.maxwidth_desktop{
+  max-width: 450px;
+}
 
 
 // import bulma and optionally the extensions
@@ -67,3 +257,44 @@ $is-narrow: 300px;
 @import "bulma-extensions";
 
 // custom scss works here or in the relevant files
+.dropdown-container #results {
+    display: block;
+    position: absolute;
+}
+.dropdown-container a {
+    color: black;
+    position: relative;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.display-none {
+    display: none;
+}
+
+.display-none {
+    display: block;
+}
+// .dropdown {
+//     position: relative;
+//     display: inline-block;
+// }
+
+// .dropdown-content {
+//     display: show;
+//     position: absolute;
+//     background-color: #f9f9f9;
+//     min-width: 160px;
+//     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+//     z-index: 1;
+// }
+
+// .dropdown-content a {
+// color: black;
+// padding: 12px 16px;
+// text-decoration: none;
+// display: block;
+// }
