@@ -1,0 +1,5 @@
+Amended_Category,Category_ID,Txn Category L4 (Clean),Service,Digital Time,Branch Time,Migratable,Monthly Count,Details,service_image_link,service_alt_text,cat_image_link,cat_alt_text,description
+Personal Info Update,5,UPDATE CUSTOMER ADDRESS,Update Address,3,5,TRUE,2500,Update Customer Address,,,,,Change your address with us easily via digibank
+Personal Info Update,5,UPDATE CUSTOMER EMAIL,Update Email,3,5,TRUE,7500,Update Customer Email,,,,,"Keep your email address updated to receive your transaction alerts, so you are notified of your account activities."
+Personal Info Update,5,UPDATE CUSTOMER PARTICULARS,Update Particulars,3,5,TRUE,20000,Update Customer Particulars,,,,,"Update your Personal Details, Signature Records or Passport Number (for foreigners) if you have recently changed it."
+Personal Info Update,5,UPDATE CUSTOMER PHONE,Update Phone,3,5,TRUE,10000,Update Customer Phone,,,,,"Keep your mobile number updated and ensure your transaction alerts on digibank app and mobile device are turned on, so you are notified of your account activities."
