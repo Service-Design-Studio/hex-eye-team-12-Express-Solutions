@@ -1,17 +1,11 @@
 When (/I type in "(.*)" into the search bar/) do | keyword |
-
-    # fill_in 'myInput', :with => keyword
-    # expect(page).to have_xpath("//input[@value='#{keyword}']")
-    # uses keypress to trigger js
     input = find_field 'myInput'
     input.send_keys keyword, :enter
     sleep 2
 end
 
 Then (/I should see "(.*)" in the dropdown/) do | keyword |
-
-    expect(page).to have_css("ul", text: keyword)
-    #
+    expect(page).to have_css("li", text: keyword)
 end
 
 But (/I should not see "(.*)" in the dropdown/) do | keyword |
@@ -19,17 +13,17 @@ But (/I should not see "(.*)" in the dropdown/) do | keyword |
 end
 
  And (/I click on the "(.*)" in the dropdown/) do | service |
-    # thing = find_field 'results'
-    # thing.click_link service
-    find(:xpath, "(//a[text()='#{service}'])").click
-    
+    #https://www.guru99.com/xpath-selenium.html
+    find(:xpath, "(//a[@id='#{service}'])").click
  end
    
 Then (/I will see "(.*)" in the search bar/) do | service |
     expect(page).to have_field("myInput", with: "#{service}")
 end
     
-# When (/I see the dropdown without any options/) do
+ Then (/I click on the ML button/) do
+    find(:xpath, "(//element[@id='clickmeML'])").click
+ end
 
 #Background
 require 'csv'
