@@ -7,15 +7,11 @@ function check(){
   if (ul[0].style.display ==='none' && input.value.length > 0 && document.activeElement === input) {
     popup.style.visibility = "visible";
     console.log("Popup")
-
   } else{
-
     popup.style.visibility = "hidden";
-    
   }
 
 }
-setInterval(check,3000)
 
 // function debounce(func, delay)  { 
 
