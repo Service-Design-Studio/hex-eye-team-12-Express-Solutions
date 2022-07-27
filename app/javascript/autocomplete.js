@@ -93,20 +93,24 @@ function wrapper() {
 // }, 2000);
 
 function check() {
-  $('#myInput').tooltip()
-  // var input = document.getElementById('myInput');
-  var ul = document.getElementsByTagName("ul")
-  console.log(ul[0])
-  if (ul['ui-id-1'].style.display === "none") {
-    //set attr title 
-    $('#myInput').attr('title', 'Type in a name');
-    // console.log('show')
-    
-    
-  } else {
-    $('#myInput').removeAttr('title');
-  console.log('remove att')}
+  var input = document.getElementById("myInput");
+  var popup = document.getElementById("displayText");
+
+  let ul= document.getElementsByTagName('ul')
+  //input is focus 
+  
+  if (ul[0].style.display ==='none' && input.value.length > 0 && document.activeElement === input) {
+
+    popup.style.visibility = "visible";
+  } else{
+
+    popup.style.visibility = "hidden";
+   
+  }
+
 }
+
+ 
 
 
 
@@ -165,26 +169,26 @@ var start_time = new Date();
 var last_time = new Date();
 
 
-function check_timer() {
-  start_time = new Date().getTime();
-  // clearInterval(timer)
-  let diff = start_time - end_time
-  console.log("diff")
-  console.log(diff)
-  if (diff > 3000) {
-  filterFunction()
-  console.log('dont repeat')
-  end_time = new Date();
+// function check_timer() {
+//   start_time = new Date().getTime();
+//   // clearInterval(timer)
+//   let diff = start_time - end_time
+//   console.log("diff")
+//   console.log(diff)
+//   if (diff > 3000) {
+//   filterFunction()
+//   console.log('dont repeat')
+//   end_time = new Date();
   
-  }else if (start_time - last_time > 2000) {
-      filterFunction();
-      console.log('send in the last');
-      last_time = new Date();}
+//   }else if (start_time - last_time > 2000) {
+//       filterFunction();
+//       console.log('send in the last');
+//       last_time = new Date();}
   
 
-  // clearInterval(timer)
+//   // clearInterval(timer)
 
-}
+// }
 
 async function filterFunction() {
  
@@ -204,15 +208,27 @@ async function filterFunction() {
   if (ul['ui-id-1'].style.display === "block") {
     console.log('add on')
     li = document.createElement("li");
-    li.innerText = "------Do you mean-------";
+    hr = document.createElement("hr");
+    hr.style = "margin-top: 2px; margin-bottom: 2px;";
+
+    ul['ui-id-1'].appendChild(hr);
+    li.innerText = "Services you may like";
+    //set inner text as bold
+    // center text
+    li.style = "text-align: center;";
+    li.style.fontWeight = "bold";
+    //set inner text as italic 
+    li.style.fontStyle = "italic";
+    console.log(ul['ui-id-1'])
     ul['ui-id-1'].appendChild(li);
-    // populate ml result
     for (i = 0; i < 5; i++) {    
       let index = id[i];
-        $("<li></li>")
+
+      
+        $('<li class="ui-menu-item" id="ui-id-6" tabindex="-1"></li>')
             .data("ui-autocomplete-item", services[i])
             .append("<a href='services/" + String(index+2) + "/time_estimate'>" + services[i] + "</a>")
-            .appendTo(ul);
+            .appendTo(ul['ui-id-1']);
       }
     } else { // if the list is not visible, show it
       console.log("no auto complete")
@@ -223,14 +239,24 @@ async function filterFunction() {
       ul[0].removeChild(ul[0].firstChild);
     }
     li = document.createElement("li");
-    li.innerText = "------Do you mean-------";
+    hr = document.createElement("hr");
+    hr.style = "margin-top: 2px; margin-bottom: 2px;";
+
+    ul['ui-id-1'].appendChild(hr);
+    li.innerText = "Services you may like";
+    //set inner text as bold
+    // center text
+    li.style = "text-align: center;";
+    li.style.fontWeight = "bold";
+    //set inner text as italic 
+    li.style.fontStyle = "italic";
     ul['ui-id-1'].appendChild(li);
     for (i = 0; i < 5; i++) {
       let index = id[i];
       $("<li></li>")
           .data("ui-autocomplete-item", services[i])
           .append("<a href='services/" + String(index+2) + "/time_estimate'>" + services[i] + "</a>")
-          .appendTo(ul);
+          .appendTo(ul['ui-id-1']);
       // li = document.createElement("li");
       // li.innerText = services[i];
       //     // li.innerHTML += "<a href='services/" + String(id[i]+2) + "/time_estimate'>" + "</a>"; // attempt at making the ML suggestions clickable
