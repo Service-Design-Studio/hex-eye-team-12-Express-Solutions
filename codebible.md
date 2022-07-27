@@ -44,8 +44,7 @@ Running Cucumber for a specific feature file
 
 ## [JS Testing Guide](testingJSguide.md)
 
-## Markdown
-[Markdown Guide](https://agea.github.io/tutorial.md/)
+## Markdown [?](https://agea.github.io/tutorial.md/)
 
 ## RSpec
 Generates rails_helper and spec_helper in "Spec"
@@ -119,3 +118,5 @@ If Cucumber features are failing but code works, check Cucumber feature backgrou
 [Rails redirecting invalid route to root](https://stackoverflow.com/questions/6548928/rails-redirecting-invalid-route-to-root)
 
 [Gem browser](https://github.com/fnando/browser)
+
+[Cloud Run with multiple processes](https://ahmet.im/blog/cloud-run-multiple-processes-easy-way/)
