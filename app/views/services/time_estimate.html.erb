@@ -11,9 +11,11 @@
         <% @digital_time = @digital_time.to_s + ' min' %>
         <h2>Estimated time: <b><%= @digital_time %></b> </h2><br>
 
-        <button class="popoutbuttons">
-          <p style="font-size:22px; color:white;">Start</p>
-        </button>
+        <a href= "<%= @deep_link %>">
+          <button class="popoutbuttons"> 
+            <p style="font-size:22px; color:white;" >Start</p>
+          </button>
+        </a>
     </div>
   </div>
 
