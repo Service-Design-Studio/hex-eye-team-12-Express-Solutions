@@ -26,23 +26,20 @@ Running Cucumber for a specific feature file
 
     bundle exec cucumber features/all_services.feature
 
-## Steps to reset the db
+## DB-related
+Creating initial Database schema
 
-1. Goto /db and delete:
+    bundle exec rails db:migrate
+    bundle exec rails db:seed
 
-        development.sqlite3
-        schema.rb
 
-2. Create initial Database schema
+Check for pending migrations and load the test schema
 
-        bundle exec rails db:migrate
-        bundle exec rails db:seed
+    bundle exec rails db:test:prepare
 
-3. Check for pending migrations and load the test schema
+Empty the test database
 
-        bundle exec rails db:test:prepare
-
-## [JS Testing Guide](testingJSguide.md)
+    bundle exec rails db:test:purge
 
 ## Markdown
 [Markdown Guide](https://agea.github.io/tutorial.md/)
