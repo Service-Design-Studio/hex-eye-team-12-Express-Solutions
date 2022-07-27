@@ -1,23 +1,49 @@
-
+// function debounce(func, wait) {
+//     let timeout;
+//     console.log(wait)
+//     console.log(func)
+  
+//     return () => {
+//       const later = () => {
+//         input = document.getElementById("myInput")
+//         clearTimeout(timeout);
+//         func
+//       };
+  
+//       clearTimeout(timeout);
+//       console.log(later)
+//       timeout = setTimeout(later, wait);
+//     };
+//   };
+// $('#myInput').tooltip({content : "Search for a service"})
 
 function check(){
   var input = document.getElementById("myInput");
   var popup = document.getElementById("displayText");
 
   let ul= document.getElementsByTagName('ul')
-  //input is focus 
-  
-  if (ul[0].style.display ==='none' && input.value.length > 0 && document.activeElement === input) {
-    console.log('none')
-  
+  if (ul[0].style.display ==='none' && input.value.length > 0) {
+    console.log('if')
+
+    // $('#myInput').tooltip({content : "Search for a service"})
+    //hide tooltip
+    // window.prompt("Enter your name");
+    //change chass to "show"
     popup.style.visibility = "visible";
     
 
+    // $('#myInput').tooltip({title: function(){return "press enter"}})
   } else{
-    console.log('block')
-
+    console.log('else')
+    // $('#myInput').tooltip({content : ""})
+    // $('#myInput').removeAttr('title')
+    // window.prompt("Enter your name");
+    // $('#myInput').classList.toggle("show")
+    // popup.classList.toggle("show");
+    // popup.classList.values = "hide";
     popup.style.visibility = "hidden";
-   
+    
+    // $('#myInpput').tooltip({title: function(){return ""}})
   }
 
 }
@@ -66,21 +92,21 @@ function wrapper() {
 //   $('#myInput').trigger('enter');
 // }, 2000);
 
-// function check() {
-//   $('#myInput').tooltip()
-//   // var input = document.getElementById('myInput');
-//   var ul = document.getElementsByTagName("ul")
-//   console.log(ul[0])
-//   if (ul['ui-id-1'].style.display === "none") {
-//     //set attr title 
-//     $('#myInput').attr('title', 'Type in a name');
-//     // console.log('show')
+function check() {
+  $('#myInput').tooltip()
+  // var input = document.getElementById('myInput');
+  var ul = document.getElementsByTagName("ul")
+  console.log(ul[0])
+  if (ul['ui-id-1'].style.display === "none") {
+    //set attr title 
+    $('#myInput').attr('title', 'Type in a name');
+    // console.log('show')
     
     
-//   } else {
-//     $('#myInput').removeAttr('title');
-//   console.log('remove att')}
-// }
+  } else {
+    $('#myInput').removeAttr('title');
+  console.log('remove att')}
+}
 
 
 
@@ -176,19 +202,9 @@ async function filterFunction() {
   // await new Promise(resolve => setTimeout(resolve, 300));
   
   if (ul['ui-id-1'].style.display === "block") {
-    console.log('add on') 
+    console.log('add on')
     li = document.createElement("li");
-    hr = document.createElement("hr");
-    hr.style = "margin-top: 2px; margin-bottom: 2px;";
-
-    ul['ui-id-1'].appendChild(hr);
-    li.innerText = "Services you may like";
-    //set inner text as bold
-    // center text
-    li.style = "text-align: center;";
-    li.style.fontWeight = "bold";
-    //set inner text as italic 
-    li.style.fontStyle = "italic";
+    li.innerText = "------Do you mean-------";
     ul['ui-id-1'].appendChild(li);
     // populate ml result
     for (i = 0; i < 5; i++) {    
@@ -207,13 +223,7 @@ async function filterFunction() {
       ul[0].removeChild(ul[0].firstChild);
     }
     li = document.createElement("li");
-    li.innerText = "Services you may like";
-    //set inner text as bold
-    // center text
-    li.style = "text-align: center;";
-    li.style.fontWeight = "bold";
-    //set inner text as italic 
-    li.style.fontStyle = "italic";
+    li.innerText = "------Do you mean-------";
     ul['ui-id-1'].appendChild(li);
     for (i = 0; i < 5; i++) {
       let index = id[i];
@@ -221,6 +231,10 @@ async function filterFunction() {
           .data("ui-autocomplete-item", services[i])
           .append("<a href='services/" + String(index+2) + "/time_estimate'>" + services[i] + "</a>")
           .appendTo(ul);
+      // li = document.createElement("li");
+      // li.innerText = services[i];
+      //     // li.innerHTML += "<a href='services/" + String(id[i]+2) + "/time_estimate'>" + "</a>"; // attempt at making the ML suggestions clickable
+      // ul['ui-id-1'].appendChild(li);
     }
     if (ul['ui-id-1'].childElementCount > 0) {
     ul['ui-id-1'].style.display = "block";}
