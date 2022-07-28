@@ -66,7 +66,7 @@
   <p style="font-size:26px; color:DimGray">Wait in the Queue</p>
 
   <% @branch_time  = @branch_time.to_s + ' min' %>
-  <h2>Estimated time: <b id="branchtime"> <%= @total_time %> </b></h2><br>
+  <h2>Estimated time: <b style='color:rgb(233,0,0)'id="branchtime"> <%= @total_time %> min </b></h2><br>
 
   <div data-time-dict='<%= @branch_time_dict %>' id="data-time-dict" ></div>
   <div data-service-time=<%= @service_time %> id="data-service-time"></div>
