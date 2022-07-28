@@ -249,6 +249,14 @@ $is-narrow: 300px;
   color:black;
 }
 
+.unselectable {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+   -o-user-select: none;
+   user-select: none
+ }
+
 .selectedtext{
   padding: 15px 25px;
   font-size: 20px;

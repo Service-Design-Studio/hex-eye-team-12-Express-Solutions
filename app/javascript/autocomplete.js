@@ -33,52 +33,39 @@ function check(){
 
   if(document.activeElement !== input){
     console.log('input is not focused')
+    popout.style.visibility = "hidden"
 
     for (var i = 0; i < ul.length; i++) {
       //remove all li elements from ul
       while (ul[i].firstChild) {
         ul[i].removeChild(ul[i].firstChild);
-    }
-    // while (div.firstChild) {
-    //   console.log('removing div  child')
-    //   div.removeChild(div.firstChild);
-    // }
-
-    while (ul.firstChild){
-      ul.removeChild(ul.firstChild);
-    }
-    console.log(div)
+      }
+      while (ul.firstChild){
+        ul.removeChild(ul.firstChild);
+      }
+   }
+   return false
   }
 
-
-    while(div.childElementCount > 1){
-      console.log('removing div child' + div.lastChild)
-      div.removeChild(div.lastChild);
+  // ui_id_1 = document.getElementById('ui-id-1')
+  for (var i = 0; i < services_sb.length; i++) {
+    if (services_sb[i] == input.value) {
+      console.log('exit')
+      popout.style.visibility = "visible"
+      return false
     }
   }
-  //delay 1 s`till input is focused
-  setTimeout(function(){},1000)
 
-  
  
   if (ul[0].style.display ==='none' && input.value.length > 0 && document.activeElement === input) {
-    for (var i = 0; i < services_sb.length; i++) {
-      if (services_sb[i] == input.value ||services_sb[i] == input.value.substring(0, input.value.length-1)) {
-        popout.style.visibility = "visible"
-        break;
-      }else{
-        if(ul[0].style.display ==='none'){
-          console.log('processing AI recommendation')
-          popout.style.visibility = "hidden"
-          filterFunction();
-        }
-      }
-    }
+    console.log('processing AI recommendation')
+    popout.style.visibility = "hidden"
+    filterFunction();
   } 
 }
 
 // check if condition is met for AI recommendation at intervals
-setInterval(check,2000)
+setInterval(check,300)
 
 
 
@@ -126,6 +113,7 @@ async function filterFunction() {
     // Tell user no recommended services
     li = document.createElement("li");
     li.innerText = "No results found, please try another search.";
+    li.classList.add("unselectable");
     li.style = "text-align: center;"; 
     li.style.fontWeight = "bold"; 
     li.style.fontStyle = "italic";
@@ -142,6 +130,7 @@ async function filterFunction() {
 
     li = document.createElement("li");
     li.innerText = "Services you may like";
+    li.classList.add("unselectable");
     li.style = "text-align: center;"; // center text
     li.style.fontWeight = "bold"; //set inner text as bold
     li.style.fontStyle = "italic";//set inner text as italic 
@@ -154,7 +143,7 @@ async function filterFunction() {
     for (i = 0; i < n; i++) {
       let index = id[i];
       $('<li class="ui-menu-item" id="ui-id-6" tabindex="-1"></li>')
-          .data("ui-autocomplete-item", services[i])
+          .data("ui-autocomplete-item", {"value":services[i]})
           .append("<a id='" + services[i] + "' href='services/" + String(index+2) + "/time_estimate'>" + services[i] + "</a>")
           .appendTo(ul['ui-id-1']);
     }  
