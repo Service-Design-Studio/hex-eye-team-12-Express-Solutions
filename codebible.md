@@ -113,6 +113,26 @@ Remove any .exe substrings, typically from
 
 If Cucumber features are failing but code works, check Cucumber feature background for missing Given tables, especially for nil searches.
 
+
+## Cucumber Publishing
+
+If you want to publish and store the cucumber tests results into your collection:
+
+1. Goto [link](https://reports.cucumber.io/profile) to login with Github and make a collection
+
+2. Once the collection is made, click it and you should see this (copy that line from the website):
+
+        CUCUMBER_PUBLISH_TOKEN=your-token-generated-for-your-collection-here
+
+3. Run this 2 lines of code to set the token and to publish the cucumber test to that collection
+
+        set CUCUMBER_PUBLISH_TOKEN=your-token-generated-for-your-collection-here
+
+        bundle exec cucumber --publish
+
+
+
+
 ## Resources
 
 [Rails redirecting invalid route to root](https://stackoverflow.com/questions/6548928/rails-redirecting-invalid-route-to-root)
