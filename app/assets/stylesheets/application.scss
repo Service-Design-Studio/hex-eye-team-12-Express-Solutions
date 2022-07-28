@@ -383,17 +383,19 @@ p.small {
 }
 
 .search{
+  margin: auto;
+  
   @include mobile {
-    width: 90vw;
+    width: 80%;
   }
   @include tablet-only {
-    width: 60vw;
+    width: 50%;
   }
   @include desktop{
-    width: 40vw;
+    width: 40%;
   }
 
-  position: fixed;
+  position: relative;
   z-index: 100;
 }
 
@@ -405,17 +407,12 @@ p.small {
 .dropdown-container #results  {
     display: block;
     position: relative;
-  
-
 }
-.dropdown-container ul {
-    color: black;
+.dropdown-container-ul {
     position: relative;
     padding: 12px 16px;
-    text-decoration: none;
     display: block;
     background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 .display-none {

@@ -125,7 +125,6 @@ async function filterFunction() {
     li.style.fontWeight = "bold"; //set inner text as bold
     li.style.fontStyle = "italic";//set inner text as italic 
     ul['ui-id-1'].appendChild(li);
-
     
     console.log(divResult);
     divResult.appendChild(ul['ui-id-1'])
@@ -143,7 +142,7 @@ async function filterFunction() {
   ul['ui-id-1'].style.position = "absolute";
   ul['ui-id-1'].style.display = "block";
   divResult.style= {'min-width': '100%'};
-  ul['ui-id-1'].style = {'min-width': '100%'};   
+  // ul['ui-id-1'].style = {'min-width': '100%'};   
 }
 
 
