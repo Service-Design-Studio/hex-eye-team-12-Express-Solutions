@@ -9,3 +9,5 @@ LICENSE
 .vscode
 .md
 .xlsx
+features/
+spec/
