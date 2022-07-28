@@ -27,6 +27,7 @@ function check(){
   let input = document.getElementById("myInput");
   let ul= document.getElementsByTagName('ul')
   let div= document.getElementById('results')
+  let popout = document.getElementById('popout')
 
   if(document.activeElement !== input){
     console.log('input is not focused')
@@ -36,21 +37,39 @@ function check(){
       while (ul[i].firstChild) {
         ul[i].removeChild(ul[i].firstChild);
     }
-    console.log(ul)
+    // while (div.firstChild) {
+    //   console.log('removing div  child')
+    //   div.removeChild(div.firstChild);
+    // }
+
+    while (ul.firstChild){
+      ul.removeChild(ul.firstChild);
+    }
+    console.log(div)
   }
-    //remove ul 
 
-    
 
-    while(div.numChildren > 1){
-      console.log('removing child')
-      div.removeChild(div.firstChild);
+    while(div.childElementCount > 1){
+      console.log('removing div child' + div.lastChild)
+      div.removeChild(div.lastChild);
     }
   }
+  //delay 1 s`till input is focused
+  setTimeout(function(){},1000)
  
   if (ul[0].style.display ==='none' && input.value.length > 0 && document.activeElement === input) {
-    console.log('processing AI recommendation')
-    filterFunction();
+    for (var i = 0; i < services_sb.length; i++) {
+      if (services_sb[i] == input.value ||services_sb[i] == input.value.substring(0, input.value.length-1)) {
+        popout.style.visibility = "visible"
+        break;
+      }else{
+        if(ul[0].style.display ==='none'){
+          console.log('processing AI recommendation')
+          popout.style.visibility = "hidden"
+          filterFunction();
+        }
+      }
+    }
   } 
 }
 
@@ -91,11 +110,9 @@ async function filterFunction() {
 
   // remove previous recommendations
   while (ul['ui-id-1'].firstChild) {
-    console.log('removing child')
     ul['ui-id-1'].removeChild(ul['ui-id-1'].firstChild);
   }
   while (ul[0].firstChild) {
-    console.log('removing child')
     ul[0].removeChild(ul[0].firstChild);
   }
 
