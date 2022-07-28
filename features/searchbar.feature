@@ -36,5 +36,5 @@ And I will see "Update Address" in the search bar
 Scenario: Customer does not find keyword in the search bar
 Given I type in "randomstuff" into the search bar
 Then I should see "No results found" in the dropdown
-And I click on the "card" of "Visit a branch"
+And I click on the "card" of "General Services"
 Then I should see the headers "Unable to find the service that you need?"
