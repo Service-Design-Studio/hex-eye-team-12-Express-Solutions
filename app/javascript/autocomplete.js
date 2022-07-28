@@ -158,7 +158,7 @@ async function filterFunction() {
   // show list of recommended services properly
   ul['ui-id-1'].style.position = "absolute";
   ul['ui-id-1'].style.display = "block";
-  divResult.style= {'min-width': '100%'};
+  // divResult.style= {'min-width': '100%'};
   // ul['ui-id-1'].style = {'min-width': '100%'};   
 }
 
