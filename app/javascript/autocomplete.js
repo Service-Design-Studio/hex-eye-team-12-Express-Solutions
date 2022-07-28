@@ -24,6 +24,8 @@ function go(){
 
 //condition to show AI recommended services
 function check(){
+
+
   let input = document.getElementById("myInput");
   let ul= document.getElementsByTagName('ul')
   let div= document.getElementById('results')
@@ -56,6 +58,8 @@ function check(){
   }
   //delay 1 s`till input is focused
   setTimeout(function(){},1000)
+
+  
  
   if (ul[0].style.display ==='none' && input.value.length > 0 && document.activeElement === input) {
     for (var i = 0; i < services_sb.length; i++) {
@@ -158,8 +162,9 @@ async function filterFunction() {
   // show list of recommended services properly
   ul['ui-id-1'].style.position = "absolute";
   ul['ui-id-1'].style.display = "block";
-  // divResult.style= {'min-width': '100%'};
-  // ul['ui-id-1'].style = {'min-width': '100%'};   
+  //fit parent width
+  divResult.style.width = "100%";
+  ul['ui-id-1'].style.width = "100%";
 }
 
 
