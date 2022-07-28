@@ -5,6 +5,6 @@ async function changeTime(branch){
 
     new_time = parseInt(time_dict[branch]) + parseInt(service_time)
 
-    document.getElementById("branchtime").innerHTML = new_time;
+    document.getElementById("branchtime").innerHTML = new_time + " min";
 }
 
