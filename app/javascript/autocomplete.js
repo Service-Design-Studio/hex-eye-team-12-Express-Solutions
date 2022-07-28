@@ -26,19 +26,25 @@ function go(){
 function check(){
   let input = document.getElementById("myInput");
   let ul= document.getElementsByTagName('ul')
+  let div= document.getElementById('results')
 
   if(document.activeElement !== input){
     console.log('input is not focused')
-    console.log(ul)
-    //remove ul 
+
     for (var i = 0; i < ul.length; i++) {
+      //remove all li elements from ul
       while (ul[i].firstChild) {
         ul[i].removeChild(ul[i].firstChild);
-      }
     }
-    while(ul['ui-id-1'].numChildren > 1){
+    console.log(ul)
+  }
+    //remove ul 
+
+    
+
+    while(div.numChildren > 1){
       console.log('removing child')
-      ul['ui-id-1'].removeChild(ul['ui-id-1'].firstChild);
+      div.removeChild(div.firstChild);
     }
   }
  
@@ -73,12 +79,14 @@ $(function () {
 
 async function filterFunction() {
  
-  let input, ul, n, li 
+  let input, ul, n, li,divResult
   input = document.getElementById("myInput");
   ul = document.getElementsByTagName("ul")
   searchDict = await query(input.value); // get search results from API
   id = searchDict["top_5_index"];
   services = searchDict['top_5_services'];
+  divResult = document.getElementById('results')
+
   n = id.length
 
   // remove previous recommendations
@@ -103,12 +111,9 @@ async function filterFunction() {
     ul['ui-id-1'].appendChild(li);
     console.log(li)
 
-    let divResult = document.getElementById('results')
-    console.log(divResult);
-    divResult.appendChild(ul['ui-id-1'])
-    ul['ui-id-1'].style.position = "absolute";
-    ul['ui-id-1'].style.display = "block";
     
+    console.log(divResult);
+    divResult.appendChild(ul['ui-id-1'])  
   
 
   } else { 
@@ -121,12 +126,9 @@ async function filterFunction() {
     li.style.fontStyle = "italic";//set inner text as italic 
     ul['ui-id-1'].appendChild(li);
 
-    let divResult = document.getElementById('results')
+    
     console.log(divResult);
     divResult.appendChild(ul['ui-id-1'])
-    ul['ui-id-1'].style.position = "absolute";
-    ul['ui-id-1'].style.display = "block";
-    
     
     // create list of recommended services
     for (i = 0; i < n; i++) {
@@ -136,7 +138,12 @@ async function filterFunction() {
           .append("<a id='" + services[i] + "' href='services/" + String(index+2) + "/time_estimate'>" + services[i] + "</a>")
           .appendTo(ul['ui-id-1']);
     }  
-  } 
+  }
+  // show list of recommended services properly
+  ul['ui-id-1'].style.position = "absolute";
+  ul['ui-id-1'].style.display = "block";
+  divResult.style= {'min-width': '100%'};
+  ul['ui-id-1'].style = {'min-width': '100%'};   
 }
 
 

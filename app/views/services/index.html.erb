@@ -31,14 +31,12 @@
 
 
 
-      <div class="container">
+      <div class="column is-full">
         <div class="dropdown-container" id="search">    
-          <input title="press enter for more" class="input is-rounded" type="text" placeholder="🔍 Search for a service" id="myInput"  />
+          <input title="press enter for more" class="input is-rounded" type="text" placeholder="🔍 Search for a service" id="myInput" style="position: relative;" />
 
-          <div class="dropdown display" id="results" style="display: block; position: relative;">
-           
-            <span class="displayText" id="displayText" style="visibility: hidden"><element id='clickmeML' onclick="filterFunction()">Click here for more</element></span>
-
+          <div class="dropdown display" id="results" style="display: block; position: absolute;">
+             
           </div>
           
         </div> 

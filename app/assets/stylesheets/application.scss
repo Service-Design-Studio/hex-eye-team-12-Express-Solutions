@@ -382,6 +382,21 @@ p.small {
   font-size:14px;
 }
 
+.search{
+  @include mobile {
+    width: 90vw;
+  }
+  @include tablet-only {
+    width: 60vw;
+  }
+  @include desktop{
+    width: 40vw;
+  }
+
+  position: fixed;
+  z-index: 100;
+}
+
 // import bulma and optionally the extensions
 @import "bulma";
 @import "bulma-extensions";
