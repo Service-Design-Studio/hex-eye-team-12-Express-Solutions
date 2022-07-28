@@ -40,6 +40,6 @@ Scenario: Customer tries a random url of our web service #sad path
 
 Scenario: Customer can't find his service on Main Page #sad path
     When I visit "/services"
-    Then I click on the "card" of "Visit a branch"
+    Then I click on the "card" of "General Services"
     Then I should see the headers "Unable to find the service that you need?"
 
