@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-# from flask_cors import CORS
+from flask_cors import CORS #comment out for deployment
 import time
 import os
 import pandas as pd 
@@ -10,7 +10,7 @@ model = SentenceTransformer('multi-qa-MiniLM-L6-cos-v1')
 desc = table['Service']+ ' '+ table['Service']+ ' '+ table['Details']
 
 app = Flask(__name__)
-# CORS(app)
+CORS(app) #comment out for deployment
 
 @app.route('/')
 def index():
