@@ -5,10 +5,12 @@ class ServicesController < ApplicationController
 
   # GET /services or /services.json
   def index
-    
+    current_date = Date.today
+    branch = session[:branch]
+
     @services_sb =  AllService.services
-    #sort_by count
-    @topServices = AllService.top_services()
+
+    @topServices = AllService.top_services(current_date, branch)
     @allServices = AllService.all_category()
   end
 
