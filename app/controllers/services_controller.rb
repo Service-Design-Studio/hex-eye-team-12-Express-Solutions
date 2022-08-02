@@ -10,7 +10,7 @@ class ServicesController < ApplicationController
 
     @services_sb =  AllService.services
 
-    @topServices = AllService.top_services(current_date, branch)
+    @topServices = Prediction.top_services(current_date, branch)
     @allServices = AllService.all_category()
   end
 
