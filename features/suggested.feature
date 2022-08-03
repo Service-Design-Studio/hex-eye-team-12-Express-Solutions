@@ -23,7 +23,7 @@ Scenario: Customer looks at the suggested service on 3rd August 2022 at Kovan Br
 
 
 # show default top 5 for unforcasted dates
-Scenario: Customer looks at the suggested service on 28 February 2024
+Scenario: Customer looks at the suggested service on 28th February 2024
     Given the date and time is "2024, 2, 28, 0, 0, 0"
     And I visit "/services"
     Then I should see the headers "Update Particulars, Update Phone, Account Closure, Debit Card Issuance, Debit Card Replacement"
