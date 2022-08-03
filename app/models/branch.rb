@@ -24,4 +24,17 @@ class Branch < ActiveRecord::Base
         end
         return branch_time_dict.to_json
     end
+
+    def self.full_branch(branch)
+        #takes in branch keyword (Kovan/TampinesOne etc)
+        #returns as DBS Kovan Branch/ DBS Tampines One Branch
+        if branch != nil
+            bank_name = Branch.where(branch: branch).select(:bank).first.bank
+            branch_name = Branch.where(branch: branch).select(:branch_name).first.branch_name
+            return bank_name + " " + branch_name
+        else
+            return branch
+        end
+    
+    end
 end
