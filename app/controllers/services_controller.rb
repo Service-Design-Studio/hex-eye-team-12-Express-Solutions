@@ -5,10 +5,15 @@ class ServicesController < ApplicationController
 
   # GET /services or /services.json
   def index
-    
+    # time_now = Time.now
+    time_now = DateTime.now
+    branch = session[:branch] #get the session's branch
+    full_branch = Branch.full_branch(branch) #convert to full formating for Prediction model
+
     @services_sb =  AllService.services
-    #sort_by count
-    @topServices = AllService.top_services()
+
+    arrTopServices = Prediction.top_services(time_now, full_branch)
+    @topServices = AllService.get_top_services(arrTopServices)
     @allServices = AllService.all_category()
   end
 

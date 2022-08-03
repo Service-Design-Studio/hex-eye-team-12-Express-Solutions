@@ -33,3 +33,13 @@ topics_table = CSV.read("db/topics.csv")
 topics_table.each do |topic|
     Topic.create!(:topic => topic)
 end
+
+predictions_table = CSV.read("db/global_prediction.csv")
+predictions_table.each do |branch_name, service, unixdate, date, prediction|
+    Prediction.create!(:branch_name => branch_name, 
+                        :service => service,
+                        :unixdate => unixdate,
+                        :date => date,
+                        :prediction => prediction
+                        )
+end

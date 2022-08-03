@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_27_094916) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_02_130805) do
   create_table "all_services", force: :cascade do |t|
     t.string "category"
     t.integer "category_id"
@@ -37,6 +37,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_27_094916) do
     t.string "branch"
     t.string "sms_number"
     t.integer "wait_time"
+  end
+
+  create_table "predictions", force: :cascade do |t|
+    t.string "branch_name"
+    t.string "service"
+    t.bigint "unixdate"
+    t.datetime "date"
+    t.float "prediction"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "services", force: :cascade do |t|

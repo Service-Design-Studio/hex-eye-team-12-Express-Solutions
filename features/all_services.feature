@@ -19,7 +19,8 @@ Background: Categories have been added to database
     | POSB | Bedok Central Branch | BedokCentral  | 83184358 |
     Then "2" seed branches should exist
 
-    Given I am using web
+    Given the data in test_global_prediction.csv
+    And I am using web
 
 Scenario: Customer uses a web link to access the One-Stop Service page 
     When I visit "/services"
