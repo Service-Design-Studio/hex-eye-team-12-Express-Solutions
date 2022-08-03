@@ -7,7 +7,8 @@ So that I know which service is for me.
 Background: Services have been added to database
 
     Given the data in sub.csv
-    Given I am using web
+    And the data in test_global_prediction.csv
+    And I am using web
     
 Scenario: Customer looks at the Personal Info Update category
     Given I visit "/services"
