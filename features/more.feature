@@ -30,6 +30,8 @@ Background: Branches, Services, Topics have been added to database
 
     Then "3" seed services should exist
 
+    And the data in test_global_prediction.csv
+    
 # not in branch, get QR from Android
 Scenario: I am not in any branch and I want to get cash related service from Android
     Given I am using "Android"
