@@ -27,9 +27,9 @@ end
 
 #Background
 require 'csv'
-Given /the data in "(.+)"$/ do |file|
+Given /the data in clean_txn.csv/ do
     # table is a Cucumber::MultilineArgument::DataTable
-    service_table = CSV.read("db/#{file}")
+    service_table = CSV.read("db/clean_txn.csv")
     service_table.each do |category, category_id,service_id, service, digital_time, branch_time, migratable, count, details, 
                             service_image_link, service_alt_text, cat_image_link, cat_alt_text|
         AllService.create!( :category => category,
