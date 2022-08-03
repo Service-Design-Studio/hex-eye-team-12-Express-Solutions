@@ -6,7 +6,8 @@ So that I can save time and energy from scouring the web.
 
 Background: Services have been added to database
 
-    Given the data in "clean_txn.csv"
+    Given the data in clean_txn.csv
+    And the data in test_global_prediction.csv
     And I visit "/services"
 
 @javascript
