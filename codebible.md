@@ -26,21 +26,9 @@ Running Cucumber for a specific feature file
 
     bundle exec cucumber features/all_services.feature
 
-## Steps to reset the db
+## Rebuilt DB: All in one line :)
 
-1. Goto /db and delete:
-
-        development.sqlite3
-        schema.rb
-
-2. Create initial Database schema
-
-        bundle exec rails db:migrate
-        bundle exec rails db:seed
-
-3. Check for pending migrations and load the test schema
-
-        bundle exec rails db:test:prepare
+    bundle exec rails db:drop:_unsafe db:create db:migrate db:seed db:test:prepare
 
 ## [JS Testing Guide](testingJSguide.md)
 
@@ -67,24 +55,32 @@ iPhone
 
     page.driver.header('user-agent', 'Mozilla/5.0 (iphone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile 15E148 Safari/604.1')
 
-Android
+Android:
 
     page.driver.header('user-agent', 'Mozilla/5.0 (Linux; Android 10; SM-G981B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Mobile Safari/537.36')
 
-Web
+Web:
 
     page.driver.header('user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36')
 
 
 ## Deployment
 
-### Dockerfile
+### Docker (Ubuntu)
 
-Add:
+Follow official docker guide to install docker:
 
-    FROM ruby:2.7.6 AS rails-toolbox
-    ENV SECRET_KEY_BASE= # put secret key
-    RUN chmod u+x bin/rails
+    install gnu2g
+    curl gpg
+    sudo apt install docker
+
+    sudo docker build -t joshua .
+    sudo docker run --name joshuac --publish 8080:8080 --publish 5000:5000 --rm joshua 
+    sudo docker stop joshuac
+    sudo docker container ls
+    sudo docker system prune -a
+    sudo docker image ls
+
 
 ### Gemfile
 
