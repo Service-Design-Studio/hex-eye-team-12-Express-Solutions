@@ -1,7 +1,7 @@
 require 'time'
 
 class Prediction < ActiveRecord::Base
-    def self.top_services(cdate, branch)
+    def self.top_services(cdate, branch, number)
         #Branch: DBS XXXXX Branch
         #Round date to nearest day
         time = Time.at(cdate).utc
@@ -13,9 +13,9 @@ class Prediction < ActiveRecord::Base
         
         if avail_dates.include? ndate #if dates can be found in db
             if branch != nil #if got branch
-                return Prediction.where(unixdate: ndate, branch_name: branch).order(prediction: :desc).pluck(:service).first(5)
+                return Prediction.where(unixdate: ndate, branch_name: branch).order(prediction: :desc).pluck(:service).first(number)
             else
-                return Prediction.where(unixdate: ndate, branch_name: 'Global').order(prediction: :desc).pluck(:service).first(5)
+                return Prediction.where(unixdate: ndate, branch_name: 'Global').order(prediction: :desc).pluck(:service).first(number)
             end
         else
             #if dates cannot be found in db

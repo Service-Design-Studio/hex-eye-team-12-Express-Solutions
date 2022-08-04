@@ -11,8 +11,11 @@ class ServicesController < ApplicationController
     full_branch = Branch.full_branch(branch) #convert to full formating for Prediction model
 
     @services_sb =  AllService.services
-
-    arrTopServices = Prediction.top_services(time_now, full_branch)
+    number = 5
+    if session[:mobile]
+      number = 3
+    end
+    arrTopServices = Prediction.top_services(time_now, full_branch, number)
     @topServices = AllService.get_top_services(arrTopServices)
     @allServices = AllService.all_category()
   end
