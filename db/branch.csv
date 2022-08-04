@@ -1,4 +1,5 @@
-﻿DBS,Ang Mo Kio Central Branch,AngMoKioCentral,83184357,6
+﻿bank,branch_name,branch_id,number,wait_time
+DBS,Ang Mo Kio Central Branch,AngMoKioCentral,83184357,6
 DBS,Bishan Central Branch,BishanCentral,83184325,3
 DBS,Bukit Timah Branch,BukitTimah,83184326,3
 DBS,Choa Chu Kang Branch,ChoaChuKang,83184327,4
