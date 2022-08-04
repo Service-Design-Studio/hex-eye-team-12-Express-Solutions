@@ -13,9 +13,7 @@ class Prediction < ActiveRecord::Base
 
         if avail_dates.include? ndate #if dates can be found in db
             if branch != nil #if got branch
-                results = Prediction.where(unixdate: ndate, branch_name: branch).order(prediction: :desc).pluck(:service).first(number)
-
-                return results
+                return Prediction.where(unixdate: ndate, branch_name: branch).order(prediction: :desc).pluck(:service).first(number)
             else
                 return Prediction.where(unixdate: ndate, branch_name: 'Global').order(prediction: :desc).pluck(:service).first(number)
             end
