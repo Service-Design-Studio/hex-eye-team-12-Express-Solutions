@@ -40,14 +40,6 @@ end
 
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
 # See the DatabaseCleaner documentation for details. Example:
-#
-Before("@inspect") do
-  DatabaseCleaner.strategy = :truncation
-  # Capybara.current_driver = :selenium_chrome
-  Capybara.current_driver = :selenium_chrome
-end
-
-
 Before('@javascript') do
   # { except: [:widgets] } may not do what you expect here
   # as Cucumber::Rails::Database.javascript_strategy overrides
@@ -57,7 +49,7 @@ Before('@javascript') do
   Capybara.current_driver = :selenium_chrome_headless
 end
 
-Before('not @javascript or not @inspect') do
+Before('not @javascript') do
   DatabaseCleaner.strategy = :transaction
   Capybara.use_default_driver 
 
