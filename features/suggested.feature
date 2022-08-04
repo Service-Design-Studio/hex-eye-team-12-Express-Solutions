@@ -9,7 +9,6 @@ Background: Services have been added to database
     Given the data in clean_txn.csv
     And the data in test_global_prediction.csv
     
-@inspect
 Scenario: Customer finds the suggested service on 3rd August 2022 at Kovan Branch, using Android
     Given the date and time is "2022, 8, 3, 0, 0, 0"
     And I am using "Android"
