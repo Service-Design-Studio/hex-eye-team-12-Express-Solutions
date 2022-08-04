@@ -71,12 +71,3 @@ When(/^I go back$/) do
   page.evaluate_script('window.history.back()')
 end 
 
-require 'csv'
-Given (/the data in branch.csv/) do
-    # table is a Cucumber::MultilineArgument::DataTable
-    bank_details_table = CSV.read("db/branch.csv")
-    bank_details_table.each do |bank, branch_name, branch, sms_number, wait_time|
-        Branch.create!(:bank => bank, :branch_name => branch_name,:branch => branch, :sms_number => sms_number, :wait_time => wait_time)
-    end
-end
-
