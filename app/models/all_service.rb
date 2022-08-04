@@ -8,7 +8,8 @@ class AllService < ActiveRecord::Base
 
     def self.get_top_services(array)
         # getting the list of top 5 services matching the array passed in
-        return AllService.where(service_id: array)
+        output = AllService.where(service_id: array)
+        return output
 
     end
 

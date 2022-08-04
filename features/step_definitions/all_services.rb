@@ -25,48 +25,58 @@ Given('I am using web') do
   page.driver.header('user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36')
 end
 
-  # Scenario 1: Customer clicks on Cash Category
-  Given /I visit "(.+)"$/ do |page_name|
-    visit page_name
-  end
+# Scenario 1: Customer clicks on Cash Category
+Given /I visit "(.+)"$/ do |page_name|
+  visit page_name
+end
 
-  When /I click on the "(.*)" of "(.*)"$/ do |l1, l2|
-    page.click_link l2
-    if (l1 == "service") 
+When /I click on the "(.*)" of "(.*)"$/ do |l1, l2|
+  page.click_link l2
+  if (l1 == "service") 
 
-      id = AllService.where(:service => l2)[0].id
-      @migratable = AllService.where(:id => id)[0].migratable
-    end
+    id = AllService.where(:service => l2)[0].id
+    @migratable = AllService.where(:id => id)[0].migratable
   end
+end
 
-  Then(/^I should see "(.*)" services on "(.+)"/) do |number, category|
-    services = AllService.where(:category => category)
-    expect(services.count).to eq number.to_i
-  end
-  
+Then(/^I should see "(.*)" services on "(.+)"/) do |number, category|
+  services = AllService.where(:category => category)
+  expect(services.count).to eq number.to_i
+end
+
 
 # Scenario 2: Customer uses a (QR Code) link to access the One-Stop Service page 
 
-  Then(/^I should see the headers "(.*)"/) do |header_list|
-    headers = header_list.split(", ")
-    headers.each do |header|
-      expect(page).to have_content header
+Then(/^I should see the headers "(.*)"/) do |header_list|
+  headers = header_list.split(", ")
+  headers.each do |header|
+    expect(page).to have_content header
+  end
+end
+
+
+And(/^I should not see the headers "(.*)"/) do |header_list|
+  headers = header_list.split(", ")
+  headers.each do |header|
+    expect(page).to_not have_content header
+  end
+end
+
+
+When (/I click on the "(.*)" button/) do |button_name|
+  click_button button_name
+end
+
+When(/^I go back$/) do
+  page.evaluate_script('window.history.back()')
+end 
+
+require 'csv'
+Given (/the data in branch.csv/) do
+    # table is a Cucumber::MultilineArgument::DataTable
+    bank_details_table = CSV.read("db/branch.csv")
+    bank_details_table.each do |bank, branch_name, branch, sms_number, wait_time|
+        Branch.create!(:bank => bank, :branch_name => branch_name,:branch => branch, :sms_number => sms_number, :wait_time => wait_time)
     end
-  end
+end
 
-  
-  And(/^I should not see the headers "(.*)"/) do |header_list|
-    headers = header_list.split(", ")
-    headers.each do |header|
-      expect(page).to_not have_content header
-    end
-  end
-
-
-  When (/I click on the "(.*)" button/) do |button_name|
-    click_button button_name
-  end
-
-  When(/^I go back$/) do
-    page.evaluate_script('window.history.back()')
-  end 

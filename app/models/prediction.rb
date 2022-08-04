@@ -10,10 +10,12 @@ class Prediction < ActiveRecord::Base
         
         # drop repeat and column header 
         avail_dates = Prediction.distinct.pluck(:unixdate)[1..]
-        
+
         if avail_dates.include? ndate #if dates can be found in db
             if branch != nil #if got branch
-                return Prediction.where(unixdate: ndate, branch_name: branch).order(prediction: :desc).pluck(:service).first(number)
+                results = Prediction.where(unixdate: ndate, branch_name: branch).order(prediction: :desc).pluck(:service).first(number)
+
+                return results
             else
                 return Prediction.where(unixdate: ndate, branch_name: 'Global').order(prediction: :desc).pluck(:service).first(number)
             end
