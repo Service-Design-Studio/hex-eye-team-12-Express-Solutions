@@ -18,7 +18,7 @@ Background: Categories have been added to database
     And the data in test_global_prediction.csv
     And the data in clean_txn.csv
 
-Testing different browser detection, changing to compatible QR
+#Testing different browser detection, changing to compatible QR
 Scenario: Customer using Web, at MBFC Branch, clicks on Update Phone
     Given I am using "web"
     When I visit "/services"
