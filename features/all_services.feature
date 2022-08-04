@@ -6,7 +6,6 @@ So that my banking needs can be fulfilled in a timely manner
 
 Background: Categories have been added to database
     
-
     Given the data in test_global_prediction.csv
     And the data in clean_txn.csv
     And the data in branch.csv

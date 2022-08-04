@@ -6,27 +6,22 @@ So that I can get my queue number for the service I need
 
 Background: Categories have been added to database
 
-    Given the following branches exist:
-    | bank  | branch_name          | branch        | sms_number | wait_time |
-    | DBS   | MBFC Branch          | MBFC          | 83184335   | 5         |
-    | POSB  | Bedok Central Branch | BedokCentral  | 83184358   | 3         |
-    | POSB  | Tiong Bahru Branch   | TiongBahru    | 83184382   | 4         |
-
-    Then "3" seed branches should exist
 
     Given the date and time is "2022, 8, 3, 0, 0, 0"
     And the data in test_global_prediction.csv
     And the data in clean_txn.csv
+    And the data in branch.csv
+
 
 #Testing different browser detection, changing to compatible QR
 Scenario: Customer using Web, at MBFC Branch, clicks on Update Phone
     Given I am using "web"
     When I visit "/services"
     And I click on the "service" of "Update Phone"
-    And I select "MBFC Branch" 
+    And I select "Ang Mo Kio Central Branch" 
     And I click on the "Get Queue Number" button
-    Then I should see the headers "Update Phone, MBFC Branch, Scan QR Code"
-    And I should see a QR with "sms:+6583184335?&body=Q Update Phone"
+    Then I should see the headers "Update Phone, Ang Mo Kio Central Branch, Scan QR Code"
+    And I should see a QR with "sms:+6583184357?&body=Q Update Phone"
 
 Scenario: Customer using Android, at Bedok Central Branch, clicks on Update Particulars
     Given I am using "Android"
