@@ -1,6 +1,3 @@
-
-
-
 function go(){
     console.log("go")
     let input = document.getElementById("myInput");
@@ -31,7 +28,7 @@ function go(){
   //condition to show AI recommended services
   function check(){
   
-  
+   if (document.URL.endsWith("/services")){
     let input = document.getElementById("myInput");
     let ul= document.getElementsByTagName('ul')
     let div= document.getElementById('results')
@@ -68,6 +65,7 @@ function go(){
       popout.style.visibility = "hidden"
       filterFunction();
     } 
+  }
   }
   
   // check if condition is met for AI recommendation at intervals
