@@ -2,15 +2,15 @@
 
 DBS Express Solutions (hereinafter ES) is a smart catalog of DBS banking services. It is a customer facing solution that reduces branch visits and integrates into the existing DBS website and deep links customers into iBanking services.
 
-ES is the result of 4 month collaboration between Team HEX-EYE from SUTD, DBS Bank and Google as part of Service Design Studio 2022.
+ES is the result of a 4 month collaboration between Team HEX-EYE from SUTD, DBS Bank and Google as part of Service Design Studio 2022.
 
 The members of the team are:
 * [Joshua Ng](https://github.com/brutatoasta)
-* [Jowie Ng]()
-* [Lai Pin Nean (Jeff)]()
-* [Raymond]()
-* [Subesh Kumar]()
-* [Yeo Ke Wei]()
+* [Jowie Ng](https://github.com/ioitami)
+* [Lai Pin Nean (Jeff)](https://github.com/Jefflai0315)
+* [Raymond](https://github.com/spizzray)
+* [Subesh Kumar](https://github.com/pinkadotted)
+* [Yeo Ke Wei](https://github.com/yeokewei)
 
 ## Table of Contents
 * [Problem Description](#problem-description)
@@ -102,13 +102,15 @@ Run the container. Use `-p` or `--publish` to link the container ports to the ho
 For ease of deployment, environment variables for google cloud run are defined in `.env` and `cloudbuild.yaml`. Follow this [guide](https://cloud.google.com/ruby/rails/run) from the Google Cloud team to setup the Google Cloud project.
 
 ## Technologies
-* CSS
+* Bulma/CSS
+* Cucumber
 * Docker
 * Flask
 * Google Cloud
 * HTML
 * JavaScript
 * Python
+* Selenium
 * SQLite
 * Ruby on Rails
 
@@ -116,21 +118,8 @@ For ease of deployment, environment variables for google cloud run are defined i
 
 
 ## Links
-Useful code snippets compuled in [Code Bible](guides/codebible.md)
+Useful code snippets compiled in [Code Bible](guides/codebible.md)
 
-[Google Site](https://sites.google.com/mymail.sutd.edu.sg/hex-eye/home)
+Our project website: [Google Site](https://sites.google.com/mymail.sutd.edu.sg/hex-eye/home)
 
-[Guides](/guides)
-
-Others:
-
-* Ruby version - 2.7.6-1
-* System dependencies
-* Configuration
-* Database creation
-* Database initialization
-* How to run the test suite
-* Services (job queues, cache servers, search engines, etc.)
-* Deployment instructions
-* ...
-
+List of [Guides](/guides) in this README.md
