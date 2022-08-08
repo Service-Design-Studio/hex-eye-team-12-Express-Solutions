@@ -28,3 +28,6 @@ Update the apt package index, and install the latest version of Docker Engine, c
     sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 This guide is mirrored from the official Docker documentation.
+
+## .dockerignore
+It is useful to specify files that are not needed such as testing folders to slim the size of the Docker container.
