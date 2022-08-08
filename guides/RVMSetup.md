@@ -6,4 +6,4 @@ As a first step install GPG keys used to verify installation package:
 In case you encounter an issues check [security](https://rvm.io/rvm/security)
 
 ## Basic install
-RVM has a dedicated Ubuntu package, so please follow instructions posted [here](https://github.com/rvm/ubuntu_rvm) 
+RVM has a dedicated Ubuntu package, so please follow instructions posted [here](https://github.com/rvm/ubuntu_rvm).
