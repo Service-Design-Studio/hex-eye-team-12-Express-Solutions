@@ -14,13 +14,13 @@ Scenario: Customer finds the suggested service on 3rd August 2022 at Kovan Branc
     And I am using "Android"
     When I visit "/services?branch=Kovan"
     Then I should see the headers "Update Particulars, Update Phone, Current/Savings Account"
-     And I should not see the headers "Account Closure, Debit Card Update"
+     And I should not see the headers "Closure Advice Withdrawal, Debit Card Update"
 
 Scenario: Customer clicks at a suggested service on 3rd August 2022, using web
     Given the date and time is "2022, 8, 3, 0, 0, 0"
     And I am using "web"
     When I visit "/services?branch=Global"
-    Then I should see the headers "Update Particulars, Current/Savings Account, Update Phone, Account Closure, Debit Card Issuance"
+    Then I should see the headers "Update Particulars, Current/Savings Account, Update Phone, Debit Card Replacement, Debit Card Issuance"
     When I click on the "service" of "Update Particulars"
     Then I should see the headers "Update Particulars, Get it done with Digibank in, Wait in the Queue"
 
@@ -29,5 +29,5 @@ Scenario: Suggested service database has not been forecasted for the particular 
     Given the date and time is "2024, 2, 28, 0, 0, 0"
     And I am using "web"
     And I visit "/services"
-    Then I should see the headers "Update Particulars, Update Phone, Account Closure, Debit Card Issuance, Debit Card Replacement"
+    Then I should see the headers "Update Particulars, Update Phone, Funds Transfer, Debit Card Issuance, Debit Card Replacement"
 
