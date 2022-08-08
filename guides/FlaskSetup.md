@@ -1,3 +1,4 @@
+# Flask Setup
 ## Steps to run the searchbar flask locally
 
 1. Use pip install the relevant libraries into your python (working for v3.10)
@@ -20,13 +21,13 @@
     
 
 
-## deployment of flask app to GCP 
+## Deployment of flask app to GCP 
 
-1. app.py - the logic of the prediction 
+1. `app.py` - the logic of the prediction 
 
-2. requirements.txt - all the requirements for the flask app and the AI model 
+2. `requirements.txt` - all the requirements for the flask app and the AI model 
 
-3. Dockerfile - reference to the docker image to be used for deployment 
+3. `Dockerfile` - reference to the docker image to be used for deployment 
 
-4. db/clean_txns - the small database file to be used for AI model training and prediction
+4. `db/clean_txns` - the small database file to be used for AI model training and prediction
 
