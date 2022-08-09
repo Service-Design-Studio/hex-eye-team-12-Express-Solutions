@@ -10,8 +10,8 @@ The members of the team are:
 * [Joshua Ng](https://github.com/brutatoasta)
 * [Jowie Ng](https://github.com/ioitami)
 * [Lai Pin Nean (Jeff)](https://github.com/Jefflai0315)
-* [Raymond](https://github.com/spizzray)
-* [Subesh Kumar](https://github.com/pinkadotted)
+* [Raymond Harrison](https://github.com/spizzray)
+* [M S Subesh Kumar](https://github.com/pinkadotted)
 * [Yeo Ke Wei](https://github.com/yeokewei)
 
 ## Table of Contents
@@ -115,9 +115,6 @@ For ease of deployment, environment variables for google cloud run are defined i
 * Selenium
 * SQLite
 * Ruby on Rails
-
-## License
-
 
 ## Links
 Useful code snippets compiled in [Code Bible](guides/codebible.md)
