@@ -49,23 +49,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_02_130805) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "services", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.text "requirements"
-    t.datetime "ttc"
-    t.string "service_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "topics", force: :cascade do |t|
     t.string "topic"
-  end
-
-  create_table "transactions_trackers", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end
