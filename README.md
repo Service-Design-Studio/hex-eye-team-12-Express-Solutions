@@ -4,6 +4,8 @@ DBS Express Solutions (hereinafter ES) is a smart catalog of DBS banking service
 
 ES is the result of a 4 month collaboration between Team HEX-EYE from SUTD, DBS Bank and Google as part of Service Design Studio 2022.
 
+Click [here](https://docs.google.com/document/d/1uey5X_Vhzqh9JIXqNTTgE9fwehEduJKwwsOt0etgt-k/edit?usp=sharing) for our Design Workbook where we jolt down our thoughts, discussions and key points.
+
 The members of the team are:
 * [Joshua Ng](https://github.com/brutatoasta)
 * [Jowie Ng](https://github.com/ioitami)
