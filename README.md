@@ -114,9 +114,6 @@ For ease of deployment, environment variables for google cloud run are defined i
 * SQLite
 * Ruby on Rails
 
-## License
-
-
 ## Links
 Useful code snippets compiled in [Code Bible](guides/codebible.md)
 
