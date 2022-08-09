@@ -19,12 +19,11 @@ class Prediction < ActiveRecord::Base
             end
             # Return top n services for branch
             predict_arr = Prediction.where(unixdate: ndate, branch_name: find_branch).order(prediction: :desc).pluck(:service).first(number)
-
-             #check if "Account Closure" Exists: if true, replace with the (n+1)th suggested
-            if predict_arr.include? 'ACCOUNT CLOSURE':
-                predict_arr = predict_arr - ['ACCOUNT CLOSURE'] +  [Prediction.offset(number).where(unixdate: ndate, branch_name: find_branch).order(prediction: :desc).pluck(:service).first]
-            end
             
+             #check if "Account Closure" Exists: if true, replace with the (n+1)th suggested
+            if 'ACCOUNT CLOSURE'.in? predict_arr
+                predict_arr = predict_arr - ['ACCOUNT CLOSURE'] + [Prediction.offset(number).where(unixdate: ndate, branch_name: find_branch).order(prediction: :desc).pluck(:service).first]
+            end
             return predict_arr #array
 
         else
@@ -37,7 +36,7 @@ class Prediction < ActiveRecord::Base
                 'DEBIT CARD REPLACEMENT'
                 ]
 
-            return default_arr[..number-1]
+            return default_arr.take(number)
         end
     end
 
