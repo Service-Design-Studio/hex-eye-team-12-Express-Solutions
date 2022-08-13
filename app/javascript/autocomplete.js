@@ -166,7 +166,8 @@ function go(){
   function query(inp) {
   // implement getrequest
     try { //for production
-      return fetch('https://search-ai-ainfo4wkya-uc.a.run.app/predict?query=' + inp)
+      // return fetch('https://search-ai-ainfo4wkya-uc.a.run.app/predict?query=' + inp) //for production
+      return fetch('http://127.0.0.1:5000/predict?query=' + inp) //for localhost
         .then(response => response.json());
     }
     catch(err) { //for localhost

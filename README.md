@@ -4,7 +4,7 @@ DBS Express Solutions (hereinafter ES) is a smart catalog of DBS banking service
 
 ES is the result of a 4 month collaboration between Team HEX-EYE from SUTD, DBS Bank and Google as part of Service Design Studio 2022.
 
-Click [here](https://sites.google.com/mymail.sutd.edu.sg/hex-eye/home) for our Google Site.
+Our project website: [Google Site](https://sites.google.com/mymail.sutd.edu.sg/hex-eye/home)
 
 Click [here](https://docs.google.com/document/d/1uey5X_Vhzqh9JIXqNTTgE9fwehEduJKwwsOt0etgt-k/edit?usp=sharing) for our Design Workbook where we jolt down our thoughts, discussions and key points.
 
@@ -121,7 +121,5 @@ For ease of deployment, environment variables for google cloud run are defined i
 
 ## Links
 Useful code snippets compiled in [Code Bible](guides/codebible.md)
-
-Our project website: [Google Site](https://sites.google.com/mymail.sutd.edu.sg/hex-eye/home)
 
 List of [Guides](/guides) in this README.md

@@ -1,0 +1,33 @@
+﻿bank,branch_name,branch_id,number,wait_time
+ABC,Ang Mo Kio Central Branch,AngMoKioCentral,95559001,6
+ABC,Bedok Central Branch,BedokCentral,95559002,3
+ABC,Bishan Central Branch,BishanCentral,95559003,3
+ABC,Bukit Batok Central Branch,BukitBatokCentral,95559004,0
+ABC,Bukit Panjang Branch,BukitPanjang,95559005,4
+ABC,Bukit Timah Branch,BukitTimah,95559006,3
+ABC,Choa Chu Kang Branch,ChoaChuKang,95559007,4
+ABC,Clementi Central Branch,ClementiCentral,95559008,4
+ABC,Compass One Branch,CompassOne,95559009,4
+ABC,HarbourFront Branch,HarbourFront,95559010,2
+ABC,Holland Village Branch,HollandVillage,95559011,3
+ABC,Hougang Central Branch,HougangCentral,95559012,4
+ABC,Jurong Point Branch,JurongPoint,95559013,5
+ABC,Kovan Branch,Kovan,95559014,5
+ABC,MBFC Branch,MBFC,95559015,5
+ABC,Parkway Parade Branch,ParkwayParade,95559016,4
+ABC,Paya Lebar Branch,PayaLebar,95559017,4
+ABC,Plaza Singapura Branch,PlazaSingapura,95559018,7
+ABC,South Bridge Branch,SouthBridge,95559019,5
+ABC,Square 2 Branch,Square2,95559020,1
+ABC,Suntec City Branch,SuntecCity,95559021,3
+ABC,Tampines Central Branch,TampinesCentral,95559022,3
+ABC,Tampines One Branch,TampinesOne,95559023,3
+ABC,Thomson Branch,Thomson,95559024,4
+ABC,Tiong Bahru Branch,TiongBahru,95559025,4
+ABC,Toa Payoh Branch,ToaPayoh,95559026,4
+ABC,Towner Road Branch,TownerRoad,95559027,4
+ABC,Waterway Point Branch,WaterwayPoint,95559028,4
+ABC,Westgate Branch,Westgate,95559029,4
+ABC,White Sands Branch,WhiteSands,95559030,2
+ABC,Woodlands Branch,Woodlands,95559031,6
+ABC,Yishun West Branch,YishunWest,95559032,4

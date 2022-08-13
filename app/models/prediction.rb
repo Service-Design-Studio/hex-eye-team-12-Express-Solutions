@@ -29,11 +29,11 @@ class Prediction < ActiveRecord::Base
         else
             #if dates cannot be found in db
             #return a the top 5 services based on DBS transaction data (Clean_txn.csv)
-            default_arr = ['UPDATE CUSTOMER PARTICULARS',
-                'UPDATE CUSTOMER PHONE',
+            default_arr = ['UPDATE PARTICULARS',
+                'UPDATE PHONE',
                 'FUND TRANSFER',
-                'DEBIT CARD ISSUANCE',
-                'DEBIT CARD REPLACEMENT'
+                'DCARD ISSUANCE',
+                'DCARD REPLACEMENT'
                 ]
 
             return default_arr.take(number)
