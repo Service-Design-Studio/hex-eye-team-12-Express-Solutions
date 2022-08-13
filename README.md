@@ -21,7 +21,7 @@ The members of the team are:
 * [Problem Description](#problem-description)
 * [Features](#features)
 * [Installation and Deployment](#installation-and-deployment)
-* [License](#license)
+* [License](/License)
 * [Links](#links)
 * [Technologies](#technologies)
 
