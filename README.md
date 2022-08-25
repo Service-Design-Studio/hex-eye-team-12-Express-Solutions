@@ -6,6 +6,8 @@ ES is the result of a 4 month collaboration between Team HEX-EYE from SUTD, DBS 
 
 Our project website: [Google Site](https://sites.google.com/mymail.sutd.edu.sg/hex-eye/home)
 
+Our Application Deployment (Without AI Feature): [Heroku Site](https://hexeye-express-solutions.herokuapp.com/)
+
 Click [here](https://docs.google.com/document/d/1uey5X_Vhzqh9JIXqNTTgE9fwehEduJKwwsOt0etgt-k/edit?usp=sharing) for our Design Workbook where we jolt down our thoughts, discussions and key points.
 
 
